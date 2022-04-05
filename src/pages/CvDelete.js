@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 
 function CvDelete() {
   const { id } = useParams();

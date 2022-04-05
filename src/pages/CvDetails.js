@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+
+import axios from "axios";
 
 function CvDetails() {
   const [state, setState] = useState({});
@@ -43,7 +45,7 @@ function CvDetails() {
         <div>
           <h2>Experiências profissionais</h2>
           {state.experiencias.map((currentCVObj) => (
-            <p>{state.experiencias}</p>
+            <p>{currentCVObj.experiencias}</p>
           ))}
         </div>
         <hr />
@@ -51,13 +53,23 @@ function CvDetails() {
           <h2>Competências</h2>
           <ul>
             {state.competencias.map((currentCVObj) => (
-              <li>{state.competencias}</li>
+              <li>{currentCVObj.competencias}</li>
             ))}
           </ul>
         </div>
       </section>
+      <div>
+        <Link className="fa-solid fa-trash-can" to={"cv delete"}></Link>
+      </div>
+      <div>
+        <Link className="btn btn-warning" to={"cv edit"}>
+          edit
+        </Link>
+      </div>
     </div>
   );
 }
 
 export default CvDetails;
+
+<i className="fa-solid fa-trash-can"></i>;
