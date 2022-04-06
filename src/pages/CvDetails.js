@@ -1,10 +1,49 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
+import dataJSON from "../data.json";
 import axios from "axios";
 
 function CvDetails() {
-  const [state, setState] = useState({});
+  const [state, setState] = useState({
+    id: "",
+    detalhes: {
+      nome: "",
+      sobrenome: " ",
+      idade: "",
+      vaga: "",
+      imagem: "",
+      sobre: "",
+      endereco: {
+        cidade: "",
+        estado: "",
+      },
+    },
+    experienciaProfissional: [
+      {
+        nomeEmpresa: "",
+        cargo: "",
+        inicio: "",
+        termino: "",
+        descricao: "",
+      },
+    ],
+    formacao: [
+      {
+        instituicao: "",
+        nomeCurso: "",
+        inicio: "",
+        termino: "",
+        descricao: "",
+      },
+    ],
+    competencias: [
+      {
+        nome: "",
+        descricao: "",
+      },
+    ],
+  });
 
   console.log(useParams());
 
@@ -13,7 +52,7 @@ function CvDetails() {
   useEffect(() => {
     async function fetchCV() {
       try {
-        const response = await axios.get("banco de dados");
+        const response = await axios.get({ dataJSON });
         setState({ ...response.data });
       } catch (err) {
         console.error(err);
@@ -24,52 +63,88 @@ function CvDetails() {
   return (
     <div>
       <section>
-        <img src="state.img" alt={`${state.firstName} picture`} />
+        <img src={state.detalhes.imagem} alt={`${state.detalhes.nome}`} />
         <div>
           <h1>
-            {state.firstName} {state.lastName}
+            {state.detalhes.nome} {state.detalhes.sobrenome}
           </h1>
           <p>
-            {state.cidade}, {state.estado}
+            {state.detalhes.endereco.cidade}, {state.detalhes.endereco.estado}
           </p>
-          <p>{state.dataAniversario} idade</p>
-          <p>{state.email}</p>
-          <h2>{state.vaga}</h2>
+          <p>{state.detalhes.idade}</p>
+          <p>{state.detalhes.email}</p>
+          <h2>{state.detalhes.vaga}</h2>
         </div>
         <hr />
         <div>
           <h2>Sobre</h2>
-          <p>{state.descricao}</p>
+          <p>{state.detalhes.descricao}</p>
         </div>
         <hr />
         <div>
           <h2>Experiências profissionais</h2>
-          {state.experiencias.map((currentCVObj) => (
-            <p>{currentCVObj.experiencias}</p>
-          ))}
+          {state.experienciaProfissional.map((currentCVObj) => {
+            const { nomeEmpresa, cargo, inicio, termino, descricao } =
+              currentCVObj;
+            return (
+              <div>
+                <p>
+                  <b>{nomeEmpresa}</b>
+                </p>
+                <p>
+                  <b>Cargo:</b>
+                  {cargo}
+                </p>
+                <p>
+                  {inicio}-{termino}
+                </p>
+                <p>{descricao}</p>
+              </div>
+            );
+          })}
+        </div>
+        <hr />
+        <div>
+          <h2>Formação</h2>
+          {state.formacao.map((currentCVObj) => {
+            const { instituicao, nomeCurso, inicio, termino, descricao } =
+              currentCVObj;
+            return (
+              <div>
+                <h3>{instituicao}</h3>
+                <p>
+                  <b>{nomeCurso}</b>
+                </p>
+                <p>
+                  {inicio}-{termino}
+                </p>
+                <p>{descricao}</p>
+              </div>
+            );
+          })}
         </div>
         <hr />
         <div>
           <h2>Competências</h2>
           <ul>
             {state.competencias.map((currentCVObj) => (
-              <li>{currentCVObj.competencias}</li>
+              <li>
+                {currentCVObj.nome} - {currentCVObj.descricao}
+              </li>
             ))}
           </ul>
         </div>
       </section>
-      <div>
+      {/* <div>
         <Link className="fa-solid fa-trash-can" to={"cv delete"}></Link>
       </div>
       <div>
         <Link className="btn btn-warning" to={"cv edit"}>
           edit
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }
 
 export default CvDetails;
-
-<i className="fa-solid fa-trash-can"></i>;

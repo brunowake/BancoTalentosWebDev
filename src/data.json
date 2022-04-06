@@ -10,6 +10,7 @@
       "celular": "",
       "vaga": "front-end",
       "imagem": "",
+      "sobre": "...",
       "endereco": {
         "rua": "123123123",
         "bairro": "123123",
@@ -56,6 +57,7 @@
       "celular": "",
       "vaga": "front-end",
       "imagem": "",
+      "sobre": "...",
       "endereco": {
         "rua": "123123123",
         "bairro": "123123",

@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import CvAdicionar from "./pages/CvAdicionar";
 import ProfileList from "./pages/ProfileList";
+import CvDetails from "./pages/CvDetails";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         {/* /criar  */}
         <Route path="/criar" element={<CvAdicionar />} />
         {/* 'cv' -> criar componente de cv */}
-        <Route path="/cv/:id" element={<div>cv</div>} />
+        <Route path="/cv/:id" element={<CvDetails />} />
         {/* '*' pagina de erro */}
         <Route path="*" element={<div>erro</div>} />
       </Routes>
