@@ -8,6 +8,8 @@ import Formacao from "./components/Formacao";
 import Observacao from "./components/Observacao";
 import Projetos from "./components/Projetos";
 import RedeSocial from "./components/RedeSocial";
+import CvEditar from "./pages/CvEditar";
+import BuscarCv from "./pages/BuscarCv";
 
 function App() {
   return (
@@ -15,8 +17,17 @@ function App() {
       <Routes>
         {/* '/' -> profileList */}
         <Route path="/" element={<ProfileList />} />
+
+        <Route path="/buscarCv" element={<BuscarCv />} />
+
         {/* /editar -> criar componente editar  */}
-        <Route path="/editar" element={<div>editar</div>} />
+        <Route path="/editar/:codigoRegistro" element={<CvEditar />}>
+          <Route path="profissional/:stateKey" element={<Profissional />} />
+          <Route path="formacao/:stateKey" element={<Formacao />} />
+          <Route path="observacao/:stateKey" element={<Observacao />} />
+          <Route path="projetos/:stateKey" element={<Projetos />} />
+          <Route path="redesocial/:stateKey" element={<RedeSocial />} />
+        </Route>
         {/* /criar  */}
         <Route path="/criar" element={<CvAdicionar />}>
           <Route path="profissional/:stateKey" element={<Profissional />} />
@@ -25,6 +36,7 @@ function App() {
           <Route path="projetos/:stateKey" element={<Projetos />} />
           <Route path="redesocial/:stateKey" element={<RedeSocial />} />
         </Route>
+
         {/* 'cv' -> criar componente de cv */}
         <Route path="/cv/:id" element={<div>cv</div>} />
         {/* '*' pagina de erro */}

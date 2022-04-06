@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes, useParams } from "react-router-dom";
 import Detalhes from "../components/Detalhes";
 import Endereco from "../components/Endereco";
 import RegistroTabs from "../components/RegistroTabs";
+import data from "../data.json";
 
-const CvAdicionar = () => {
+const CvEditar = () => {
   const [cv, setCv] = useState({
     id: "",
     codigoRegistro: "",
@@ -69,6 +70,7 @@ const CvAdicionar = () => {
       },
     ],
   });
+  const { codigoRegistro } = useParams();
 
   const [buscarCEP, setBuscarCEP] = useState("");
 
@@ -77,7 +79,7 @@ const CvAdicionar = () => {
   }
 
   function handleFinalizarClick(event) {
-    setCv({ ...cv, codigoRegistro: createCodigoResgistro() });
+    alert("axios aqui");
   }
 
   function handleDetalhesChange(event) {
@@ -126,10 +128,12 @@ const CvAdicionar = () => {
   }
 
   useEffect(() => {
-    if (cv.codigoRegistro) {
-      alert(cv.codigoRegistro);
-    }
-  }, [cv.codigoRegistro]);
+    const editarCv = data.filter((element) => {
+      return element.codigoRegistro === codigoRegistro;
+    });
+
+    setCv(editarCv[0]);
+  }, []);
 
   return (
     <div>
@@ -165,11 +169,11 @@ const CvAdicionar = () => {
             handleFinalizarClick();
           }}
         >
-          Finalizar Cadastro
+          Atualizar Cadastro
         </button>
       </form>
     </div>
   );
 };
 
-export default CvAdicionar;
+export default CvEditar;
