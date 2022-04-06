@@ -1,93 +1,127 @@
 [
   {
     "id": "1",
+    "codigoRegistro": "brunowake25",
     "detalhes": {
       "nome": "jose",
-      "sobrenome": "da silva",
-      "idade": "12",
-      "dataNascimento": "20-12-2021",
-      "estadoCivil": "solteiro",
-      "celular": "",
-      "vaga": "front-end",
-      "imagem": "",
+      "sobrenome": "silva",
+      "idade": "25",
+      "dataNascimento": "123123",
+      "estadoCivil": "123123",
+      "celular": "123123",
+      "vaga": "123123",
       "endereco": {
-        "rua": "123123123",
+        "logradouro": "123123",
         "bairro": "123123",
-        "numero": "321",
+        "numero": "123123",
         "cep": "123123",
-        "complemento": "",
-        "cidade": "sp",
-        "estado": "sp"
+        "complemento": "123123",
+        "localidade": "123123",
+        "uf": "12312312"
       }
     },
     "experienciaProfissional": [
       {
-        "nomeEmpresa": "sbt",
-        "cargo": "apresentador",
-        "inicio": "10-08-1996",
-        "termino": "20-05-2015",
-        "descricao": "adasdasdasdasdasdasdasd"
+        "nomeEmpresa": "123123",
+        "cargo": "123123",
+        "inicio": "123123",
+        "termino": "123123",
+        "descricao": "12312"
       }
     ],
     "formacao": [
       {
-        "instituicao": "usp",
-        "nomeCurso": "sistemas",
-        "inicio": "10-08-1996",
-        "termino": "20-05-2015",
-        "descricao": "asdasdasdasdqwe1e123"
+        "instituicao": "123123",
+        "nomeCurso": "123123",
+        "inicio": "123123123",
+        "termino": "123123123",
+        "descricao": "1231231"
       }
     ],
-    "competencias": [
+    "observacao": [
       {
-        "nome": "ingles",
-        "descricao": "fluente"
+        "nome": "123123",
+        "descricao": "123123"
+      }
+    ],
+    "projetos": [
+      {
+        "nome": "123123",
+        "url": "123123",
+        "github": "123123",
+        "descricao": "123123"
+      }
+    ],
+    "redeSocial": [
+      {
+        "instagram": "123123",
+        "facebook": "123123",
+        "twitter": "123123",
+        "linkedin": "123123",
+        "github": "123123"
       }
     ]
   },
   {
-    "id": "2",
+    "id": "1",
+    "codigoRegistro": "brunowake26",
     "detalhes": {
-      "nome": "pedro",
-      "sobrenome": "da silva",
-      "idade": "21",
-      "dataNascimento": "20-12-2021",
-      "estadoCivil": "solteiro",
-      "celular": "",
-      "vaga": "front-end",
-      "imagem": "",
+      "nome": "moises",
+      "sobrenome": "ribeiro",
+      "idade": "25",
+      "dataNascimento": "20-10-1996",
+      "estadoCivil": "123123",
+      "celular": "123123",
+      "vaga": "123123",
       "endereco": {
-        "rua": "123123123",
+        "logradouro": "123123",
         "bairro": "123123",
-        "numero": "321",
+        "numero": "123123",
         "cep": "123123",
-        "complemento": "",
-        "cidade": "sp",
-        "estado": "sp"
+        "complemento": "123123",
+        "localidade": "123123",
+        "uf": "12312312"
       }
     },
     "experienciaProfissional": [
       {
-        "nomeEmpresa": "sbt",
-        "cargo": "apresentador",
-        "inicio": "10-08-1996",
-        "termino": "20-05-2015",
-        "descricao": "adasdasdasdasdasdasdasd"
+        "nomeEmpresa": "123123",
+        "cargo": "123123",
+        "inicio": "123123",
+        "termino": "123123",
+        "descricao": "12312"
       }
     ],
     "formacao": [
       {
-        "instituicao": "usp",
-        "nomeCurso": "sistemas",
-        "inicio": "10-08-1996",
-        "termino": "20-05-2015",
-        "descricao": "asdasdasdasdqwe1e123"
+        "instituicao": "123123",
+        "nomeCurso": "123123",
+        "inicio": "123123123",
+        "termino": "123123123",
+        "descricao": "1231231"
       }
     ],
-    "competencias": [
+    "observacao": [
       {
-        "nome": "ingles",
-        "descricao": "fluente"
+        "nome": "123123",
+        "descricao": "123123"
+      }
+    ],
+    "projetos": [
+      {
+        "nome": "123123",
+        "url": "123123",
+        "github": "123123",
+        "descricao": "123123"
+      }
+    ],
+    "redeSocial": [
+      {
+        "instagram": "123123",
+        "facebook": "123123",
+        "twitter": "123123",
+        "linkedin": "123123",
+        "github": "123123"
       }
     ]
   }
