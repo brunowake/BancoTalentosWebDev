@@ -26,7 +26,6 @@ function App() {
           <Route path="formacao/:stateKey" element={<Formacao />} />
           <Route path="observacao/:stateKey" element={<Observacao />} />
           <Route path="projetos/:stateKey" element={<Projetos />} />
-          <Route path="redesocial/:stateKey" element={<RedeSocial />} />
         </Route>
         {/* /criar  */}
         <Route path="/criar" element={<CvAdicionar />}>
@@ -34,7 +33,6 @@ function App() {
           <Route path="formacao/:stateKey" element={<Formacao />} />
           <Route path="observacao/:stateKey" element={<Observacao />} />
           <Route path="projetos/:stateKey" element={<Projetos />} />
-          <Route path="redesocial/:stateKey" element={<RedeSocial />} />
         </Route>
 
         {/* 'cv' -> criar componente de cv */}

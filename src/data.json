@@ -10,6 +10,7 @@
       "estadoCivil": "123123",
       "celular": "123123",
       "vaga": "123123",
+      "email": "bruno@teste.com",
       "endereco": {
         "logradouro": "123123",
         "bairro": "123123",
@@ -52,15 +53,13 @@
         "descricao": "123123"
       }
     ],
-    "redeSocial": [
-      {
-        "instagram": "123123",
-        "facebook": "123123",
-        "twitter": "123123",
-        "linkedin": "123123",
-        "github": "123123"
-      }
-    ]
+    "redeSocial": {
+      "instagram": "123123",
+      "facebook": "123123",
+      "twitter": "123123",
+      "linkedin": "123123",
+      "github": "123123"
+    }
   },
   {
     "id": "1",
@@ -73,6 +72,7 @@
       "estadoCivil": "123123",
       "celular": "123123",
       "vaga": "123123",
+      "email": "bruno@teste.com",
       "endereco": {
         "logradouro": "123123",
         "bairro": "123123",
@@ -115,14 +115,12 @@
         "descricao": "123123"
       }
     ],
-    "redeSocial": [
-      {
-        "instagram": "123123",
-        "facebook": "123123",
-        "twitter": "123123",
-        "linkedin": "123123",
-        "github": "123123"
-      }
-    ]
+    "redeSocial": {
+      "instagram": "123123",
+      "facebook": "123123",
+      "twitter": "123123",
+      "linkedin": "123123",
+      "github": "123123"
+    }
   }
 ]

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Outlet, Route, Routes, useParams } from "react-router-dom";
 import Detalhes from "../components/Detalhes";
 import Endereco from "../components/Endereco";
+import RedeSocial from "../components/RedeSocial";
 import RegistroTabs from "../components/RegistroTabs";
 import data from "../data.json";
 
@@ -18,6 +19,7 @@ const CvEditar = () => {
       estadoCivil: "",
       celular: "",
       vaga: "",
+      email: "",
       endereco: {
         logradouro: "",
         bairro: "",
@@ -60,15 +62,13 @@ const CvEditar = () => {
         descricao: "",
       },
     ],
-    redeSocial: [
-      {
-        instagram: "",
-        facebook: "",
-        twitter: "",
-        linkedin: "",
-        github: "",
-      },
-    ],
+    redeSocial: {
+      instagram: "",
+      facebook: "",
+      twitter: "",
+      linkedin: "",
+      github: "",
+    },
   });
   const { codigoRegistro } = useParams();
 
@@ -127,6 +127,12 @@ const CvEditar = () => {
       .catch((err) => console.error(err));
   }
 
+  function handleRedeSocialChange(event) {
+    const aux = { ...cv.redeSocial, [event.target.name]: event.target.value };
+
+    setCv({ ...cv, redeSocial: aux });
+  }
+
   useEffect(() => {
     const editarCv = data.filter((element) => {
       return element.codigoRegistro === codigoRegistro;
@@ -136,20 +142,34 @@ const CvEditar = () => {
   }, []);
 
   return (
-    <div>
-      <form>
+    <div className="container ">
+      <form className="d-flex justify-content-center flex-column">
+        <p className="h1 text-center mb-3">Detalhes</p>
         <Detalhes state={cv.detalhes} handleChange={handleDetalhesChange} />
+        <hr />
 
-        <div>
-          <label htmlFor="CEP">CEP</label>
+        <p className="h1 text-center mb-3">Rede Social</p>
+        <RedeSocial
+          state={cv.redeSocial}
+          handleChange={handleRedeSocialChange}
+        />
+        <hr />
+
+        <p className="h1 text-center mb-3">Endereço</p>
+        <div className="input-group mb-3 mt-3">
           <input
             id="CEP"
             type="text"
             name="CEP"
+            className="form-control rounded-pill"
             value={buscarCEP}
+            placeholder="Insira o seu CEP"
             onChange={handleCEPChangeAPI}
           />
-          <button onClick={(event) => handleCEPClickAPI(event)}>
+          <button
+            className="btn btn-outline-primary ms-2 rounded-pill"
+            onClick={(event) => handleCEPClickAPI(event)}
+          >
             Buscar CEP
           </button>
         </div>
@@ -158,10 +178,11 @@ const CvEditar = () => {
           state={cv.detalhes.endereco}
           handleChange={handleCEPChangeObj}
         />
-
+        <hr />
         <RegistroTabs />
-        <Outlet context={{ state: cv, setState: setCv }} />
 
+        <Outlet context={{ state: cv, setState: setCv }} />
+        <hr />
         <button
           className="btn btn-primary"
           onClick={(event) => {
