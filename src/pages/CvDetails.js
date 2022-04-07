@@ -9,53 +9,58 @@ function CvDetails() {
   const { id } = useParams();
 
   useEffect(() => {
+    console.log("oi");
     axios
       .get(`http://localhost:4000/perfis/${id}`)
       .then((response) => {
+        console.log(response.data);
         setState({ ...response.data });
       })
       .catch((err) => {
         console.error(err);
       });
-    // async function fetchCV() {
-    //   try {
-    //     const response = await axios.get(`http://localhost:4000/perfis/${id}`);
-    //     setState({ ...response.data });
-    //     console.log(response.data);
-    //   } catch (err) {
-    //     console.error(err);
-    //   }
-    // }
-    // fetchCV();
+    console.log(state);
   }, [id]);
+
+  console.log(state);
+
+  const {
+    detalhes,
+    experienciaProfissional,
+    formacao,
+    projetos,
+    competencias,
+    redeSocial,
+  } = state;
+
   return (
     <div className="m-3">
       <section>
         <img
           className="rounded float-start"
-          src={state.detalhes.imagem}
-          alt={`${state.detalhes.nome}`}
+          src={detalhes.imagem}
+          alt={`${detalhes.nome}`}
         />
         <div>
           <h1>
-            {state.detalhes.nome} {state.detalhes.sobrenome}
+            {detalhes.nome} {detalhes.sobrenome}
           </h1>
           <p>
-            {state.detalhes.endereco.localidade}, {state.detalhes.endereco.uf}
+            {detalhes.endereco.localidade}, {detalhes.endereco.uf}
           </p>
-          <p>{state.detalhes.idade}</p>
-          <p>{state.detalhes.email}</p>
-          <h2>{state.detalhes.vaga}</h2>
+          <p>{detalhes.idade}</p>
+          <p>{detalhes.email}</p>
+          <h2>{detalhes.vaga}</h2>
         </div>
         <hr />
         <div>
           <h3>Sobre</h3>
-          <p>{state.detalhes.sobre}</p>
+          <p>{detalhes.sobre}</p>
         </div>
         <hr />
         <div>
           <h3>Experiências profissionais</h3>
-          {state.experienciaProfissional.map((currentCVObj) => {
+          {experienciaProfissional.map((currentCVObj) => {
             const { nomeEmpresa, cargo, inicio, termino, descricao } =
               currentCVObj;
             return (
@@ -78,7 +83,7 @@ function CvDetails() {
         <hr />
         <div>
           <h3>Formação</h3>
-          {state.formacao.map((currentCVObj) => {
+          {formacao.map((currentCVObj) => {
             const { instituicao, nomeCurso, inicio, termino, descricao } =
               currentCVObj;
             return (
@@ -102,7 +107,7 @@ function CvDetails() {
         <hr />
         <div>
           <h3>Projetos</h3>
-          {state.projetos.map((currentCVObj) => {
+          {projetos.map((currentCVObj) => {
             const { nome, url, github, descricao } = currentCVObj;
             return (
               <div>
@@ -120,7 +125,7 @@ function CvDetails() {
         <div>
           <h3>Competências</h3>
           <ul>
-            {state.competencias.map((currentCVObj) => (
+            {competencias.map((currentCVObj) => (
               <li>
                 {currentCVObj.nome} - {currentCVObj.descricao}
               </li>
@@ -130,7 +135,7 @@ function CvDetails() {
         <hr />
         <div>
           <h3>Redes Sociais</h3>
-          {state.redeSocial.map((currentCVObj) => {
+          {redeSocial.map((currentCVObj) => {
             const { instagram, facebook, twitter, github, linkedin } =
               currentCVObj;
             return (

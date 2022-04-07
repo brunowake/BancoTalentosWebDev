@@ -1,29 +1,59 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import dataJSON from "../data.json";
 import axios from "axios";
+import Search from "../components/Search";
 
 function ProfileList() {
   const navigate = useNavigate();
 
-  const [state, setState] = useState([]);
+  const [profile, setProfile] = useState([]);
+  const [text, setText] = useState("");
 
   useEffect(() => {
+    getProfiles();
+    console.log(profile);
+  }, []);
+
+  useEffect(() => {
+    searchByVaga(text);
+  }, [text]);
+
+  function searchByVaga(text) {
+    const clone = [...profile];
+    const find = clone.filter((currentProfileObj) => {
+      return currentProfileObj.detalhes.vaga
+        .toLowerCase()
+        .includes(text.toLowerCase());
+    });
+
+    setProfile(find);
+
+    if (!text) {
+      getProfiles();
+    }
+  }
+
+  function getProfiles() {
     axios
       .get("http://localhost:4000/perfis")
       .then((response) => {
-        setState([...response.data]);
+        setProfile([...response.data]);
       })
       .catch((err) => {
         console.error(err);
       });
-    console.log(state);
-  }, []);
+  }
 
   return (
     <div className="m-3">
       <div>
-        {state.map((currentProfile) => {
+        <Search
+          value={text}
+          onChange={(event) => setText(event.target.value)}
+        />
+      </div>
+      <div>
+        {profile.map((currentProfile) => {
           const { id, detalhes } = currentProfile;
           return (
             <div
