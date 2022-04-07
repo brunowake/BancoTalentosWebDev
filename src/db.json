@@ -1,0 +1,211 @@
+{
+  "perfis": [
+    {
+      "codigoRegistro": "josesilva25",
+      "detalhes": {
+        "nome": "jose",
+        "sobrenome": "silva",
+        "idade": "25",
+        "dataNascimento": "05/02/1998",
+        "estadoCivil": "casado",
+        "celular": "123123",
+        "vaga": "web dev",
+        "sobre": "adoro programar...",
+        "imagem": "https://pxhere.com/pt/photo/451653",
+        "endereco": {
+          "logradouro": "Rua Jõao Lira",
+          "bairro": "Leblon",
+          "numero": "85",
+          "cep": "123123",
+          "complemento": "401",
+          "localidade": "Rio de Janeiro",
+          "uf": "RJ"
+        }
+      },
+      "experienciaProfissional": [
+        {
+          "nomeEmpresa": "Amazon",
+          "cargo": "web dev junior",
+          "inicio": "12/31/23",
+          "termino": "12/31/23",
+          "descricao": "front end developer"
+        }
+      ],
+      "formacao": [
+        {
+          "instituicao": "usp",
+          "nomeCurso": "ciencia da computacao",
+          "inicio": "12/31/23123",
+          "termino": "12/31/23123",
+          "descricao": "IC"
+        }
+      ],
+      "competencias": [
+        {
+          "nome": "ingles",
+          "descricao": "fluente"
+        },
+        {
+          "nome": "javascript",
+          "descricao": "avançado"
+        }
+      ],
+      "projetos": [
+        {
+          "nome": "banco de dados",
+          "url": "www.123123.com",
+          "github": "123123",
+          "descricao": "123123"
+        }
+      ],
+      "redeSocial": [
+        {
+          "instagram": "123123",
+          "facebook": "123123",
+          "twitter": "123123",
+          "linkedin": "123123",
+          "github": "123123"
+        }
+      ],
+      "id": "zHwGaea"
+    },
+    {
+      "codigoRegistro": "mariasantos18",
+      "detalhes": {
+        "nome": "maria",
+        "sobrenome": "santos",
+        "idade": "18",
+        "dataNascimento": "08/04/2002",
+        "estadoCivil": "solteira",
+        "celular": "123123",
+        "vaga": "web dev junior",
+        "sobre": "aprendendo a programar...",
+        "imagem": "https://diariodocomercio.com.br/wp-content/webp-express/webp-images/uploads/2020/03/mulheres-profissionas0303.jpg.webp",
+        "endereco": {
+          "logradouro": "Rua Fabia",
+          "bairro": "Vila Romana",
+          "numero": "72",
+          "cep": "123123",
+          "complemento": "82B",
+          "localidade": "São Paulo",
+          "uf": "SP"
+        }
+      },
+      "experienciaProfissional": [
+        {
+          "nomeEmpresa": "Vivo",
+          "cargo": "estagiária web dev",
+          "inicio": "12/31/23",
+          "termino": "12/31/23",
+          "descricao": "teste"
+        }
+      ],
+      "formacao": [
+        {
+          "instituicao": "ufscar",
+          "nomeCurso": "ciencia de dados",
+          "inicio": "12/31/23123",
+          "termino": "12/31/23123",
+          "descricao": "intercambio San Francisco-USA"
+        }
+      ],
+      "competencias": [
+        {
+          "nome": "ingles",
+          "descricao": "fluente"
+        },
+        {
+          "nome": "javascript",
+          "descricao": "iniciante"
+        }
+      ],
+      "projetos": [
+        {
+          "nome": "joguinho",
+          "url": "www.123123.com",
+          "github": "123123",
+          "descricao": "123123"
+        }
+      ],
+      "redeSocial": [
+        {
+          "instagram": "123123",
+          "facebook": "123123",
+          "twitter": "123123",
+          "linkedin": "123123",
+          "github": "123123"
+        }
+      ],
+      "id": "UB1PH2s"
+    },
+    {
+      "codigoRegistro": "manuelpereira34",
+      "detalhes": {
+        "nome": "manuel",
+        "sobrenome": "pereira",
+        "idade": "34",
+        "dataNascimento": "012/08/1986",
+        "estadoCivil": "casado",
+        "celular": "123123",
+        "vaga": "web dev senior",
+        "sobre": " trabalho na area há 12 anos...",
+        "imagem": "https://designtecnologico.com/wp-content/uploads/2021/07/imagem-masculina-perfil-whatsapp-desenho-3d.jpg",
+        "endereco": {
+          "logradouro": "Rua Diogo Jacome",
+          "bairro": "Moema",
+          "numero": "133",
+          "cep": "123123",
+          "complemento": "-",
+          "localidade": "São Paulo",
+          "uf": "SP"
+        }
+      },
+      "experienciaProfissional": [
+        {
+          "nomeEmpresa": "Vivo",
+          "cargo": "estagiária web dev",
+          "inicio": "12/31/23",
+          "termino": "12/31/23",
+          "descricao": "teste"
+        }
+      ],
+      "formacao": [
+        {
+          "instituicao": "unesp",
+          "nomeCurso": "ciencia de dados",
+          "inicio": "12/31/23123",
+          "termino": "12/31/23123",
+          "descricao": "..."
+        }
+      ],
+      "competencias": [
+        {
+          "nome": "espanhol",
+          "descricao": "intermediario"
+        },
+        {
+          "nome": "javascript",
+          "descricao": "avançado"
+        }
+      ],
+      "projetos": [
+        {
+          "nome": "site",
+          "url": "www.123123.com",
+          "github": "123123",
+          "descricao": "123123"
+        }
+      ],
+      "redeSocial": [
+        {
+          "instagram": "123123",
+          "facebook": "123123",
+          "twitter": "123123",
+          "linkedin": "123123",
+          "github": "123123"
+        }
+      ],
+      "id": "io9XyLI"
+    }
+  ]
+}

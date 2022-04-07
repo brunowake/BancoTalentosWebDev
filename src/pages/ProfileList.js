@@ -1,40 +1,27 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import data from "../data.json";
+// import dataJSON from "../data.json";
 import axios from "axios";
 
 function ProfileList() {
   const navigate = useNavigate();
 
-  const [state, setState] = useState({
-    id: "",
-    detalhes: {
-      nome: "",
-      sobrenome: " ",
-      idade: "",
-      vaga: "",
-      imagem: "",
-      sobre: "",
-      endereco: {
-        cidade: "",
-        estado: "",
-      },
-    },
-  });
+  const [state, setState] = useState([]);
 
   useEffect(() => {
     axios
-      .get({ data })
+      .get("http://localhost:4000/perfis")
       .then((response) => {
         setState([...response.data]);
       })
       .catch((err) => {
         console.error(err);
       });
+    console.log(state);
   }, []);
 
   return (
-    <div>
+    <div className="m-3">
       <div>
         {state.map((currentProfile) => {
           const { id, detalhes } = currentProfile;
@@ -55,9 +42,11 @@ function ProfileList() {
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">
-                    <h5 className="card-title">{detalhes.nome}</h5>
+                    <h5 className="card-title">
+                      {detalhes.nome} {detalhes.sobrenome}
+                    </h5>
                     <p className="card-text">
-                      {detalhes.cidade}, {detalhes.estado}
+                      {detalhes.endereco.localidade}, {detalhes.endereco.uf}
                     </p>
                     <p className="card-text">
                       <b>{detalhes.vaga}</b>

@@ -7,16 +7,25 @@ function CvDelete() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    async function fetchCV() {
-      try {
-        const response = await axios.delete(`cv a partir do id`);
-        navigate("home");
-      } catch (err) {
+    axios
+      .delete(`http://localhost:4000/perfis/${id}`)
+      .then((response) => {
+        navigate("/");
+      })
+      .catch((err) => {
         console.error(err);
-      }
-    }
-    fetchCV();
-    navigate(-1);
+      });
+    // async function fetchCV() {
+    //   try {
+    //     const response = await axios.delete(
+    //       `http://localhost:4000/perfis/${id}`
+    //     );
+    //     navigate("home");
+    //   } catch (err) {
+    //     console.error(err);
+    //   }
+    // }
+    // fetchCV();
   }, [id, navigate]);
 
   return <p>...</p>;
