@@ -43,7 +43,7 @@ function App() {
           </Route>
 
           {/* 'cv' -> criar componente de cv */}
-          <Route path="/cv/:id" element={<CvDetails />} />
+          <Route path="/cv/:_id" element={<CvDetails />} />
 
           {/* 'deletar perfil' -> criar componente de deletar */}
           <Route path="/cv/delete" element={<CvDelete />} />
