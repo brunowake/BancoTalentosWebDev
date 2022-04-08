@@ -139,12 +139,12 @@ const CvAdicionar = () => {
     axios
       .get(url)
       .then((response) => {
-        const { logradouro, bairro, numero, cep, complemento, localidade, uf } =
+        const { logradouro, bairro, cep, complemento, localidade, uf } =
           response.data;
         const aux = {
           logradouro,
           bairro,
-          numero,
+          numero: 0,
           cep,
           complemento,
           localidade,
