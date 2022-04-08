@@ -250,6 +250,156 @@
         "github": "/manuel-pereira2"
       },
       "id": 3
+    },
+    {
+      "codigoRegistro": "antoniofunction toLowerCase() { [native code] }38",
+      "detalhes": {
+        "nome": "Antonio",
+        "sobrenome": "Silveira",
+        "idade": "38",
+        "dataNascimento": "1980-06-30",
+        "estadoCivil": "casado",
+        "celular": "11-34578765422",
+        "vaga": "Backend",
+        "email": "antonio_silveira@gmail.com",
+        "sobre": "trabalho há 10 anos no frontend e gostaria de uma oportunidade no back",
+        "imagem": "https://i.pinimg.com/564x/67/0f/0f/670f0f9e3bf3367d3c9db7e05d919c40.jpg",
+        "endereco": {
+          "logradouro": "Rua Arizona",
+          "bairro": "Cidade Monções",
+          "cep": "04567-003",
+          "complemento": "940",
+          "localidade": "São Paulo",
+          "uf": "SP"
+        }
+      },
+      "experienciaProfissional": [
+        {
+          "nomeEmpresa": "",
+          "cargo": "",
+          "inicio": "",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "nomeEmpresa": "Microsoft",
+          "cargo": "Frontend Senior",
+          "inicio": "2013-02-02",
+          "termino": "2022-02-04",
+          "descricao": ""
+        }
+      ],
+      "formacao": [
+        {
+          "instituicao": "",
+          "nomeCurso": "",
+          "inicio": "1",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "instituicao": "USP",
+          "nomeCurso": "Ciência da computação",
+          "inicio": "2000-02-15",
+          "termino": "2004-12-08",
+          "descricao": ""
+        }
+      ],
+      "competencias": [
+        {
+          "nome": "",
+          "descricao": ""
+        }
+      ],
+      "projetos": [
+        {
+          "nome": "",
+          "url": "",
+          "github": "",
+          "descricao": ""
+        }
+      ],
+      "redeSocial": {
+        "0": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "linkedin": "/antoniosilv",
+        "github": "/antonio-silveira"
+      },
+      "id": 4
+    },
+    {
+      "codigoRegistro": "tm29",
+      "detalhes": {
+        "nome": "Thaís",
+        "sobrenome": "Machado",
+        "idade": "29",
+        "dataNascimento": "",
+        "estadoCivil": "solteira",
+        "celular": "11-34567875",
+        "vaga": "Web Dev Jr",
+        "email": "thais@gmail.com",
+        "sobre": "bkjbkbkjb",
+        "imagem": "dofjiojeo.jpg",
+        "endereco": {
+          "logradouro": "Rua Arizona",
+          "bairro": "Cidade Monções",
+          "numero": "0A",
+          "cep": "04567-003",
+          "complemento": "0000",
+          "localidade": "São Paulo",
+          "uf": "SP"
+        }
+      },
+      "experienciaProfissional": [
+        {
+          "nomeEmpresa": "",
+          "cargo": "",
+          "inicio": "",
+          "termino": "",
+          "descricao": ""
+        }
+      ],
+      "formacao": [
+        {
+          "instituicao": "",
+          "nomeCurso": "",
+          "inicio": "1",
+          "termino": "",
+          "descricao": ""
+        }
+      ],
+      "competencias": [
+        {
+          "nome": "",
+          "descricao": ""
+        }
+      ],
+      "projetos": [
+        {
+          "nome": "",
+          "url": "",
+          "github": "",
+          "descricao": ""
+        }
+      ],
+      "redeSocial": {
+        "0": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "instagram": "@thaismachado",
+        "facebook": "/thaismachado",
+        "twitter": "/thaismachado"
+      },
+      "id": 5
     }
   ]
 }

@@ -79,7 +79,10 @@ const CvAdicionar = () => {
   const [buscarCEP, setBuscarCEP] = useState("");
 
   function createCodigoResgistro() {
-    const codigo = `${cv.detalhes.nome}${cv.detalhes.sobrenome}${cv.detalhes.idade}`;
+    const inicialNome = cv.detalhes.nome.slice(0, 1).toLowerCase();
+    const inicialSobrenome = cv.detalhes.sobrenome.slice(0, 1).toLowerCase();
+    const codigo = `${inicialNome}${inicialSobrenome}${cv.detalhes.idade}`;
+    console.log(codigo);
     setCv({ ...cv, codigoRegistro: codigo });
   }
   async function handleSubmit(event) {

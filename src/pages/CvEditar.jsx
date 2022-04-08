@@ -1,6 +1,12 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Outlet, Route, Routes, useParams } from "react-router-dom";
+import {
+  Outlet,
+  Route,
+  Routes,
+  useParams,
+  useNavigate,
+} from "react-router-dom";
 import Detalhes from "../components/Detalhes";
 import Endereco from "../components/Endereco";
 import RedeSocial from "../components/RedeSocial";
@@ -9,7 +15,6 @@ import data from "../data.json";
 
 const CvEditar = () => {
   const [cv, setCv] = useState({
-    id: "",
     codigoRegistro: "",
     detalhes: {
       nome: "",
@@ -20,6 +25,8 @@ const CvEditar = () => {
       celular: "",
       vaga: "",
       email: "",
+      sobre: "",
+      imagem: "",
       endereco: {
         logradouro: "",
         bairro: "",
@@ -43,12 +50,12 @@ const CvEditar = () => {
       {
         instituicao: "",
         nomeCurso: "",
-        inicio: "",
+        inicio: "1",
         termino: "",
         descricao: "",
       },
     ],
-    observacao: [
+    competencias: [
       {
         nome: "",
         descricao: "",
@@ -62,24 +69,43 @@ const CvEditar = () => {
         descricao: "",
       },
     ],
-    redeSocial: {
-      instagram: "",
-      facebook: "",
-      twitter: "",
-      linkedin: "",
-      github: "",
-    },
+    redeSocial: [
+      {
+        instagram: "",
+        facebook: "",
+        twitter: "",
+        linkedin: "",
+        github: "",
+      },
+    ],
   });
-  const { codigoRegistro } = useParams();
+  const { id } = useParams();
+
+  const navigate = useNavigate();
 
   const [buscarCEP, setBuscarCEP] = useState("");
 
-  function createCodigoResgistro() {
-    return `${cv.detalhes.nome}${cv.detalhes.sobrenome}${cv.detalhes.idade}`;
-  }
+  useEffect(() => {
+    axios
+      .get(`http://localhost:4000/perfis/${id}`)
+      .then((response) => {
+        console.log(response.data);
+        setCv({ ...response.data });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    console.log(cv);
+  }, []);
 
-  function handleFinalizarClick(event) {
-    alert("axios aqui");
+  async function handleSubmit(event) {
+    event.preventDefault();
+    axios
+      .patch(`http://localhost:4000/perfis/${id}`, cv)
+      .then((response) => {
+        navigate("/");
+      })
+      .catch((err) => console.error(err));
   }
 
   function handleDetalhesChange(event) {
@@ -135,7 +161,7 @@ const CvEditar = () => {
 
   useEffect(() => {
     const editarCv = data.filter((element) => {
-      return element.codigoRegistro === codigoRegistro;
+      return element[id] === id;
     });
 
     setCv(editarCv[0]);
@@ -143,7 +169,10 @@ const CvEditar = () => {
 
   return (
     <div className="container ">
-      <form className="d-flex justify-content-center flex-column">
+      <form
+        className="d-flex justify-content-center flex-column"
+        onSubmit={handleSubmit}
+      >
         <p className="h1 text-center mb-3">Detalhes</p>
         <Detalhes state={cv.detalhes} handleChange={handleDetalhesChange} />
         <hr />
@@ -183,15 +212,7 @@ const CvEditar = () => {
 
         <Outlet context={{ state: cv, setState: setCv }} />
         <hr />
-        <button
-          className="btn btn-primary"
-          onClick={(event) => {
-            event.preventDefault();
-            handleFinalizarClick();
-          }}
-        >
-          Atualizar Cadastro
-        </button>
+        <button className="btn btn-primary">Atualizar Cadastro</button>
       </form>
     </div>
   );

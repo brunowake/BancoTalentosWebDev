@@ -21,7 +21,7 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse text-end" id="navbarNav">
           <ul className="navbar-nav ms-5">
             <li className="nav-item">
               <Link className="nav-link" to="/">
@@ -39,7 +39,7 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/buscar">
+              <Link className="nav-link" to="/buscarCv">
                 Busca
               </Link>
             </li>

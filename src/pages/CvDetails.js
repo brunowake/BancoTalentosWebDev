@@ -14,27 +14,71 @@ function CvDetails() {
       estadoCivil: "",
       celular: "",
       vaga: "",
+      email: "",
       sobre: "",
       imagem: "",
-      endereco: {},
+      endereco: {
+        logradouro: "",
+        bairro: "",
+        numero: "",
+        cep: "",
+        complemento: "",
+        localidade: "",
+        uf: "",
+      },
     },
-    experienciaProfissional: [],
-    formacao: [],
-    competencias: [],
-    projetos: [],
-    redeSocial: [],
-    id: "",
+    experienciaProfissional: [
+      {
+        nomeEmpresa: "",
+        cargo: "",
+        inicio: "",
+        termino: "",
+        descricao: "",
+      },
+    ],
+    formacao: [
+      {
+        instituicao: "",
+        nomeCurso: "",
+        inicio: "1",
+        termino: "",
+        descricao: "",
+      },
+    ],
+    competencias: [
+      {
+        nome: "",
+        descricao: "",
+      },
+    ],
+    projetos: [
+      {
+        nome: "",
+        url: "",
+        github: "",
+        descricao: "",
+      },
+    ],
+    redeSocial: [
+      {
+        instagram: "",
+        facebook: "",
+        twitter: "",
+        linkedin: "",
+        github: "",
+      },
+    ],
   });
 
-  const { _id } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
-    console.log(_id);
+    console.log(id);
     axios
-      .get(`http://localhost:4000/perfis/${_id}`)
+      .get(`http://localhost:4000/perfis/${id}`)
       .then((response) => {
         console.log(response.data);
-        console.log(_id);
+        console.log(id);
         setState({ ...response.data });
       })
       .catch((err) => {
