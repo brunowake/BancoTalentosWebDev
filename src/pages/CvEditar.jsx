@@ -11,7 +11,6 @@ import Detalhes from "../components/Detalhes";
 import Endereco from "../components/Endereco";
 import RedeSocial from "../components/RedeSocial";
 import RegistroTabs from "../components/RegistroTabs";
-import data from "../data.json";
 
 const CvEditar = () => {
   const [cv, setCv] = useState({
@@ -79,7 +78,7 @@ const CvEditar = () => {
       },
     ],
   });
-  const { id } = useParams();
+  const { codigoCadastro } = useParams();
 
   const navigate = useNavigate();
 
@@ -87,21 +86,20 @@ const CvEditar = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/perfis/${id}`)
+      .get(`http://localhost:4000/perfis/?codigoRegistro=${codigoCadastro}`)
       .then((response) => {
         console.log(response.data);
-        setCv({ ...response.data });
+        setCv({ ...response.data[0] });
       })
       .catch((err) => {
         console.error(err);
       });
-    console.log(cv);
   }, []);
 
   async function handleSubmit(event) {
     event.preventDefault();
     axios
-      .patch(`http://localhost:4000/perfis/${id}`, cv)
+      .patch(`http://localhost:4000/perfis/${cv.id}`, cv)
       .then((response) => {
         navigate("/");
       })
@@ -133,12 +131,12 @@ const CvEditar = () => {
     axios
       .get(url)
       .then((response) => {
-        const { logradouro, bairro, numero, cep, complemento, localidade, uf } =
+        const { logradouro, bairro, cep, complemento, localidade, uf } =
           response.data;
         const aux = {
           logradouro,
           bairro,
-          numero,
+          numero: 0,
           cep,
           complemento,
           localidade,
@@ -159,13 +157,13 @@ const CvEditar = () => {
     setCv({ ...cv, redeSocial: aux });
   }
 
-  useEffect(() => {
-    const editarCv = data.filter((element) => {
-      return element[id] === id;
-    });
+  // useEffect(() => {
+  //   const editarCv = data.filter((element) => {
+  //     return element[id] === id;
+  //   });
 
-    setCv(editarCv[0]);
-  }, []);
+  //   setCv(editarCv[0]);
+  // }, []);
 
   return (
     <div className="container ">

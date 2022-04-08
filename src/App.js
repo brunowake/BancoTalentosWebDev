@@ -27,7 +27,7 @@ function App() {
           <Route path="/buscarCv" element={<BuscarCv />} />
 
           {/* /editar -> criar componente editar  */}
-          <Route path="/editar/:id" element={<CvEditar />}>
+          <Route path="/editar/:codigoCadastro" element={<CvEditar />}>
             <Route path="profissional/:stateKey" element={<Profissional />} />
             <Route path="formacao/:stateKey" element={<Formacao />} />
             <Route path="competencias/:stateKey" element={<Observacao />} />
