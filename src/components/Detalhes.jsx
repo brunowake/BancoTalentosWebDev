@@ -111,6 +111,32 @@ const Detalhes = (props) => {
           onChange={handleChange}
         />
       </div>
+      <div className="mb-2">
+        <label htmlFor="imagem" className={labelClassName}>
+          Foto
+        </label>
+        <input
+          id="imagem"
+          type="text"
+          name="imagem"
+          className={inputClassName}
+          value={state.imagem}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="mb-2">
+        <label htmlFor="sobre" className={labelClassName}>
+          Sobre
+        </label>
+        <textarea
+          id="sobre"
+          type="text"
+          name="sobre"
+          value={state.sobre}
+          className={inputClassName}
+          onChange={handleChange}
+        ></textarea>
+      </div>
     </div>
   );
 };

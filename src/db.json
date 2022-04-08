@@ -1,0 +1,405 @@
+{
+  "perfis": [
+    {
+      "codigoRegistro": "JoséSilva25",
+      "detalhes": {
+        "nome": "José",
+        "sobrenome": "Silva",
+        "idade": "25",
+        "dataNascimento": "1998-02-05",
+        "estadoCivil": "casado",
+        "celular": "1234123",
+        "vaga": "web dev",
+        "email": "jose@gmail.com",
+        "sobre": "adoro programar",
+        "imagem": "https://i.pinimg.com/564x/8b/1f/2e/8b1f2ed71f1f3ce5ff959e6ff8cd7dcb.jpg",
+        "endereco": {
+          "logradouro": "Rua Cristiano Viana",
+          "bairro": "Cerqueira César",
+          "numero": "0A",
+          "cep": "05411-001",
+          "complemento": "940",
+          "localidade": "São Paulo",
+          "uf": "SP"
+        }
+      },
+      "experienciaProfissional": [
+        {
+          "nomeEmpresa": "",
+          "cargo": "",
+          "inicio": "",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "nomeEmpresa": "Amazon",
+          "cargo": "web dev junior",
+          "inicio": "2003-03-12",
+          "termino": "2005-04-12",
+          "descricao": "front end developer"
+        }
+      ],
+      "formacao": [
+        {
+          "instituicao": "",
+          "nomeCurso": "",
+          "inicio": "1",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "instituicao": "USP",
+          "nomeCurso": "Ciência da computação",
+          "inicio": "2001-02-23",
+          "termino": "2005-12-30",
+          "descricao": "ic"
+        }
+      ],
+      "competencias": [
+        {
+          "nome": "",
+          "descricao": ""
+        }
+      ],
+      "projetos": [
+        {
+          "nome": "",
+          "url": "",
+          "github": "",
+          "descricao": ""
+        }
+      ],
+      "redeSocial": {
+        "0": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "instagram": "@zezinho",
+        "facebook": "/josesilva"
+      },
+      "id": 1
+    },
+    {
+      "codigoRegistro": "MariaSantos18",
+      "detalhes": {
+        "nome": "Maria",
+        "sobrenome": "Santos",
+        "idade": "18",
+        "dataNascimento": "2002-04-08",
+        "estadoCivil": "solteira",
+        "celular": "11-34578765422",
+        "vaga": "Web Dev Jr",
+        "email": "maria@yahoo.com.br",
+        "sobre": "aprendendo a programar",
+        "imagem": "https://diariodocomercio.com.br/wp-content/webp-express/webp-images/uploads/2020/03/mulheres-profissionas0303.jpg.webp",
+        "endereco": {
+          "logradouro": "Rua Fábia",
+          "bairro": "Vila Romana",
+          "cep": "05051-030",
+          "complemento": "85",
+          "localidade": "São Paulo",
+          "uf": "SP"
+        }
+      },
+      "experienciaProfissional": [
+        {
+          "nomeEmpresa": "",
+          "cargo": "",
+          "inicio": "",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "nomeEmpresa": "Vivo",
+          "cargo": "Estagiária",
+          "inicio": "2021-07-23",
+          "termino": "2022-03-10",
+          "descricao": ""
+        }
+      ],
+      "formacao": [
+        {
+          "instituicao": "",
+          "nomeCurso": "",
+          "inicio": "1",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "instituicao": "Ufscar",
+          "nomeCurso": "Analise de Sistemas",
+          "inicio": "2015-03-31",
+          "termino": "2019-11-17",
+          "descricao": "intercambio São Francisco/EUA"
+        }
+      ],
+      "competencias": [
+        {
+          "nome": "",
+          "descricao": ""
+        }
+      ],
+      "projetos": [
+        {
+          "nome": "",
+          "url": "",
+          "github": "",
+          "descricao": ""
+        }
+      ],
+      "redeSocial": {
+        "0": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "facebook": "/maria123",
+        "twitter": "/masantos"
+      },
+      "id": 2
+    },
+    {
+      "codigoRegistro": "ManuelPereira34",
+      "detalhes": {
+        "nome": "Manuel",
+        "sobrenome": "Pereira",
+        "idade": "34",
+        "dataNascimento": "1988-08-12",
+        "estadoCivil": "casado",
+        "celular": "21-9876876",
+        "vaga": "Web Dev Sênio",
+        "email": "manuel@gmail.com",
+        "sobre": "trabalho na área há 12 anos",
+        "imagem": "https://designtecnologico.com/wp-content/uploads/2021/07/imagem-masculina-perfil-whatsapp-desenho-3d.jpg",
+        "endereco": {
+          "logradouro": "Rua Senador Correia",
+          "bairro": "Laranjeiras",
+          "numero": "302",
+          "cep": "22231-180",
+          "complemento": "85",
+          "localidade": "Rio de Janeiro",
+          "uf": "RJ"
+        }
+      },
+      "experienciaProfissional": [
+        {
+          "nomeEmpresa": "",
+          "cargo": "",
+          "inicio": "",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "nomeEmpresa": "Google",
+          "cargo": "Web Dev - Front End",
+          "inicio": "2013-08-18",
+          "termino": "2017-11-30",
+          "descricao": ""
+        }
+      ],
+      "formacao": [
+        {
+          "instituicao": "",
+          "nomeCurso": "",
+          "inicio": "1",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "instituicao": "UNESP",
+          "nomeCurso": "Ciência da computação",
+          "inicio": "2012-02-10",
+          "termino": "2018-12-10",
+          "descricao": ""
+        }
+      ],
+      "competencias": [
+        {
+          "nome": "",
+          "descricao": ""
+        }
+      ],
+      "projetos": [
+        {
+          "nome": "",
+          "url": "",
+          "github": "",
+          "descricao": ""
+        },
+        {
+          "nome": "SITE",
+          "url": "www.1234566.com",
+          "github": "/1234567",
+          "descricao": "JavaScript\nHTML/CSS"
+        }
+      ],
+      "redeSocial": {
+        "0": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "linkedin": "/manuel-pereira",
+        "github": "/manuel-pereira2"
+      },
+      "id": 3
+    },
+    {
+      "codigoRegistro": "antoniofunction toLowerCase() { [native code] }38",
+      "detalhes": {
+        "nome": "Antonio",
+        "sobrenome": "Silveira",
+        "idade": "38",
+        "dataNascimento": "1980-06-30",
+        "estadoCivil": "casado",
+        "celular": "11-34578765422",
+        "vaga": "Backend",
+        "email": "antonio_silveira@gmail.com",
+        "sobre": "trabalho há 10 anos no frontend e gostaria de uma oportunidade no back",
+        "imagem": "https://i.pinimg.com/564x/67/0f/0f/670f0f9e3bf3367d3c9db7e05d919c40.jpg",
+        "endereco": {
+          "logradouro": "Rua Arizona",
+          "bairro": "Cidade Monções",
+          "cep": "04567-003",
+          "complemento": "940",
+          "localidade": "São Paulo",
+          "uf": "SP"
+        }
+      },
+      "experienciaProfissional": [
+        {
+          "nomeEmpresa": "",
+          "cargo": "",
+          "inicio": "",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "nomeEmpresa": "Microsoft",
+          "cargo": "Frontend Senior",
+          "inicio": "2013-02-02",
+          "termino": "2022-02-04",
+          "descricao": ""
+        }
+      ],
+      "formacao": [
+        {
+          "instituicao": "",
+          "nomeCurso": "",
+          "inicio": "1",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "instituicao": "USP",
+          "nomeCurso": "Ciência da computação",
+          "inicio": "2000-02-15",
+          "termino": "2004-12-08",
+          "descricao": ""
+        }
+      ],
+      "competencias": [
+        {
+          "nome": "",
+          "descricao": ""
+        }
+      ],
+      "projetos": [
+        {
+          "nome": "",
+          "url": "",
+          "github": "",
+          "descricao": ""
+        }
+      ],
+      "redeSocial": {
+        "0": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "linkedin": "/antoniosilv",
+        "github": "/antonio-silveira"
+      },
+      "id": 4
+    },
+    {
+      "codigoRegistro": "tm29",
+      "detalhes": {
+        "nome": "Thaís",
+        "sobrenome": "Machado",
+        "idade": "29",
+        "dataNascimento": "",
+        "estadoCivil": "solteira",
+        "celular": "11-34567875",
+        "vaga": "Web Dev Jr",
+        "email": "thais@gmail.com",
+        "sobre": "bkjbkbkjb",
+        "imagem": "dofjiojeo.jpg",
+        "endereco": {
+          "logradouro": "Rua Arizona",
+          "bairro": "Cidade Monções",
+          "numero": "0A",
+          "cep": "04567-003",
+          "complemento": "0000",
+          "localidade": "São Paulo",
+          "uf": "SP"
+        }
+      },
+      "experienciaProfissional": [
+        {
+          "nomeEmpresa": "",
+          "cargo": "",
+          "inicio": "",
+          "termino": "",
+          "descricao": ""
+        }
+      ],
+      "formacao": [
+        {
+          "instituicao": "",
+          "nomeCurso": "",
+          "inicio": "1",
+          "termino": "",
+          "descricao": ""
+        }
+      ],
+      "competencias": [
+        {
+          "nome": "",
+          "descricao": ""
+        }
+      ],
+      "projetos": [
+        {
+          "nome": "",
+          "url": "",
+          "github": "",
+          "descricao": ""
+        }
+      ],
+      "redeSocial": {
+        "0": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "instagram": "@thaismachado",
+        "facebook": "/thaismachado",
+        "twitter": "/thaismachado"
+      },
+      "id": 5
+    }
+  ]
+}

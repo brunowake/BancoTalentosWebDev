@@ -9,7 +9,7 @@ const RegistroTabs = (props) => {
       endereco: "profissional/experienciaProfissional",
     },
     { valor: "Formação", endereco: "formacao/formacao" },
-    { valor: "Observação", endereco: "observacao/observacao" },
+    { valor: "Competências", endereco: "competencias/competencias" },
     { valor: "Projetos", endereco: "projetos/projetos" },
   ];
 

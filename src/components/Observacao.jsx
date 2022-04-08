@@ -60,13 +60,13 @@ const Observacao = (props) => {
         />
       </div>
       <button onClick={handleClick} className="btn btn-primary mt-3 mb-3">
-        Adicionar Observação
+        Adicionar Competências
       </button>
 
       {outletcontext.state[params.stateKey].map((element, index) => {
         return (
           <div className="card mb-3" key={index}>
-            <h5 className="card-header">Observação</h5>
+            <h5 className="card-header">Competências</h5>
             <div className="card-body">
               <h5 className="card-title">{element.nome}</h5>
               <p className="card-text">{element.descricao}</p>

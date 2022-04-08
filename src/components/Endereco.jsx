@@ -22,36 +22,8 @@ const Endereco = (props) => {
       </div>
 
       <div>
-        <label htmlFor="uf" className={labelClassName}>
-          Estado
-        </label>
-        <input
-          id="uf"
-          type="text"
-          name="uf"
-          className={inputClassName}
-          value={state.uf}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div>
-        <label htmlFor="localidade" className={labelClassName}>
-          Cidade
-        </label>
-        <input
-          id="localidade"
-          type="text"
-          name="localidade"
-          className={inputClassName}
-          value={state.localidade}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div>
         <label htmlFor="complemento" className={labelClassName}>
-          Complemento
+          Número
         </label>
         <input
           id="complemento"
@@ -62,22 +34,10 @@ const Endereco = (props) => {
           onChange={handleChange}
         />
       </div>
-      <div>
-        <label htmlFor="cep" className={labelClassName}>
-          Cep
-        </label>
-        <input
-          id="cep"
-          type="text"
-          name="cep"
-          className={inputClassName}
-          value={state.cep}
-          onChange={handleChange}
-        />
-      </div>
+
       <div>
         <label htmlFor="numero" className={labelClassName}>
-          Numero
+          Complemento
         </label>
         <input
           id="numero"
@@ -98,6 +58,45 @@ const Endereco = (props) => {
           name="bairro"
           className={inputClassName}
           value={state.bairro}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="cep" className={labelClassName}>
+          Cep
+        </label>
+        <input
+          id="cep"
+          type="text"
+          name="cep"
+          className={inputClassName}
+          value={state.cep}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="localidade" className={labelClassName}>
+          Cidade
+        </label>
+        <input
+          id="localidade"
+          type="text"
+          name="localidade"
+          className={inputClassName}
+          value={state.localidade}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="uf" className={labelClassName}>
+          Estado
+        </label>
+        <input
+          id="uf"
+          type="text"
+          name="uf"
+          className={inputClassName}
+          value={state.uf}
           onChange={handleChange}
         />
       </div>

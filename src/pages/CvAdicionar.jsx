@@ -5,10 +5,10 @@ import Detalhes from "../components/Detalhes";
 import Endereco from "../components/Endereco";
 import RedeSocial from "../components/RedeSocial";
 import RegistroTabs from "../components/RegistroTabs";
+import { useNavigate, Link } from "react-router-dom";
 
 const CvAdicionar = () => {
   const [cv, setCv] = useState({
-    id: "",
     codigoRegistro: "",
     detalhes: {
       nome: "",
@@ -19,6 +19,8 @@ const CvAdicionar = () => {
       celular: "",
       vaga: "",
       email: "",
+      sobre: "",
+      imagem: "",
       endereco: {
         logradouro: "",
         bairro: "",
@@ -42,12 +44,12 @@ const CvAdicionar = () => {
       {
         instituicao: "",
         nomeCurso: "",
-        inicio: "",
+        inicio: "1",
         termino: "",
         descricao: "",
       },
     ],
-    observacao: [
+    competencias: [
       {
         nome: "",
         descricao: "",
@@ -61,24 +63,51 @@ const CvAdicionar = () => {
         descricao: "",
       },
     ],
-    redeSocial: {
-      instagram: "",
-      facebook: "",
-      twitter: "",
-      linkedin: "",
-      github: "",
-    },
+    redeSocial: [
+      {
+        instagram: "",
+        facebook: "",
+        twitter: "",
+        linkedin: "",
+        github: "",
+      },
+    ],
   });
+
+  const navigate = useNavigate();
 
   const [buscarCEP, setBuscarCEP] = useState("");
 
   function createCodigoResgistro() {
-    return `${cv.detalhes.nome}${cv.detalhes.sobrenome}${cv.detalhes.idade}`;
+    const inicialNome = cv.detalhes.nome.slice(0, 1).toLowerCase();
+    const inicialSobrenome = cv.detalhes.sobrenome.slice(0, 1).toLowerCase();
+    const codigo = `${inicialNome}${inicialSobrenome}${cv.detalhes.idade}`;
+    console.log(codigo);
+    setCv({ ...cv, codigoRegistro: codigo });
+  }
+  async function handleSubmit(event) {
+    event.preventDefault();
+    console.log(cv);
+    axios
+      .post("http://localhost:4000/perfis", cv)
+      .then((response) => {
+        navigate("/");
+      })
+      .catch((err) => console.error(err));
   }
 
-  function handleFinalizarClick(event) {
-    setCv({ ...cv, codigoRegistro: createCodigoResgistro() });
-  }
+  // function handleFinalizarClick(event) {
+  //   axios
+  //     .post()
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       navigate("/");
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+  //   setCv({ ...cv, codigoRegistro: createCodigoResgistro() });
+  // }
 
   function handleDetalhesChange(event) {
     const aux = { ...cv.detalhes, [event.target.name]: event.target.value };
@@ -139,7 +168,10 @@ const CvAdicionar = () => {
   console.log(cv.redeSocial);
   return (
     <div className="container ">
-      <form className="d-flex justify-content-center flex-column">
+      <form
+        className="d-flex justify-content-center flex-column"
+        onSubmit={handleSubmit}
+      >
         <p className="h1 text-center mb-3">Detalhes</p>
         <Detalhes state={cv.detalhes} handleChange={handleDetalhesChange} />
         <hr />
@@ -182,10 +214,8 @@ const CvAdicionar = () => {
 
         <button
           className="btn btn-primary align-text-center "
-          onClick={(event) => {
-            event.preventDefault();
-            handleFinalizarClick();
-          }}
+          type="submit"
+          onClick={() => createCodigoResgistro()}
         >
           Finalizar Cadastro
         </button>
