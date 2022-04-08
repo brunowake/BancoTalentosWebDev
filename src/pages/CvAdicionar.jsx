@@ -3,11 +3,12 @@ import React, { useState, useEffect } from "react";
 import { Outlet, Route, Routes } from "react-router-dom";
 import Detalhes from "../components/Detalhes";
 import Endereco from "../components/Endereco";
+import RedeSocial from "../components/RedeSocial";
 import RegistroTabs from "../components/RegistroTabs";
+import { useNavigate, Link } from "react-router-dom";
 
 const CvAdicionar = () => {
   const [cv, setCv] = useState({
-    id: "",
     codigoRegistro: "",
     detalhes: {
       nome: "",
@@ -17,6 +18,9 @@ const CvAdicionar = () => {
       estadoCivil: "",
       celular: "",
       vaga: "",
+      email: "",
+      sobre: "",
+      imagem: "",
       endereco: {
         logradouro: "",
         bairro: "",
@@ -40,12 +44,12 @@ const CvAdicionar = () => {
       {
         instituicao: "",
         nomeCurso: "",
-        inicio: "",
+        inicio: "1",
         termino: "",
         descricao: "",
       },
     ],
-    observacao: [
+    competencias: [
       {
         nome: "",
         descricao: "",
@@ -70,20 +74,47 @@ const CvAdicionar = () => {
     ],
   });
 
+  const navigate = useNavigate();
+
   const [buscarCEP, setBuscarCEP] = useState("");
 
   function createCodigoResgistro() {
-    return `${cv.detalhes.nome}${cv.detalhes.sobrenome}${cv.detalhes.idade}`;
+    const codigo = `${cv.detalhes.nome}${cv.detalhes.sobrenome}${cv.detalhes.idade}`;
+    setCv({ ...cv, codigoRegistro: codigo });
+  }
+  async function handleSubmit(event) {
+    event.preventDefault();
+    console.log(cv);
+    axios
+      .post("http://localhost:4000/perfis", cv)
+      .then((response) => {
+        navigate("/");
+      })
+      .catch((err) => console.error(err));
   }
 
-  function handleFinalizarClick(event) {
-    setCv({ ...cv, codigoRegistro: createCodigoResgistro() });
-  }
+  // function handleFinalizarClick(event) {
+  //   axios
+  //     .post()
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       navigate("/");
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
+  //   setCv({ ...cv, codigoRegistro: createCodigoResgistro() });
+  // }
 
   function handleDetalhesChange(event) {
     const aux = { ...cv.detalhes, [event.target.name]: event.target.value };
 
     setCv({ ...cv, detalhes: aux });
+  }
+  function handleRedeSocialChange(event) {
+    const aux = { ...cv.redeSocial, [event.target.name]: event.target.value };
+
+    setCv({ ...cv, redeSocial: aux });
   }
 
   function handleCEPChangeAPI(event) {
@@ -131,21 +162,39 @@ const CvAdicionar = () => {
     }
   }, [cv.codigoRegistro]);
 
+  console.log(cv.redeSocial);
   return (
-    <div>
-      <form>
+    <div className="container ">
+      <form
+        className="d-flex justify-content-center flex-column"
+        onSubmit={handleSubmit}
+      >
+        <p className="h1 text-center mb-3">Detalhes</p>
         <Detalhes state={cv.detalhes} handleChange={handleDetalhesChange} />
+        <hr />
 
-        <div>
-          <label htmlFor="CEP">CEP</label>
+        <p className="h1 text-center mb-3">Rede Social</p>
+        <RedeSocial
+          state={cv.redeSocial}
+          handleChange={handleRedeSocialChange}
+        />
+        <hr />
+
+        <p className="h1 text-center mb-3">Endereço</p>
+        <div className="input-group mb-3 mt-3">
           <input
             id="CEP"
             type="text"
             name="CEP"
+            className="form-control rounded-pill"
             value={buscarCEP}
+            placeholder="Insira o seu CEP"
             onChange={handleCEPChangeAPI}
           />
-          <button onClick={(event) => handleCEPClickAPI(event)}>
+          <button
+            className="btn btn-outline-primary ms-2 rounded-pill"
+            onClick={(event) => handleCEPClickAPI(event)}
+          >
             Buscar CEP
           </button>
         </div>
@@ -154,16 +203,16 @@ const CvAdicionar = () => {
           state={cv.detalhes.endereco}
           handleChange={handleCEPChangeObj}
         />
-
+        <hr />
         <RegistroTabs />
+
         <Outlet context={{ state: cv, setState: setCv }} />
+        <hr />
 
         <button
-          className="btn btn-primary"
-          onClick={(event) => {
-            event.preventDefault();
-            handleFinalizarClick();
-          }}
+          className="btn btn-primary align-text-center "
+          type="submit"
+          onClick={() => createCodigoResgistro()}
         >
           Finalizar Cadastro
         </button>

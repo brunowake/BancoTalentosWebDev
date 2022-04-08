@@ -4,23 +4,58 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 function CvDetails() {
-  const [state, setState] = useState({});
+  const [state, setState] = useState({
+    codigoRegistro: "",
+    detalhes: {
+      nome: "",
+      sobrenome: "",
+      idade: "",
+      dataNascimento: "",
+      estadoCivil: "",
+      celular: "",
+      vaga: "",
+      sobre: "",
+      imagem: "",
+      endereco: {},
+    },
+    experienciaProfissional: [],
+    formacao: [],
+    competencias: [],
+    projetos: [],
+    redeSocial: [],
+    id: "",
+  });
 
-  const { id } = useParams();
+  const { _id } = useParams();
 
   useEffect(() => {
-    console.log("oi");
+    console.log(_id);
     axios
-      .get(`http://localhost:4000/perfis/${id}`)
+      .get(`http://localhost:4000/perfis/${_id}`)
       .then((response) => {
         console.log(response.data);
+        console.log(_id);
         setState({ ...response.data });
       })
       .catch((err) => {
         console.error(err);
       });
     console.log(state);
-  }, [id]);
+  }, []);
+
+  // useEffect(() => {
+  //   async function fetchCV() {
+  //     console.log("oi");
+  //     try {
+  //       const response = await axios.get(`http://localhost:4000/perfis/${id}`);
+  //       console.log(response);
+  //       setState({ ...response.data });
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
+  //   }
+  //   fetchCV();
+  // }, [id]);
 
   console.log(state);
 
@@ -56,6 +91,28 @@ function CvDetails() {
         <div>
           <h3>Sobre</h3>
           <p>{detalhes.sobre}</p>
+        </div>
+        <hr />
+        <div>
+          <h3>Redes Sociais</h3>
+
+          <div>
+            <p>
+              <b>Instagram:</b> {redeSocial.instagram}
+            </p>
+            <p>
+              <b>Facebook:</b> {redeSocial.facebook}
+            </p>
+            <p>
+              <b>Twitter:</b> {redeSocial.twitter}
+            </p>
+            <p>
+              <b>LinkedIn:</b> {redeSocial.linkedin}
+            </p>
+            <p>
+              <b>github:</b> {redeSocial.github}
+            </p>
+          </div>
         </div>
         <hr />
         <div>
@@ -133,32 +190,6 @@ function CvDetails() {
           </ul>
         </div>
         <hr />
-        <div>
-          <h3>Redes Sociais</h3>
-          {redeSocial.map((currentCVObj) => {
-            const { instagram, facebook, twitter, github, linkedin } =
-              currentCVObj;
-            return (
-              <div>
-                <p>
-                  <b>Instagram:</b> {instagram}
-                </p>
-                <p>
-                  <b>Facebook:</b> {facebook}
-                </p>
-                <p>
-                  <b>Twitter:</b> {twitter}
-                </p>
-                <p>
-                  <b>LinkedIn:</b> {linkedin}
-                </p>
-                <p>
-                  <b>github:</b> {github}
-                </p>
-              </div>
-            );
-          })}
-        </div>
       </section>
       {/* <div>
         <Link className="fa-solid fa-trash-can" to={"cv delete"}></Link>

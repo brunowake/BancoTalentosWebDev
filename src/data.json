@@ -1,0 +1,126 @@
+[
+  {
+    "id": "1",
+    "codigoRegistro": "brunowake25",
+    "detalhes": {
+      "nome": "jose",
+      "sobrenome": "silva",
+      "idade": "25",
+      "dataNascimento": "123123",
+      "estadoCivil": "123123",
+      "celular": "123123",
+      "vaga": "123123",
+      "email": "bruno@teste.com",
+      "endereco": {
+        "logradouro": "123123",
+        "bairro": "123123",
+        "numero": "123123",
+        "cep": "123123",
+        "complemento": "123123",
+        "localidade": "123123",
+        "uf": "12312312"
+      }
+    },
+    "experienciaProfissional": [
+      {
+        "nomeEmpresa": "123123",
+        "cargo": "123123",
+        "inicio": "123123",
+        "termino": "123123",
+        "descricao": "12312"
+      }
+    ],
+    "formacao": [
+      {
+        "instituicao": "123123",
+        "nomeCurso": "123123",
+        "inicio": "123123123",
+        "termino": "123123123",
+        "descricao": "1231231"
+      }
+    ],
+    "observacao": [
+      {
+        "nome": "123123",
+        "descricao": "123123"
+      }
+    ],
+    "projetos": [
+      {
+        "nome": "123123",
+        "url": "123123",
+        "github": "123123",
+        "descricao": "123123"
+      }
+    ],
+    "redeSocial": {
+      "instagram": "123123",
+      "facebook": "123123",
+      "twitter": "123123",
+      "linkedin": "123123",
+      "github": "123123"
+    }
+  },
+  {
+    "id": "1",
+    "codigoRegistro": "brunowake26",
+    "detalhes": {
+      "nome": "moises",
+      "sobrenome": "ribeiro",
+      "idade": "25",
+      "dataNascimento": "20-10-1996",
+      "estadoCivil": "123123",
+      "celular": "123123",
+      "vaga": "123123",
+      "email": "bruno@teste.com",
+      "endereco": {
+        "logradouro": "123123",
+        "bairro": "123123",
+        "numero": "123123",
+        "cep": "123123",
+        "complemento": "123123",
+        "localidade": "123123",
+        "uf": "12312312"
+      }
+    },
+    "experienciaProfissional": [
+      {
+        "nomeEmpresa": "123123",
+        "cargo": "123123",
+        "inicio": "123123",
+        "termino": "123123",
+        "descricao": "12312"
+      }
+    ],
+    "formacao": [
+      {
+        "instituicao": "123123",
+        "nomeCurso": "123123",
+        "inicio": "123123123",
+        "termino": "123123123",
+        "descricao": "1231231"
+      }
+    ],
+    "observacao": [
+      {
+        "nome": "123123",
+        "descricao": "123123"
+      }
+    ],
+    "projetos": [
+      {
+        "nome": "123123",
+        "url": "123123",
+        "github": "123123",
+        "descricao": "123123"
+      }
+    ],
+    "redeSocial": {
+      "instagram": "123123",
+      "facebook": "123123",
+      "twitter": "123123",
+      "linkedin": "123123",
+      "github": "123123"
+    }
+  }
+]

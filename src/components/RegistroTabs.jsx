@@ -9,13 +9,12 @@ const RegistroTabs = (props) => {
       endereco: "profissional/experienciaProfissional",
     },
     { valor: "Formação", endereco: "formacao/formacao" },
-    { valor: "Observação", endereco: "observacao/observacao" },
+    { valor: "Competências", endereco: "competencias/competencias" },
     { valor: "Projetos", endereco: "projetos/projetos" },
-    { valor: "Rede Social", endereco: "redesocial/redeSocial" },
   ];
 
   return (
-    <ul className="nav nav-pills justify-content-center">
+    <ul className="nav nav-pills justify-content-center mb-3">
       {opcoes.map((element, index) => {
         return (
           <li className="nav-item" key={index}>

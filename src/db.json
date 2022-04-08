@@ -1,211 +1,255 @@
 {
   "perfis": [
     {
-      "codigoRegistro": "josesilva25",
+      "codigoRegistro": "JoséSilva25",
       "detalhes": {
-        "nome": "jose",
-        "sobrenome": "silva",
+        "nome": "José",
+        "sobrenome": "Silva",
         "idade": "25",
-        "dataNascimento": "05/02/1998",
+        "dataNascimento": "1998-02-05",
         "estadoCivil": "casado",
-        "celular": "123123",
+        "celular": "1234123",
         "vaga": "web dev",
-        "sobre": "adoro programar...",
-        "imagem": "https://pxhere.com/pt/photo/451653",
+        "email": "jose@gmail.com",
+        "sobre": "adoro programar",
+        "imagem": "https://i.pinimg.com/564x/8b/1f/2e/8b1f2ed71f1f3ce5ff959e6ff8cd7dcb.jpg",
         "endereco": {
-          "logradouro": "Rua Jõao Lira",
-          "bairro": "Leblon",
-          "numero": "85",
-          "cep": "123123",
-          "complemento": "401",
+          "logradouro": "Rua Cristiano Viana",
+          "bairro": "Cerqueira César",
+          "numero": "0A",
+          "cep": "05411-001",
+          "complemento": "940",
+          "localidade": "São Paulo",
+          "uf": "SP"
+        }
+      },
+      "experienciaProfissional": [
+        {
+          "nomeEmpresa": "",
+          "cargo": "",
+          "inicio": "",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "nomeEmpresa": "Amazon",
+          "cargo": "web dev junior",
+          "inicio": "2003-03-12",
+          "termino": "2005-04-12",
+          "descricao": "front end developer"
+        }
+      ],
+      "formacao": [
+        {
+          "instituicao": "",
+          "nomeCurso": "",
+          "inicio": "1",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "instituicao": "USP",
+          "nomeCurso": "Ciência da computação",
+          "inicio": "2001-02-23",
+          "termino": "2005-12-30",
+          "descricao": "ic"
+        }
+      ],
+      "competencias": [
+        {
+          "nome": "",
+          "descricao": ""
+        }
+      ],
+      "projetos": [
+        {
+          "nome": "",
+          "url": "",
+          "github": "",
+          "descricao": ""
+        }
+      ],
+      "redeSocial": {
+        "0": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "instagram": "@zezinho",
+        "facebook": "/josesilva"
+      },
+      "id": 1
+    },
+    {
+      "codigoRegistro": "MariaSantos18",
+      "detalhes": {
+        "nome": "Maria",
+        "sobrenome": "Santos",
+        "idade": "18",
+        "dataNascimento": "2002-04-08",
+        "estadoCivil": "solteira",
+        "celular": "11-34578765422",
+        "vaga": "Web Dev Jr",
+        "email": "maria@yahoo.com.br",
+        "sobre": "aprendendo a programar",
+        "imagem": "https://diariodocomercio.com.br/wp-content/webp-express/webp-images/uploads/2020/03/mulheres-profissionas0303.jpg.webp",
+        "endereco": {
+          "logradouro": "Rua Fábia",
+          "bairro": "Vila Romana",
+          "cep": "05051-030",
+          "complemento": "85",
+          "localidade": "São Paulo",
+          "uf": "SP"
+        }
+      },
+      "experienciaProfissional": [
+        {
+          "nomeEmpresa": "",
+          "cargo": "",
+          "inicio": "",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "nomeEmpresa": "Vivo",
+          "cargo": "Estagiária",
+          "inicio": "2021-07-23",
+          "termino": "2022-03-10",
+          "descricao": ""
+        }
+      ],
+      "formacao": [
+        {
+          "instituicao": "",
+          "nomeCurso": "",
+          "inicio": "1",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "instituicao": "Ufscar",
+          "nomeCurso": "Analise de Sistemas",
+          "inicio": "2015-03-31",
+          "termino": "2019-11-17",
+          "descricao": "intercambio São Francisco/EUA"
+        }
+      ],
+      "competencias": [
+        {
+          "nome": "",
+          "descricao": ""
+        }
+      ],
+      "projetos": [
+        {
+          "nome": "",
+          "url": "",
+          "github": "",
+          "descricao": ""
+        }
+      ],
+      "redeSocial": {
+        "0": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "facebook": "/maria123",
+        "twitter": "/masantos"
+      },
+      "id": 2
+    },
+    {
+      "codigoRegistro": "ManuelPereira34",
+      "detalhes": {
+        "nome": "Manuel",
+        "sobrenome": "Pereira",
+        "idade": "34",
+        "dataNascimento": "1988-08-12",
+        "estadoCivil": "casado",
+        "celular": "21-9876876",
+        "vaga": "Web Dev Sênio",
+        "email": "manuel@gmail.com",
+        "sobre": "trabalho na área há 12 anos",
+        "imagem": "https://designtecnologico.com/wp-content/uploads/2021/07/imagem-masculina-perfil-whatsapp-desenho-3d.jpg",
+        "endereco": {
+          "logradouro": "Rua Senador Correia",
+          "bairro": "Laranjeiras",
+          "numero": "302",
+          "cep": "22231-180",
+          "complemento": "85",
           "localidade": "Rio de Janeiro",
           "uf": "RJ"
         }
       },
       "experienciaProfissional": [
         {
-          "nomeEmpresa": "Amazon",
-          "cargo": "web dev junior",
-          "inicio": "12/31/23",
-          "termino": "12/31/23",
-          "descricao": "front end developer"
+          "nomeEmpresa": "",
+          "cargo": "",
+          "inicio": "",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "nomeEmpresa": "Google",
+          "cargo": "Web Dev - Front End",
+          "inicio": "2013-08-18",
+          "termino": "2017-11-30",
+          "descricao": ""
         }
       ],
       "formacao": [
         {
-          "instituicao": "usp",
-          "nomeCurso": "ciencia da computacao",
-          "inicio": "12/31/23123",
-          "termino": "12/31/23123",
-          "descricao": "IC"
+          "instituicao": "",
+          "nomeCurso": "",
+          "inicio": "1",
+          "termino": "",
+          "descricao": ""
+        },
+        {
+          "instituicao": "UNESP",
+          "nomeCurso": "Ciência da computação",
+          "inicio": "2012-02-10",
+          "termino": "2018-12-10",
+          "descricao": ""
         }
       ],
       "competencias": [
         {
-          "nome": "ingles",
-          "descricao": "fluente"
-        },
-        {
-          "nome": "javascript",
-          "descricao": "avançado"
+          "nome": "",
+          "descricao": ""
         }
       ],
       "projetos": [
         {
-          "nome": "banco de dados",
-          "url": "www.123123.com",
-          "github": "123123",
-          "descricao": "123123"
-        }
-      ],
-      "redeSocial": [
+          "nome": "",
+          "url": "",
+          "github": "",
+          "descricao": ""
+        },
         {
-          "instagram": "123123",
-          "facebook": "123123",
-          "twitter": "123123",
-          "linkedin": "123123",
-          "github": "123123"
+          "nome": "SITE",
+          "url": "www.1234566.com",
+          "github": "/1234567",
+          "descricao": "JavaScript\nHTML/CSS"
         }
       ],
-      "id": "zHwGaea"
-    },
-    {
-      "codigoRegistro": "mariasantos18",
-      "detalhes": {
-        "nome": "maria",
-        "sobrenome": "santos",
-        "idade": "18",
-        "dataNascimento": "08/04/2002",
-        "estadoCivil": "solteira",
-        "celular": "123123",
-        "vaga": "web dev junior",
-        "sobre": "aprendendo a programar...",
-        "imagem": "https://diariodocomercio.com.br/wp-content/webp-express/webp-images/uploads/2020/03/mulheres-profissionas0303.jpg.webp",
-        "endereco": {
-          "logradouro": "Rua Fabia",
-          "bairro": "Vila Romana",
-          "numero": "72",
-          "cep": "123123",
-          "complemento": "82B",
-          "localidade": "São Paulo",
-          "uf": "SP"
-        }
+      "redeSocial": {
+        "0": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "linkedin": "",
+          "github": ""
+        },
+        "linkedin": "/manuel-pereira",
+        "github": "/manuel-pereira2"
       },
-      "experienciaProfissional": [
-        {
-          "nomeEmpresa": "Vivo",
-          "cargo": "estagiária web dev",
-          "inicio": "12/31/23",
-          "termino": "12/31/23",
-          "descricao": "teste"
-        }
-      ],
-      "formacao": [
-        {
-          "instituicao": "ufscar",
-          "nomeCurso": "ciencia de dados",
-          "inicio": "12/31/23123",
-          "termino": "12/31/23123",
-          "descricao": "intercambio San Francisco-USA"
-        }
-      ],
-      "competencias": [
-        {
-          "nome": "ingles",
-          "descricao": "fluente"
-        },
-        {
-          "nome": "javascript",
-          "descricao": "iniciante"
-        }
-      ],
-      "projetos": [
-        {
-          "nome": "joguinho",
-          "url": "www.123123.com",
-          "github": "123123",
-          "descricao": "123123"
-        }
-      ],
-      "redeSocial": [
-        {
-          "instagram": "123123",
-          "facebook": "123123",
-          "twitter": "123123",
-          "linkedin": "123123",
-          "github": "123123"
-        }
-      ],
-      "id": "UB1PH2s"
-    },
-    {
-      "codigoRegistro": "manuelpereira34",
-      "detalhes": {
-        "nome": "manuel",
-        "sobrenome": "pereira",
-        "idade": "34",
-        "dataNascimento": "012/08/1986",
-        "estadoCivil": "casado",
-        "celular": "123123",
-        "vaga": "web dev senior",
-        "sobre": " trabalho na area há 12 anos...",
-        "imagem": "https://designtecnologico.com/wp-content/uploads/2021/07/imagem-masculina-perfil-whatsapp-desenho-3d.jpg",
-        "endereco": {
-          "logradouro": "Rua Diogo Jacome",
-          "bairro": "Moema",
-          "numero": "133",
-          "cep": "123123",
-          "complemento": "-",
-          "localidade": "São Paulo",
-          "uf": "SP"
-        }
-      },
-      "experienciaProfissional": [
-        {
-          "nomeEmpresa": "Vivo",
-          "cargo": "estagiária web dev",
-          "inicio": "12/31/23",
-          "termino": "12/31/23",
-          "descricao": "teste"
-        }
-      ],
-      "formacao": [
-        {
-          "instituicao": "unesp",
-          "nomeCurso": "ciencia de dados",
-          "inicio": "12/31/23123",
-          "termino": "12/31/23123",
-          "descricao": "..."
-        }
-      ],
-      "competencias": [
-        {
-          "nome": "espanhol",
-          "descricao": "intermediario"
-        },
-        {
-          "nome": "javascript",
-          "descricao": "avançado"
-        }
-      ],
-      "projetos": [
-        {
-          "nome": "site",
-          "url": "www.123123.com",
-          "github": "123123",
-          "descricao": "123123"
-        }
-      ],
-      "redeSocial": [
-        {
-          "instagram": "123123",
-          "facebook": "123123",
-          "twitter": "123123",
-          "linkedin": "123123",
-          "github": "123123"
-        }
-      ],
-      "id": "io9XyLI"
+      "id": 3
     }
   ]
 }

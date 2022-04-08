@@ -3,12 +3,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 function CvDelete() {
-  const { id } = useParams();
+  const { codigoregistro } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .delete(`http://localhost:4000/perfis/${id}`)
+      .delete(`http://localhost:4000/perfis/${codigoregistro}`)
       .then((response) => {
         navigate("/");
       })
@@ -26,7 +26,7 @@ function CvDelete() {
     //   }
     // }
     // fetchCV();
-  }, [id, navigate]);
+  }, [codigoregistro, navigate]);
 
   return <p>...</p>;
 }

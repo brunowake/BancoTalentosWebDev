@@ -12,6 +12,9 @@ const Profissional = (props) => {
     descricao: "",
   });
 
+  const inputClassName = `col-lg-8 col-12 rounded-pill`;
+  const labelClassName = `form-label  col-lg-4 col-12`;
+
   function handleChange(event) {
     setProfissaoState({
       ...profissaoState,
@@ -40,66 +43,88 @@ const Profissional = (props) => {
   }
 
   return (
-    <div>
-      <div>
-        <label htmlFor="nomeEmpresa">Nome da empresa:</label>
+    <div className="d-flex justify-content-center flex-column">
+      <div className="mb-2">
+        <label htmlFor="nomeEmpresa" className={labelClassName}>
+          Nome da empresa:
+        </label>
         <input
           id="nomeEmpresa"
           type="text"
           name="nomeEmpresa"
+          className={inputClassName}
           value={profissaoState.nomeEmpresa}
           onChange={handleChange}
         />
       </div>
-      <div>
-        <label htmlFor="cargo">Cargo:</label>
+      <div className="mb-2">
+        <label htmlFor="cargo" className={labelClassName}>
+          Cargo:
+        </label>
         <input
           id="cargo"
           type="text"
           name="cargo"
+          className={inputClassName}
           value={profissaoState.cargo}
           onChange={handleChange}
         />
       </div>
-      <div>
-        <label htmlFor="inicio">inicio:</label>
+      <div className="mb-2">
+        <label htmlFor="inicio" className={labelClassName}>
+          inicio:
+        </label>
         <input
           id="inicio"
           type="date"
           name="inicio"
+          className={inputClassName}
           value={profissaoState.inicio}
           onChange={handleChange}
         />
       </div>
-      <div>
-        <label htmlFor="termino">termino:</label>
+      <div className="mb-2">
+        <label htmlFor="termino" className={labelClassName}>
+          termino:
+        </label>
         <input
           id="termino"
           type="date"
           name="termino"
+          className={inputClassName}
           value={profissaoState.termino}
           onChange={handleChange}
         />
       </div>
-      <div>
-        <label htmlFor="descricao">descricao:</label>
+      <div className="mb-2">
+        <label htmlFor="descricao" className={labelClassName}>
+          descricao:
+        </label>
         <textarea
           id="descricao"
           type="text"
           name="descricao"
+          className="col-lg-8 col-12 rounded"
           value={profissaoState.descricao}
           onChange={handleChange}
         />
       </div>
-      <button onClick={handleClick}>adicionar Formação</button>
+      <button onClick={handleClick} className="btn btn-primary mt-3 mb-3">
+        Adicionar trabalho
+      </button>
 
-      <ul>
-        {outletcontext.state[params.stateKey].map((element, index) => {
-          return (
-            <li key={index}>
-              {`nomeEmpresa: ${element.nomeEmpresa} cargo: ${element.cargo} inicio: ${element.inicio} termino:${element.termino} descricao: ${element.descricao}`}
+      {outletcontext.state[params.stateKey].map((element, index) => {
+        return (
+          <div className="card mb-3" key={index}>
+            <h5 className="card-header">{`${element.nomeEmpresa} - ${element.cargo}`}</h5>
+            <div className="card-body">
+              <h5 className="card-title">De: {element.inicio}</h5>
+              <h5 className="card-title">Até: {element.termino}</h5>
+              <p className="card-text">{element.descricao}</p>
+            </div>
+            <div className="d-flex flex-row-reverse">
               <button
-                className="btn btn-danger"
+                className="btn btn-danger col-2 me-2 mb-2"
                 onClick={(event) => {
                   event.preventDefault();
                   handleDeleteClick(index);
@@ -107,10 +132,10 @@ const Profissional = (props) => {
               >
                 deletar
               </button>
-            </li>
-          );
-        })}
-      </ul>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

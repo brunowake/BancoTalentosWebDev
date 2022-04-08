@@ -29,9 +29,8 @@ function App() {
           <Route path="/editar/:codigoRegistro" element={<CvEditar />}>
             <Route path="profissional/:stateKey" element={<Profissional />} />
             <Route path="formacao/:stateKey" element={<Formacao />} />
-            <Route path="observacao/:stateKey" element={<Observacao />} />
+            <Route path="competencias/:stateKey" element={<Observacao />} />
             <Route path="projetos/:stateKey" element={<Projetos />} />
-            <Route path="redesocial/:stateKey" element={<RedeSocial />} />
           </Route>
           {/* /criar  */}
           <Route path="/criar" element={<CvAdicionar />}>
@@ -39,7 +38,6 @@ function App() {
             <Route path="formacao/:stateKey" element={<Formacao />} />
             <Route path="observacao/:stateKey" element={<Observacao />} />
             <Route path="projetos/:stateKey" element={<Projetos />} />
-            <Route path="redesocial/:stateKey" element={<RedeSocial />} />
           </Route>
 
           {/* 'cv' -> criar componente de cv */}
