@@ -25,13 +25,6 @@
       },
       "experienciaProfissional": [
         {
-          "nomeEmpresa": "",
-          "cargo": "",
-          "inicio": "",
-          "termino": "",
-          "descricao": ""
-        },
-        {
           "nomeEmpresa": "Amazon",
           "cargo": "web dev junior",
           "inicio": "2003-03-12",
@@ -41,13 +34,6 @@
       ],
       "formacao": [
         {
-          "instituicao": "",
-          "nomeCurso": "",
-          "inicio": "1",
-          "termino": "",
-          "descricao": ""
-        },
-        {
           "instituicao": "USP",
           "nomeCurso": "Ciência da computação",
           "inicio": "2001-02-23",
@@ -55,28 +41,9 @@
           "descricao": "ic"
         }
       ],
-      "competencias": [
-        {
-          "nome": "",
-          "descricao": ""
-        }
-      ],
-      "projetos": [
-        {
-          "nome": "",
-          "url": "",
-          "github": "",
-          "descricao": ""
-        }
-      ],
+      "competencias": [],
+      "projetos": [],
       "redeSocial": {
-        "0": {
-          "instagram": "",
-          "facebook": "",
-          "twitter": "",
-          "linkedin": "",
-          "github": ""
-        },
         "instagram": "@zezinho",
         "facebook": "/josesilva"
       },
@@ -151,13 +118,6 @@
         }
       ],
       "redeSocial": {
-        "0": {
-          "instagram": "",
-          "facebook": "",
-          "twitter": "",
-          "linkedin": "",
-          "github": ""
-        },
         "facebook": "/maria123",
         "twitter": "/masantos"
       },
@@ -239,13 +199,6 @@
         }
       ],
       "redeSocial": {
-        "0": {
-          "instagram": "",
-          "facebook": "",
-          "twitter": "",
-          "linkedin": "",
-          "github": ""
-        },
         "linkedin": "/manuel-pereira",
         "github": "/manuel-pereira2"
       },
@@ -320,13 +273,6 @@
         }
       ],
       "redeSocial": {
-        "0": {
-          "instagram": "",
-          "facebook": "",
-          "twitter": "",
-          "linkedin": "",
-          "github": ""
-        },
         "linkedin": "/antoniosilv",
         "github": "/antonio-silveira"
       },
@@ -388,18 +334,119 @@
         }
       ],
       "redeSocial": {
-        "0": {
-          "instagram": "",
-          "facebook": "",
-          "twitter": "",
-          "linkedin": "",
-          "github": ""
-        },
         "instagram": "@thaismachado",
         "facebook": "/thaismachado",
         "twitter": "/thaismachado"
       },
       "id": 5
+    },
+    {
+      "codigoRegistro": "1234",
+      "detalhes": {
+        "nome": "burno",
+        "sobrenome": "123",
+        "idade": "123",
+        "dataNascimento": "2022-04-07",
+        "estadoCivil": "123",
+        "celular": "123",
+        "vaga": "123",
+        "email": "brunowake.bw@gmail.com",
+        "sobre": "123123123",
+        "imagem": "",
+        "endereco": {
+          "logradouro": "Rua Jorge Beretta",
+          "bairro": "Parque Erasmo Assunção",
+          "numero": 0,
+          "cep": "09271-400",
+          "complemento": "",
+          "localidade": "Santo André",
+          "uf": "SP"
+        }
+      },
+      "experienciaProfissional": [
+        {
+          "nomeEmpresa": "123",
+          "cargo": "123",
+          "inicio": "2022-04-06",
+          "termino": "2022-04-29",
+          "descricao": "123"
+        }
+      ],
+      "formacao": [
+        {
+          "instituicao": "123",
+          "nomeCurso": "123",
+          "inicio": "2022-04-06",
+          "termino": "2022-04-22",
+          "descricao": "123123"
+        }
+      ],
+      "competencias": [
+        {
+          "nome": "123",
+          "descricao": "123"
+        }
+      ],
+      "projetos": [
+        {
+          "nome": "123",
+          "url": "1231",
+          "github": "123123",
+          "descricao": ""
+        }
+      ],
+      "redeSocial": {
+        "instagram": "123",
+        "facebook": "1231",
+        "twitter": "123",
+        "linkedin": "12312",
+        "github": "3123123"
+      },
+      "id": 6
+    },
+    {
+      "codigoRegistro": "cr25",
+      "detalhes": {
+        "nome": "cleiton",
+        "sobrenome": "rasta",
+        "idade": "25",
+        "dataNascimento": "2022-03-30",
+        "estadoCivil": "123123",
+        "celular": "1231231",
+        "vaga": "123",
+        "email": "jose@gmail.com",
+        "sobre": "123",
+        "imagem": "",
+        "endereco": {
+          "logradouro": "Rua Jorge Beretta",
+          "bairro": "Parque Erasmo Assunção",
+          "numero": 0,
+          "cep": "09271-400",
+          "complemento": "123",
+          "localidade": "Santo André",
+          "uf": "SP"
+        }
+      },
+      "experienciaProfissional": [
+        {
+          "nomeEmpresa": "123",
+          "cargo": "123",
+          "inicio": "2022-03-30",
+          "termino": "2022-04-22",
+          "descricao": "123123"
+        }
+      ],
+      "formacao": [],
+      "competencias": [],
+      "projetos": [],
+      "redeSocial": {
+        "facebook": "iuhdiuahsuidh23123",
+        "twitter": "iudhaiushd1231",
+        "linkedin": "iushiudh23123",
+        "github": "12312312312azs9a90asd90",
+        "instagram": "ausdhaiushd1231"
+      },
+      "id": 7
     }
   ]
 }

@@ -161,11 +161,11 @@ function CvDetails() {
         <hr />
         <div>
           <h3>Experiências profissionais</h3>
-          {experienciaProfissional.map((currentCVObj) => {
+          {experienciaProfissional.map((currentCVObj, index) => {
             const { nomeEmpresa, cargo, inicio, termino, descricao } =
               currentCVObj;
             return (
-              <div>
+              <div key={index}>
                 <p>
                   <b>{nomeEmpresa}</b>
                 </p>
@@ -184,11 +184,11 @@ function CvDetails() {
         <hr />
         <div>
           <h3>Formação</h3>
-          {formacao.map((currentCVObj) => {
+          {formacao.map((currentCVObj, index) => {
             const { instituicao, nomeCurso, inicio, termino, descricao } =
               currentCVObj;
             return (
-              <div>
+              <div key={index}>
                 <p>
                   <b>{instituicao}</b>
                 </p>
@@ -208,10 +208,10 @@ function CvDetails() {
         <hr />
         <div>
           <h3>Projetos</h3>
-          {projetos.map((currentCVObj) => {
+          {projetos.map((currentCVObj, index) => {
             const { nome, url, github, descricao } = currentCVObj;
             return (
-              <div>
+              <div key={index}>
                 <p>
                   <b>{nome}</b>
                 </p>
@@ -226,8 +226,8 @@ function CvDetails() {
         <div>
           <h3>Competências</h3>
           <ul>
-            {competencias.map((currentCVObj) => (
-              <li>
+            {competencias.map((currentCVObj, index) => (
+              <li key={index}>
                 {currentCVObj.nome} - {currentCVObj.descricao}
               </li>
             ))}

@@ -31,47 +31,17 @@ const CvAdicionar = () => {
         uf: "",
       },
     },
-    experienciaProfissional: [
-      {
-        nomeEmpresa: "",
-        cargo: "",
-        inicio: "",
-        termino: "",
-        descricao: "",
-      },
-    ],
-    formacao: [
-      {
-        instituicao: "",
-        nomeCurso: "",
-        inicio: "1",
-        termino: "",
-        descricao: "",
-      },
-    ],
-    competencias: [
-      {
-        nome: "",
-        descricao: "",
-      },
-    ],
-    projetos: [
-      {
-        nome: "",
-        url: "",
-        github: "",
-        descricao: "",
-      },
-    ],
-    redeSocial: [
-      {
-        instagram: "",
-        facebook: "",
-        twitter: "",
-        linkedin: "",
-        github: "",
-      },
-    ],
+    experienciaProfissional: [],
+    formacao: [],
+    competencias: [],
+    projetos: [],
+    redeSocial: {
+      instagram: "",
+      facebook: "",
+      twitter: "",
+      linkedin: "",
+      github: "",
+    },
   });
 
   const navigate = useNavigate();
@@ -117,6 +87,7 @@ const CvAdicionar = () => {
   function handleRedeSocialChange(event) {
     const aux = { ...cv.redeSocial, [event.target.name]: event.target.value };
 
+    console.log(aux);
     setCv({ ...cv, redeSocial: aux });
   }
 
