@@ -7,20 +7,15 @@ function CvDelete() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const confirmar = window.confirm("Você deseja deletar o seu CV?");
-    console.log(params);
-    if (confirmar) {
-      axios
-        .delete(`http://localhost:4000/perfis/${params.id}`)
-        .then((response) => {
-          navigate("/");
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    }
-
-    navigate("/");
+    axios
+      .delete(`http://localhost:4000/perfis/${params.id}`)
+      .then((response) => {
+        navigate("/");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    navigate(-1);
   }, [params.id, navigate]);
 
   return <p>...</p>;
