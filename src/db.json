@@ -277,68 +277,6 @@
         "github": "/antonio-silveira"
       },
       "id": 4
-    },
-    {
-      "codigoRegistro": "tm29",
-      "detalhes": {
-        "nome": "Thaís",
-        "sobrenome": "Machado",
-        "idade": "29",
-        "dataNascimento": "",
-        "estadoCivil": "solteira",
-        "celular": "11-34567875",
-        "vaga": "Web Dev Jr",
-        "email": "thais@gmail.com",
-        "sobre": "bkjbkbkjb",
-        "imagem": "dofjiojeo.jpg",
-        "endereco": {
-          "logradouro": "Rua Arizona",
-          "bairro": "Cidade Monções",
-          "numero": "0A",
-          "cep": "04567-003",
-          "complemento": "0000",
-          "localidade": "São Paulo",
-          "uf": "SP"
-        }
-      },
-      "experienciaProfissional": [
-        {
-          "nomeEmpresa": "",
-          "cargo": "",
-          "inicio": "",
-          "termino": "",
-          "descricao": ""
-        }
-      ],
-      "formacao": [
-        {
-          "instituicao": "",
-          "nomeCurso": "",
-          "inicio": "1",
-          "termino": "",
-          "descricao": ""
-        }
-      ],
-      "competencias": [
-        {
-          "nome": "",
-          "descricao": ""
-        }
-      ],
-      "projetos": [
-        {
-          "nome": "",
-          "url": "",
-          "github": "",
-          "descricao": ""
-        }
-      ],
-      "redeSocial": {
-        "instagram": "@thaismachado",
-        "facebook": "/thaismachado",
-        "twitter": "/thaismachado"
-      },
-      "id": 5
     }
   ]
 }

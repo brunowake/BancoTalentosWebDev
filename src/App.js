@@ -45,7 +45,7 @@ function App() {
           <Route path="/cv/:id" element={<CvDetails />} />
 
           {/* 'deletar perfil' -> criar componente de deletar */}
-          <Route path="/cv/delete" element={<CvDelete />} />
+          <Route path="/cv/delete/:id" element={<CvDelete />} />
           {/* '*' pagina de erro */}
 
           <Route path="*" element={<div>erro</div>} />
