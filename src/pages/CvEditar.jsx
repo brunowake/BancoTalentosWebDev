@@ -6,6 +6,7 @@ import {
   Routes,
   useParams,
   useNavigate,
+  Link,
 } from "react-router-dom";
 import Detalhes from "../components/Detalhes";
 import Endereco from "../components/Endereco";
@@ -137,6 +138,12 @@ const CvEditar = () => {
 
   return (
     <div className="container ">
+      <div className="mb-3 mt-3 text-end">
+        <Link className="btn btn-danger" to={`/cv/delete`}>
+          Deletar
+        </Link>
+      </div>
+
       <form
         className="d-flex justify-content-center flex-column"
         onSubmit={handleSubmit}

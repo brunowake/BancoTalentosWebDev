@@ -447,6 +447,42 @@
         "instagram": "ausdhaiushd1231"
       },
       "id": 7
+    },
+    {
+      "codigoRegistro": "p",
+      "detalhes": {
+        "nome": "pedro",
+        "sobrenome": "",
+        "idade": "",
+        "dataNascimento": "",
+        "estadoCivil": "",
+        "celular": "",
+        "vaga": "",
+        "email": "",
+        "sobre": "",
+        "imagem": "",
+        "endereco": {
+          "logradouro": "",
+          "bairro": "",
+          "numero": "",
+          "cep": "",
+          "complemento": "",
+          "localidade": "",
+          "uf": ""
+        }
+      },
+      "experienciaProfissional": [],
+      "formacao": [],
+      "competencias": [],
+      "projetos": [],
+      "redeSocial": {
+        "instagram": "",
+        "facebook": "",
+        "twitter": "",
+        "linkedin": "",
+        "github": ""
+      },
+      "id": 8
     }
   ]
 }
