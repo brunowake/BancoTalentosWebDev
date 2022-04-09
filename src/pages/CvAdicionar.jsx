@@ -130,13 +130,16 @@ const CvAdicionar = () => {
       .catch((err) => console.error(err));
   }
 
+  function setImagem(img) {
+    setCv({ ...cv, detalhes: { ...cv.detalhes, imagem: img } });
+  }
+
   useEffect(() => {
     if (cv.codigoRegistro) {
       alert(cv.codigoRegistro);
     }
   }, [cv.codigoRegistro]);
 
-  console.log(cv.redeSocial);
   return (
     <div className="container ">
       <form
@@ -144,7 +147,11 @@ const CvAdicionar = () => {
         onSubmit={handleSubmit}
       >
         <p className="h1 text-center mb-3">Detalhes</p>
-        <Detalhes state={cv.detalhes} handleChange={handleDetalhesChange} />
+        <Detalhes
+          state={cv.detalhes}
+          handleChange={handleDetalhesChange}
+          setImgFunction={setImagem}
+        />
         <hr />
 
         <p className="h1 text-center mb-3">Rede Social</p>

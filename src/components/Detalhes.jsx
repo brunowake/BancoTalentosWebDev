@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Detalhes = (props) => {
-  const { state, handleChange } = props;
+  const { state, handleChange, setImgFunction } = props;
+
   const inputClassName = `col-lg-8 col-12 rounded-pill`;
   const labelClassName = `form-label  col-lg-4 col-12`;
+  const [img, setImg] = useState("");
+  const [uploading, setUploading] = useState();
+
+  function handleUpload(event) {
+    setUploading(true);
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setUploading(false);
+      setImg(reader.result);
+    };
+    reader.readAsDataURL(file);
+  }
+
+  useEffect(() => {
+    setImgFunction(img);
+  }, [img]);
   return (
     <div>
       {" "}
@@ -115,14 +133,20 @@ const Detalhes = (props) => {
         <label htmlFor="imagem" className={labelClassName}>
           Foto
         </label>
-        <input
+        <input type="file" id="imagem" name="imagem" onChange={handleUpload} />
+        {uploading ? (
+          "  Uploading..."
+        ) : (
+          <img src={state.imagem} style={{ height: "100px" }} />
+        )}
+        {/* <input
           id="imagem"
           type="text"
           name="imagem"
           className={inputClassName}
-          value={state.imagem}
+          
           onChange={handleChange}
-        />
+        /> */}
       </div>
       <div className="mb-2">
         <label htmlFor="sobre" className={labelClassName}>

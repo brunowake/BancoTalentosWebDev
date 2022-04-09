@@ -128,6 +128,10 @@ const CvEditar = () => {
     setCv({ ...cv, redeSocial: aux });
   }
 
+  function setImagem(img) {
+    setCv({ ...cv, detalhes: { ...cv.detalhes, imagem: img } });
+  }
+
   // useEffect(() => {
   //   const editarCv = data.filter((element) => {
   //     return element[id] === id;
@@ -139,7 +143,7 @@ const CvEditar = () => {
   return (
     <div className="container ">
       <div className="mb-3 mt-3 text-end">
-        <Link className="btn btn-danger" to={`/cv/delete`}>
+        <Link className="btn btn-danger" to={`/cv/delete/${cv.id}`}>
           Deletar
         </Link>
       </div>
@@ -149,7 +153,11 @@ const CvEditar = () => {
         onSubmit={handleSubmit}
       >
         <p className="h1 text-center mb-3">Detalhes</p>
-        <Detalhes state={cv.detalhes} handleChange={handleDetalhesChange} />
+        <Detalhes
+          state={cv.detalhes}
+          handleChange={handleDetalhesChange}
+          setImgFunction={setImagem}
+        />
         <hr />
 
         <p className="h1 text-center mb-3">Rede Social</p>
