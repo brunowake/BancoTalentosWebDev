@@ -14,14 +14,19 @@ const BuscarCv = () => {
     setCodigoCadastro(event.target.value);
   }
   return (
-    <div className="d-flex justify-content-center mt-5">
-      <input
-        type="text"
-        value={codigoCadastro}
-        onChange={handleChange}
-        placeholder="código de registro"
-      />
-      <button onClick={handleClick}>Buscar</button>
+    <div>
+      <p className="d-flex justify-content-center mt-5">
+        <b>Digite o código de registro abaixo para editar ou deletar seu CV:</b>
+      </p>
+      <div className="d-flex justify-content-center mt-5">
+        <input
+          type="text"
+          value={codigoCadastro}
+          onChange={handleChange}
+          placeholder="código de registro"
+        />
+        <button onClick={handleClick}>Buscar</button>
+      </div>
     </div>
   );
 };

@@ -12,6 +12,7 @@ import Detalhes from "../components/Detalhes";
 import Endereco from "../components/Endereco";
 import RedeSocial from "../components/RedeSocial";
 import RegistroTabs from "../components/RegistroTabs";
+import ConfirmaModal from "../components/ConfirmaModal";
 
 const CvEditar = () => {
   const [cv, setCv] = useState({
@@ -52,6 +53,8 @@ const CvEditar = () => {
   const { codigoCadastro } = useParams();
 
   const navigate = useNavigate();
+
+  const [modal, setModal] = useState(false);
 
   const [buscarCEP, setBuscarCEP] = useState("");
 
@@ -132,20 +135,29 @@ const CvEditar = () => {
     setCv({ ...cv, detalhes: { ...cv.detalhes, imagem: img } });
   }
 
-  // useEffect(() => {
-  //   const editarCv = data.filter((element) => {
-  //     return element[id] === id;
-  //   });
-
-  //   setCv(editarCv[0]);
-  // }, []);
+  // const handleClose = () => setModal(false);
+  const handleShow = () => setModal(true);
 
   return (
     <div className="container ">
       <div className="mb-3 mt-3 text-end">
-        <Link className="btn btn-danger" to={`/cv/delete/${cv.id}`}>
+        <button className="btn btn-danger" onClick={handleShow}>
           Deletar
-        </Link>
+        </button>
+
+        <ConfirmaModal
+          title="Atenção!"
+          variant="danger"
+          confirmationText="Deletar"
+          show={modal}
+          handleClose={() => setModal(false)}
+          handleConfirmation={() => {
+            navigate(`/cv/delete/${cv.id}`);
+            setModal(false);
+          }}
+        >
+          Você deseja deletar o seu CV?{" "}
+        </ConfirmaModal>
       </div>
 
       <form
