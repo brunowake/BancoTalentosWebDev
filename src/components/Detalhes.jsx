@@ -1,12 +1,56 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import AlertForm from "./AlertForm";
 
 const Detalhes = (props) => {
-  const { state, handleChange, setImgFunction } = props;
+  const {
+    state,
+    handleChange,
+    setImgFunction,
+    validation,
+    show,
+    isValid,
+    closeAlert,
+  } = props;
 
-  const inputClassName = `col-lg-8 col-12 rounded-pill`;
+  const inputClassName = ` col-lg-8 col-12 rounded-pill `;
   const labelClassName = `form-label  col-lg-4 col-12`;
+
   const [img, setImg] = useState("");
   const [uploading, setUploading] = useState();
+
+  const errorsKeys = Object.keys(validation.errors);
+
+  let domList = useRef([]);
+
+  domList = errorsKeys.map((key) => {
+    return document.getElementsByName(key)[0];
+  });
+
+  useEffect(() => {
+    if (domList.length > 1) {
+      domList.forEach((element) => {
+        if (validation.errors[element.name] !== "") {
+          element.style.borderColor = "red";
+        } else {
+          element.style.borderColor = "black";
+        }
+      });
+    }
+  }, [show]);
+
+  function handleBlur(event) {
+    const campo = domList.find((element) => element.name === event.target.name);
+
+    if (validation.errors[event.target.name] !== "") {
+      campo.placeholder = "Por favor preencha o campo obrigatório";
+      campo.style.borderColor = "red";
+    } else {
+      campo.style.borderColor = "black";
+    }
+    if (isValid()) {
+      closeAlert();
+    }
+  }
 
   function handleUpload(event) {
     setUploading(true);
@@ -24,10 +68,10 @@ const Detalhes = (props) => {
   }, [img]);
   return (
     <div>
-      {" "}
-      <div className="input-group mb-2">
+      <AlertForm show={show} errors={validation.errors} />{" "}
+      <div className="mb-2">
         <label htmlFor="nome" className={labelClassName}>
-          Nome
+          Nome *
         </label>
         <input
           id="nome"
@@ -35,12 +79,14 @@ const Detalhes = (props) => {
           name="nome"
           className={inputClassName}
           value={state.nome}
+          placeholder="insira seu nome"
           onChange={handleChange}
+          onBlur={handleBlur}
         />
       </div>
       <div className="mb-2">
         <label htmlFor="sobrenome" className={labelClassName}>
-          Sobrenome
+          Sobrenome *
         </label>
         <input
           id="sobrenome"
@@ -49,6 +95,7 @@ const Detalhes = (props) => {
           className={inputClassName}
           value={state.sobrenome}
           onChange={handleChange}
+          onBlur={handleBlur}
         />
       </div>
       <div className="mb-2">
@@ -118,15 +165,16 @@ const Detalhes = (props) => {
       </div>
       <div className="mb-2">
         <label htmlFor="email" className={labelClassName}>
-          Email
+          Email *
         </label>
         <input
           id="email"
-          type="email"
+          type="text"
           name="email"
           className={inputClassName}
           value={state.email}
           onChange={handleChange}
+          onBlur={handleBlur}
         />
       </div>
       <div className="mb-2">
@@ -139,14 +187,6 @@ const Detalhes = (props) => {
         ) : (
           <img src={state.imagem} style={{ height: "100px" }} />
         )}
-        {/* <input
-          id="imagem"
-          type="text"
-          name="imagem"
-          className={inputClassName}
-          
-          onChange={handleChange}
-        /> */}
       </div>
       <div className="mb-2">
         <label htmlFor="sobre" className={labelClassName}>

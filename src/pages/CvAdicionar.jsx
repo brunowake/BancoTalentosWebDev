@@ -44,40 +44,54 @@ const CvAdicionar = () => {
     },
   });
 
+  const [validation, setValidation] = useState({
+    errors: {},
+    validForm: false,
+  });
   const navigate = useNavigate();
 
   const [buscarCEP, setBuscarCEP] = useState("");
+  const [show, setShow] = useState(false);
 
   function createCodigoResgistro() {
     const inicialNome = cv.detalhes.nome.slice(0, 1).toLowerCase();
     const inicialSobrenome = cv.detalhes.sobrenome.slice(0, 1).toLowerCase();
     const codigo = `${inicialNome}${inicialSobrenome}${cv.detalhes.idade}`;
-    console.log(codigo);
+
     setCv({ ...cv, codigoRegistro: codigo });
   }
-  async function handleSubmit(event) {
-    event.preventDefault();
-    console.log(cv);
-    axios
-      .post("http://localhost:4000/perfis", cv)
-      .then((response) => {
-        navigate("/");
-      })
-      .catch((err) => console.error(err));
+
+  function closeAlert() {
+    setShow(false);
   }
 
-  // function handleFinalizarClick(event) {
-  //   axios
-  //     .post()
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       navigate("/");
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-  //   setCv({ ...cv, codigoRegistro: createCodigoResgistro() });
-  // }
+  function isValid() {
+    const erro = Object.values(validation.errors);
+    let valor = false;
+    for (const value of erro) {
+      console.log(value);
+      if (!value) {
+        valor += true;
+      }
+    }
+
+    return valor / 3 === 1 ? true : false;
+  }
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    isValid()
+      ? axios
+          .post("http://localhost:4000/perfis", cv)
+          .then((response) => {
+            createCodigoResgistro();
+            setShow(false);
+            navigate("/");
+          })
+          .catch((err) => console.error(err))
+      : setShow(true);
+  }
 
   function handleDetalhesChange(event) {
     const aux = { ...cv.detalhes, [event.target.name]: event.target.value };
@@ -103,6 +117,48 @@ const CvAdicionar = () => {
       return newState;
     });
   }
+
+  useEffect(() => {
+    if (!cv.detalhes.nome) {
+      setValidation((prevState) => {
+        prevState.errors["nome"] = "Campo nome nao pode estar vazio";
+
+        return prevState;
+      });
+    } else {
+      setValidation((prevState) => {
+        prevState.errors["nome"] = "";
+
+        return prevState;
+      });
+    }
+    if (!cv.detalhes.sobrenome) {
+      setValidation((prevState) => {
+        prevState.errors["sobrenome"] = "Campo sobrenome nao pode estar vazio";
+
+        return prevState;
+      });
+    } else {
+      setValidation((prevState) => {
+        prevState.errors["sobrenome"] = "";
+
+        return prevState;
+      });
+    }
+    if (!cv.detalhes.email) {
+      setValidation((prevState) => {
+        prevState.errors["email"] = "Campo email nao pode estar vazio";
+
+        return prevState;
+      });
+    } else {
+      setValidation((prevState) => {
+        prevState.errors["email"] = "";
+
+        return prevState;
+      });
+    }
+  }, [cv.detalhes.nome, cv.detalhes.sobrenome, cv.detalhes.email]);
 
   function handleCEPClickAPI(event) {
     event.preventDefault();
@@ -143,7 +199,7 @@ const CvAdicionar = () => {
   return (
     <div className="container ">
       <form
-        className="d-flex justify-content-center flex-column"
+        className="d-flex justify-content-center flex-column "
         onSubmit={handleSubmit}
       >
         <p className="h1 text-center mb-3">Detalhes</p>
@@ -151,6 +207,10 @@ const CvAdicionar = () => {
           state={cv.detalhes}
           handleChange={handleDetalhesChange}
           setImgFunction={setImagem}
+          validation={validation}
+          show={show}
+          isValid={isValid}
+          closeAlert={closeAlert}
         />
         <hr />
 
@@ -190,11 +250,7 @@ const CvAdicionar = () => {
         <Outlet context={{ state: cv, setState: setCv }} />
         <hr />
 
-        <button
-          className="btn btn-primary align-text-center "
-          type="submit"
-          onClick={() => createCodigoResgistro()}
-        >
+        <button className="btn btn-primary align-text-center " type="submit">
           Finalizar Cadastro
         </button>
       </form>

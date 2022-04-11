@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useOutletContext, useParams } from "react-router-dom";
 
 const RedeSocial = (props) => {
   const { state, handleChange } = props;
