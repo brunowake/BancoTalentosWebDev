@@ -73,13 +73,6 @@
       },
       "experienciaProfissional": [
         {
-          "nomeEmpresa": "",
-          "cargo": "",
-          "inicio": "",
-          "termino": "",
-          "descricao": ""
-        },
-        {
           "nomeEmpresa": "Vivo",
           "cargo": "Estagiária",
           "inicio": "2021-07-23",
@@ -89,18 +82,18 @@
       ],
       "formacao": [
         {
-          "instituicao": "",
-          "nomeCurso": "",
-          "inicio": "1",
-          "termino": "",
-          "descricao": ""
-        },
-        {
           "instituicao": "Ufscar",
           "nomeCurso": "Analise de Sistemas",
           "inicio": "2015-03-31",
           "termino": "2019-11-17",
           "descricao": "intercambio São Francisco/EUA"
+        },
+        {
+          "instituicao": "USP",
+          "nomeCurso": "Pós Graduação em Computacao",
+          "inicio": "2017-03-12",
+          "termino": "2018-06-08",
+          "descricao": ""
         }
       ],
       "competencias": [

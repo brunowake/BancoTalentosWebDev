@@ -57,15 +57,15 @@ function ProfileList() {
           const { id, detalhes } = currentProfile;
           return (
             <div
-              className="card mb-3"
+              className="card mb-3 w-75"
               style={{ maxWidth: "540px" }}
               key={id}
               onClick={() => navigate(`/cv/${id}`)}
             >
               <div className="row g-0">
-                <div className="col-md-4">
+                <div className="col-md-4 ">
                   <img
-                    className="img-fluid rounded-start"
+                    className="img-fluid rounded-start h-100 d-block"
                     src={detalhes.imagem}
                     alt={detalhes.nome}
                   />
@@ -75,10 +75,10 @@ function ProfileList() {
                     <h5 className="card-title">
                       {detalhes.nome} {detalhes.sobrenome}
                     </h5>
-                    <p className="card-text">
+                    <h6 class="card-subtitle mb-2 fw-light text-muted fs-6">
                       {detalhes.endereco.localidade}, {detalhes.endereco.uf}
-                    </p>
-                    <p className="card-text">
+                    </h6>
+                    <p className="card-text mt-2">
                       <b>{detalhes.vaga}</b>
                     </p>
                     <p className="card-text">{detalhes.sobre}</p>
