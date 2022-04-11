@@ -139,6 +139,7 @@ const CvEditar = () => {
   //   setCv(editarCv[0]);
   // }, []);
 
+  console.log(cv);
   return (
     <div className="container ">
       <form
