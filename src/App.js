@@ -12,13 +12,13 @@ import RedeSocial from "./components/RedeSocial";
 import CvEditar from "./pages/CvEditar";
 import BuscarCv from "./pages/BuscarCv";
 import CvDelete from "./pages/CvDelete";
-import Navbar from "./components/NavBar";
+import NavBar from "./components/NavBar";
 
 // npm run dev:server - para rodar a API
 function App() {
   return (
     <div>
-      <Navbar />
+      <NavBar />
       <div>
         <Routes>
           {/* '/' -> profileList */}
@@ -45,7 +45,7 @@ function App() {
           <Route path="/cv/:id" element={<CvDetails />} />
 
           {/* 'deletar perfil' -> criar componente de deletar */}
-          <Route path="/cv/delete" element={<CvDelete />} />
+          <Route path="/cv/delete/:id" element={<CvDelete />} />
           {/* '*' pagina de erro */}
 
           <Route path="*" element={<div>erro</div>} />
