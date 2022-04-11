@@ -3,8 +3,8 @@
     {
       "codigoRegistro": "JoséSilva25",
       "detalhes": {
-        "nome": "José",
-        "sobrenome": "Silva Junior",
+        "nome": "bruno",
+        "sobrenome": "silva",
         "idade": "25",
         "dataNascimento": "1998-02-05",
         "estadoCivil": "casado",
@@ -45,7 +45,10 @@
       "projetos": [],
       "redeSocial": {
         "instagram": "@zezinho",
-        "facebook": "/josesilva"
+        "facebook": "/josesilva",
+        "twitter": "",
+        "linkedin": "",
+        "github": ""
       },
       "id": 1
     },
@@ -277,6 +280,114 @@
         "github": "/antonio-silveira"
       },
       "id": 4
+    },
+    {
+      "codigoRegistro": "",
+      "detalhes": {
+        "nome": "123",
+        "sobrenome": "123",
+        "idade": "",
+        "dataNascimento": "",
+        "estadoCivil": "",
+        "celular": "",
+        "vaga": "",
+        "email": "123",
+        "sobre": "",
+        "imagem": "",
+        "endereco": {
+          "logradouro": "",
+          "bairro": "",
+          "numero": "",
+          "cep": "",
+          "complemento": "",
+          "localidade": "",
+          "uf": ""
+        }
+      },
+      "experienciaProfissional": [],
+      "formacao": [],
+      "competencias": [],
+      "projetos": [],
+      "redeSocial": {
+        "instagram": "",
+        "facebook": "",
+        "twitter": "",
+        "linkedin": "",
+        "github": ""
+      },
+      "id": 5
+    },
+    {
+      "codigoRegistro": "",
+      "detalhes": {
+        "nome": "123123123123",
+        "sobrenome": "123123",
+        "idade": "",
+        "dataNascimento": "",
+        "estadoCivil": "",
+        "celular": "",
+        "vaga": "",
+        "email": "123123123123",
+        "sobre": "",
+        "imagem": "",
+        "endereco": {
+          "logradouro": "",
+          "bairro": "",
+          "numero": "",
+          "cep": "",
+          "complemento": "",
+          "localidade": "",
+          "uf": ""
+        }
+      },
+      "experienciaProfissional": [],
+      "formacao": [],
+      "competencias": [],
+      "projetos": [],
+      "redeSocial": {
+        "instagram": "",
+        "facebook": "",
+        "twitter": "",
+        "linkedin": "",
+        "github": ""
+      },
+      "id": 6
+    },
+    {
+      "codigoRegistro": "",
+      "detalhes": {
+        "nome": "123123",
+        "sobrenome": "123123123",
+        "idade": "",
+        "dataNascimento": "",
+        "estadoCivil": "",
+        "celular": "",
+        "vaga": "",
+        "email": "123123123",
+        "sobre": "",
+        "imagem": "",
+        "endereco": {
+          "logradouro": "",
+          "bairro": "",
+          "numero": "",
+          "cep": "",
+          "complemento": "",
+          "localidade": "",
+          "uf": ""
+        }
+      },
+      "experienciaProfissional": [],
+      "formacao": [],
+      "competencias": [],
+      "projetos": [],
+      "redeSocial": {
+        "instagram": "",
+        "facebook": "",
+        "twitter": "",
+        "linkedin": "",
+        "github": ""
+      },
+      "id": 7
     }
   ]
 }
