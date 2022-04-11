@@ -58,26 +58,52 @@ const CvEditar = () => {
 
   const [buscarCEP, setBuscarCEP] = useState("");
 
+  const [validation, setValidation] = useState({
+    errors: { nome: "" },
+    validForm: false,
+  });
+
+  const [show, setShow] = useState(false);
+
   useEffect(() => {
     axios
       .get(`http://localhost:4000/perfis/?codigoRegistro=${codigoCadastro}`)
       .then((response) => {
-        console.log(response.data);
-        setCv({ ...response.data[0] });
+        const data = response.data[0];
+        console.log(data.redeSocial);
+        setCv({ ...data });
       })
       .catch((err) => {
         console.error(err);
       });
   }, []);
 
+  function closeAlert() {
+    setShow(false);
+  }
+
+  // async function handleSubmit(event) {
+  //   event.preventDefault();
+  //   axios
+  //     .patch(`http://localhost:4000/perfis/${cv.id}`, cv)
+  //     .then((response) => {
+  //       navigate("/");
+  //     })
+  //     .catch((err) => console.error(err));
+  // }
+
   async function handleSubmit(event) {
     event.preventDefault();
-    axios
-      .patch(`http://localhost:4000/perfis/${cv.id}`, cv)
-      .then((response) => {
-        navigate("/");
-      })
-      .catch((err) => console.error(err));
+
+    isValid()
+      ? axios
+          .patch(`http://localhost:4000/perfis/${cv.id}`, cv)
+          .then((response) => {
+            setShow(false);
+            navigate("/");
+          })
+          .catch((err) => console.error(err))
+      : setShow(true);
   }
 
   function handleDetalhesChange(event) {
@@ -125,6 +151,18 @@ const CvEditar = () => {
       .catch((err) => console.error(err));
   }
 
+  function isValid() {
+    const erro = Object.values(validation.errors);
+    let valor = false;
+    for (const value of erro) {
+      if (!value) {
+        valor += true;
+      }
+    }
+
+    return valor / 3 === 1 ? true : false;
+  }
+
   function handleRedeSocialChange(event) {
     const aux = { ...cv.redeSocial, [event.target.name]: event.target.value };
 
@@ -135,10 +173,51 @@ const CvEditar = () => {
     setCv({ ...cv, detalhes: { ...cv.detalhes, imagem: img } });
   }
 
+  useEffect(() => {
+    if (!cv.detalhes.nome) {
+      setValidation((prevState) => {
+        prevState.errors["nome"] = "Campo nome nao pode estar vazio";
+
+        return prevState;
+      });
+    } else {
+      setValidation((prevState) => {
+        prevState.errors["nome"] = "";
+
+        return prevState;
+      });
+    }
+    if (!cv.detalhes.sobrenome) {
+      setValidation((prevState) => {
+        prevState.errors["sobrenome"] = "Campo sobrenome nao pode estar vazio";
+
+        return prevState;
+      });
+    } else {
+      setValidation((prevState) => {
+        prevState.errors["sobrenome"] = "";
+
+        return prevState;
+      });
+    }
+    if (!cv.detalhes.email) {
+      setValidation((prevState) => {
+        prevState.errors["email"] = "Campo email nao pode estar vazio";
+
+        return prevState;
+      });
+    } else {
+      setValidation((prevState) => {
+        prevState.errors["email"] = "";
+
+        return prevState;
+      });
+    }
+  }, [cv.detalhes.nome, cv.detalhes.sobrenome, cv.detalhes.email]);
+
   // const handleClose = () => setModal(false);
   const handleShow = () => setModal(true);
 
-  console.log(cv);
   return (
     <div className="container ">
       <div className="mb-3 mt-3 text-end">
@@ -170,6 +249,10 @@ const CvEditar = () => {
           state={cv.detalhes}
           handleChange={handleDetalhesChange}
           setImgFunction={setImagem}
+          validation={validation}
+          show={show}
+          isValid={isValid}
+          closeAlert={closeAlert}
         />
         <hr />
 
