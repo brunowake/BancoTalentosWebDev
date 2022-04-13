@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import AlertForm from "./AlertForm";
-
+import InputMask from "react-input-mask";
+import CropImg from "./CropImg";
 const Detalhes = (props) => {
   const {
     state,
@@ -19,6 +20,8 @@ const Detalhes = (props) => {
   const [uploading, setUploading] = useState();
 
   const errorsKeys = Object.keys(validation.errors);
+
+  const [showCrop, setShowCrop] = useState(false);
 
   let domList = useRef([]);
 
@@ -57,15 +60,19 @@ const Detalhes = (props) => {
     const file = event.target.files[0];
     const reader = new FileReader();
     reader.onloadend = () => {
-      setUploading(false);
       setImg(reader.result);
+      setUploading(false);
+      setShowCrop(true);
     };
     reader.readAsDataURL(file);
   }
 
-  useEffect(() => {
-    setImgFunction(img);
-  }, [img]);
+  // useEffect(() => {
+  //   setImgFunction(img);
+  // }, [img]);
+
+  console.log(img.data);
+
   return (
     <div>
       <AlertForm show={show} errors={validation.errors} />{" "}
@@ -154,10 +161,12 @@ const Detalhes = (props) => {
         <label htmlFor="celular" className={labelClassName}>
           Celular
         </label>
-        <input
+        <InputMask
           id="celular"
           type="text"
           name="celular"
+          mask="(99) 99999-9999"
+          placeholder="(xx) xxxxx-xxxx"
           className={inputClassName}
           value={state.celular}
           onChange={handleChange}
@@ -185,7 +194,14 @@ const Detalhes = (props) => {
         {uploading ? (
           "  Uploading..."
         ) : (
-          <img src={state.imagem} style={{ height: "100px" }} />
+          // <img src={state.imagem} style={{ height: "100px" }} />
+          <CropImg
+            uploadedImg={img}
+            cvImage={state.imagem}
+            showCrop={showCrop}
+            setShowCrop={setShowCrop}
+            setImg={setImgFunction}
+          />
         )}
       </div>
       <div className="mb-2">

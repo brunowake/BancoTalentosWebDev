@@ -6,6 +6,8 @@ import Endereco from "../components/Endereco";
 import RedeSocial from "../components/RedeSocial";
 import RegistroTabs from "../components/RegistroTabs";
 import { useNavigate, Link } from "react-router-dom";
+import ReactInputMask from "react-input-mask";
+import ConfirmaModal from "../components/ConfirmaModal";
 
 const CvAdicionar = () => {
   const [cv, setCv] = useState({
@@ -52,6 +54,11 @@ const CvAdicionar = () => {
 
   const [buscarCEP, setBuscarCEP] = useState("");
   const [show, setShow] = useState(false);
+  const [modal, setModal] = useState(false);
+
+  function handleShow() {
+    setModal(true);
+  }
 
   function createCodigoResgistro() {
     const inicialNome = cv.detalhes.nome.slice(0, 1).toLowerCase();
@@ -78,19 +85,22 @@ const CvAdicionar = () => {
     return valor / 3 === 1 ? true : false;
   }
 
+  function scrollToError() {
+    setShow(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   async function handleSubmit(event) {
     event.preventDefault();
-
     isValid()
       ? axios
           .post("http://localhost:4000/perfis", cv)
           .then((response) => {
-            createCodigoResgistro();
+            handleShow();
             setShow(false);
-            navigate("/");
           })
           .catch((err) => console.error(err))
-      : setShow(true);
+      : scrollToError();
   }
 
   function handleDetalhesChange(event) {
@@ -190,18 +200,27 @@ const CvAdicionar = () => {
     setCv({ ...cv, detalhes: { ...cv.detalhes, imagem: img } });
   }
 
-  useEffect(() => {
-    if (cv.codigoRegistro) {
-      alert(cv.codigoRegistro);
-    }
-  }, [cv.codigoRegistro]);
-
   return (
     <div className="container ">
       <form
         className="d-flex justify-content-center flex-column "
         onSubmit={handleSubmit}
       >
+        <ConfirmaModal
+          title="Parabéns, Cadastro concluído com sucesso!"
+          variant="primary"
+          confirmationText="Ok"
+          show={modal}
+          handleClose={false}
+          handleConfirmation={() => {
+            navigate(`/`);
+            setModal(false);
+          }}
+        >
+          O seu código é {cv.codigoRegistro} e será enviado para o e-mail{" "}
+          {cv.detalhes.email}
+        </ConfirmaModal>
+
         <p className="h1 text-center mb-3">Detalhes</p>
         <Detalhes
           state={cv.detalhes}
@@ -223,12 +242,13 @@ const CvAdicionar = () => {
 
         <p className="h1 text-center mb-3">Endereço</p>
         <div className="input-group mb-3 mt-3">
-          <input
+          <ReactInputMask
             id="CEP"
             type="text"
             name="CEP"
             className="form-control rounded-pill"
             value={buscarCEP}
+            mask="99999-999"
             placeholder="Insira o seu CEP"
             onChange={handleCEPChangeAPI}
           />
@@ -250,7 +270,11 @@ const CvAdicionar = () => {
         <Outlet context={{ state: cv, setState: setCv }} />
         <hr />
 
-        <button className="btn btn-primary align-text-center " type="submit">
+        <button
+          className="btn btn-primary align-text-center "
+          type="submit"
+          onClick={createCodigoResgistro}
+        >
           Finalizar Cadastro
         </button>
       </form>
