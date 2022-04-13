@@ -104,8 +104,8 @@ function CvDetails() {
   } = state;
 
   return (
-    <div className="m-5 ">
-      <div className="d-flex">
+    <div className="m-5 mt-5 p-3">
+      <div className="d-flex mt-5">
         <img
           className="img-fluid rounded col"
           style={{ height: "195px" }}
@@ -202,6 +202,8 @@ function CvDetails() {
               ))}
             </ul>
           </div>
+
+          <div class="vr p-0"></div>
 
           <div className="ms-3 col">
             <h3 className="fs-5 mb-3">Redes Sociais</h3>

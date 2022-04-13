@@ -250,7 +250,11 @@ const CvAdicionar = () => {
         <Outlet context={{ state: cv, setState: setCv }} />
         <hr />
 
-        <button className="btn btn-primary align-text-center " type="submit">
+        <button
+          className="btn btn-success border-0 align-text-center "
+          style={{ backgroundColor: "#556B2F" }}
+          type="submit"
+        >
           Finalizar Cadastro
         </button>
       </form>

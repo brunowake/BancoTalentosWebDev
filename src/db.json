@@ -120,87 +120,6 @@
       "id": 2
     },
     {
-      "codigoRegistro": "ManuelPereira34",
-      "detalhes": {
-        "nome": "Manuel",
-        "sobrenome": "Pereira",
-        "idade": "34",
-        "dataNascimento": "1988-08-12",
-        "estadoCivil": "casado",
-        "celular": "21-9876876",
-        "vaga": "Web Dev Sênio",
-        "email": "manuel@gmail.com",
-        "sobre": "trabalho na área há 12 anos",
-        "imagem": "https://designtecnologico.com/wp-content/uploads/2021/07/imagem-masculina-perfil-whatsapp-desenho-3d.jpg",
-        "endereco": {
-          "logradouro": "Rua Senador Correia",
-          "bairro": "Laranjeiras",
-          "numero": "302",
-          "cep": "22231-180",
-          "complemento": "85",
-          "localidade": "Rio de Janeiro",
-          "uf": "RJ"
-        }
-      },
-      "experienciaProfissional": [
-        {
-          "nomeEmpresa": "",
-          "cargo": "",
-          "inicio": "",
-          "termino": "",
-          "descricao": ""
-        },
-        {
-          "nomeEmpresa": "Google",
-          "cargo": "Web Dev - Front End",
-          "inicio": "2013-08-18",
-          "termino": "2017-11-30",
-          "descricao": ""
-        }
-      ],
-      "formacao": [
-        {
-          "instituicao": "",
-          "nomeCurso": "",
-          "inicio": "1",
-          "termino": "",
-          "descricao": ""
-        },
-        {
-          "instituicao": "UNESP",
-          "nomeCurso": "Ciência da computação",
-          "inicio": "2012-02-10",
-          "termino": "2018-12-10",
-          "descricao": ""
-        }
-      ],
-      "competencias": [
-        {
-          "nome": "",
-          "descricao": ""
-        }
-      ],
-      "projetos": [
-        {
-          "nome": "",
-          "url": "",
-          "github": "",
-          "descricao": ""
-        },
-        {
-          "nome": "SITE",
-          "url": "www.1234566.com",
-          "github": "/1234567",
-          "descricao": "JavaScript\nHTML/CSS"
-        }
-      ],
-      "redeSocial": {
-        "linkedin": "/manuel-pereira",
-        "github": "/manuel-pereira2"
-      },
-      "id": 3
-    },
-    {
       "codigoRegistro": "antoniofunction toLowerCase() { [native code] }38",
       "detalhes": {
         "nome": "Antonio",
@@ -381,6 +300,42 @@
         "github": ""
       },
       "id": 7
+    },
+    {
+      "codigoRegistro": "",
+      "detalhes": {
+        "nome": "Thaís",
+        "sobrenome": "Machado",
+        "idade": "",
+        "dataNascimento": "",
+        "estadoCivil": "",
+        "celular": "",
+        "vaga": "",
+        "email": "thais@gmail.com",
+        "sobre": "",
+        "imagem": "",
+        "endereco": {
+          "logradouro": "",
+          "bairro": "",
+          "numero": "",
+          "cep": "",
+          "complemento": "",
+          "localidade": "",
+          "uf": ""
+        }
+      },
+      "experienciaProfissional": [],
+      "formacao": [],
+      "competencias": [],
+      "projetos": [],
+      "redeSocial": {
+        "instagram": "",
+        "facebook": "",
+        "twitter": "",
+        "linkedin": "",
+        "github": ""
+      },
+      "id": 8
     }
   ]
 }

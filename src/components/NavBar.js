@@ -2,8 +2,12 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 
 function NavBar() {
   return (
-    <div>
-      <Navbar variant="dark" expand="lg" style={{ backgroundColor: "#556B2F" }}>
+    <div className="fixed-top">
+      <Navbar
+        variant="dark"
+        expand="lg"
+        style={{ backgroundColor: "#556B2F", color: "white" }}
+      >
         <Container>
           <Navbar.Brand href="/">lookUp</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
