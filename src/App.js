@@ -3,7 +3,7 @@ import "./App.css";
 import CvAdicionar from "./pages/CvAdicionar";
 import ProfileList from "./pages/ProfileList";
 import CvDetails from "./pages/CvDetails";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import Profissional from "./components/Profissional";
 import Formacao from "./components/Formacao";
 import Observacao from "./components/Observacao";
