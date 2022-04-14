@@ -1,5 +1,19 @@
-function SideBar() {
-  function handleClick() {}
+import { useState } from "react";
+function SideBar(props) {
+  //   const vagasLength = props.vaga.length;
+  const [checkVagas, setCheckVagas] = useState([
+    ...new Array(props.vaga.length).fill(false),
+  ]);
+
+  function handleCheckboxChange(i) {
+    const updateCheckVagas = checkVagas.map((item, index) => {
+      return index === i ? !item : item;
+    });
+    setCheckVagas(updateCheckVagas);
+    console.log(checkVagas);
+    console.log(props.vaga[i]);
+  }
+
   return (
     <div style={{ maxHeight: "50vh" }}>
       <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -24,42 +38,21 @@ function SideBar() {
           >
             <div class="accordion-body ps-0 pe-0">
               <ul className="list-group">
-                <li class="list-group-item border-0">
-                  <input
-                    class="form-check-input me-1"
-                    type="checkbox"
-                    value="estagiario"
-                    aria-label="..."
-                  />
-                  Estágiario
-                </li>
-                <li class="list-group-item border-0">
-                  <input
-                    class="form-check-input me-1"
-                    type="checkbox"
-                    value="junior"
-                    aria-label="..."
-                  />
-                  Júnior{" "}
-                </li>
-                <li class="list-group-item border-0">
-                  <input
-                    class="form-check-input me-1"
-                    type="checkbox"
-                    value="senior"
-                    aria-label="..."
-                  />
-                  Sênior{" "}
-                </li>
-                <li class="list-group-item border-0">
-                  <input
-                    class="form-check-input me-1"
-                    type="checkbox"
-                    value="gerente"
-                    aria-label="..."
-                  />
-                  Gerente de Projetos{" "}
-                </li>
+                {props.vaga.map((currentVaga, index) => {
+                  return (
+                    <li class="list-group-item border-0">
+                      <input
+                        class="form-check-input me-1"
+                        type="checkbox"
+                        checked={checkVagas[index]}
+                        value={currentVaga}
+                        aria-label="..."
+                        onChange={() => handleCheckboxChange(index)}
+                      />
+                      {currentVaga}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
@@ -84,42 +77,21 @@ function SideBar() {
           >
             <div class="accordion-body ps-0 pe-0">
               <ul className="list-group">
-                <li class="list-group-item border-0">
-                  <input
-                    class="form-check-input me-1"
-                    type="checkbox"
-                    value="sp"
-                    aria-label="..."
-                  />
-                  SP
-                </li>
-                <li class="list-group-item border-0">
-                  <input
-                    class="form-check-input me-1"
-                    type="checkbox"
-                    value="rj"
-                    aria-label="..."
-                  />
-                  RJ{" "}
-                </li>
-                <li class="list-group-item border-0">
-                  <input
-                    class="form-check-input me-1"
-                    type="checkbox"
-                    value="mg"
-                    aria-label="..."
-                  />
-                  MG{" "}
-                </li>
-                <li class="list-group-item border-0">
-                  <input
-                    class="form-check-input me-1"
-                    type="checkbox"
-                    value="pr"
-                    aria-label="..."
-                  />
-                  PR{" "}
-                </li>
+                {props.estado.map((currentEstado) => {
+                  return (
+                    <li class="list-group-item border-0">
+                      <input
+                        class="form-check-input me-1"
+                        type="checkbox"
+                        value={currentEstado}
+                        // checked={check}
+                        aria-label="..."
+                        // onChange={handleCheckboxChange}
+                      />
+                      {currentEstado}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
@@ -204,42 +176,21 @@ function SideBar() {
           >
             <div class="accordion-body ps-0 pe-0">
               <ul className="list-group">
-                <li class="list-group-item border-0">
-                  <input
-                    class="form-check-input me-1"
-                    type="checkbox"
-                    value="ingles"
-                    aria-label="..."
-                  />
-                  Inglês
-                </li>
-                <li class="list-group-item border-0">
-                  <input
-                    class="form-check-input me-1"
-                    type="checkbox"
-                    value="espanhol"
-                    aria-label="..."
-                  />
-                  Espanhol{" "}
-                </li>
-                <li class="list-group-item border-0">
-                  <input
-                    class="form-check-input me-1"
-                    type="checkbox"
-                    value="javascript"
-                    aria-label="..."
-                  />
-                  JavaScript{" "}
-                </li>
-                <li class="list-group-item border-0">
-                  <input
-                    class="form-check-input me-1"
-                    type="checkbox"
-                    value="react"
-                    aria-label="..."
-                  />
-                  React{" "}
-                </li>
+                {props.competencias.map((currentCompetencia) => {
+                  return (
+                    <li class="list-group-item border-0">
+                      <input
+                        class="form-check-input me-1"
+                        type="checkbox"
+                        value={currentCompetencia}
+                        // checked={check}
+                        aria-label="..."
+                        // onChange={handleCheckboxChange}
+                      />
+                      {currentCompetencia}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>

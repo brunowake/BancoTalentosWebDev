@@ -103,7 +103,7 @@ const CvEditar = () => {
             navigate("/");
           })
           .catch((err) => console.error(err))
-      : setShow(true);
+      : scrollToError();
   }
 
   function handleDetalhesChange(event) {
@@ -214,6 +214,11 @@ const CvEditar = () => {
       });
     }
   }, [cv.detalhes.nome, cv.detalhes.sobrenome, cv.detalhes.email]);
+
+  function scrollToError() {
+    setShow(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 
   // const handleClose = () => setModal(false);
   const handleShow = () => setModal(true);

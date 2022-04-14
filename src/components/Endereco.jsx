@@ -1,4 +1,5 @@
 import React from "react";
+import ReactInputMask from "react-input-mask";
 
 const Endereco = (props) => {
   const { state, handleChange } = props;
@@ -30,7 +31,7 @@ const Endereco = (props) => {
           type="text"
           name="complemento"
           className={inputClassName}
-          value={state.complemento}
+          value={state.numero}
           onChange={handleChange}
         />
       </div>
@@ -44,7 +45,7 @@ const Endereco = (props) => {
           type="text"
           name="numero"
           className={inputClassName}
-          value={state.numero}
+          value={state.complemento}
           onChange={handleChange}
         />
       </div>
@@ -65,10 +66,11 @@ const Endereco = (props) => {
         <label htmlFor="cep" className={labelClassName}>
           Cep
         </label>
-        <input
+        <ReactInputMask
           id="cep"
           type="text"
           name="cep"
+          mask="99999-999"
           className={inputClassName}
           value={state.cep}
           onChange={handleChange}

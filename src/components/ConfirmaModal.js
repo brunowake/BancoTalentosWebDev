@@ -1,6 +1,8 @@
 import Modal from "react-bootstrap/Modal";
 
 function ConfirmaModal(props) {
+  console.log(props.handleClose);
+
   return (
     <Modal show={props.show} onHide={props.handleClose}>
       <Modal.Header closeButton>
@@ -8,9 +10,13 @@ function ConfirmaModal(props) {
       </Modal.Header>
       <Modal.Body>{props.children}</Modal.Body>
       <Modal.Footer>
-        <button className="btn btn-secondary" onClick={props.handleClose}>
-          Cancelar
-        </button>
+        {props.handleClose ? (
+          <button className="btn btn-secondary" onClick={props.handleClose}>
+            Cancelar
+          </button>
+        ) : (
+          ""
+        )}
         <button
           className={`btn btn-${props.variant}`}
           onClick={props.handleConfirmation}

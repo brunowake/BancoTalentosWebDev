@@ -34,18 +34,59 @@ function ProfileList() {
     }
   }
 
-  function filterTag(tag) {
-    const clone = [...profile];
-    const find = clone.filter((currentProfileObj) => {
-      return currentProfileObj.tag.toLowerCase().includes(text.toLowerCase());
-    });
+  // function handleCheckboxChange(event) {
+  //   if (!check[event.target.value]) {
+  //     setCheck({ ...check, [event.target.value]: true });
+  //     const checkbox = profile.filter((currentProfile) => {
+  //       return currentProfile[event.target.value];
+  //     });
+  //     setProfile(checkbox);
+  //   }
+  //   if (check[event.target.value]) {
+  //     setCheck({ ...check, [event.target.value]: false });
+  //   }
+  // }
 
-    // setProfile(find);
+  //sendo data: detalhe.vaga, detalhe.endereco.uf, formacao.instituicao, competencias.nome
+  let vagas = [
+    ...new Set(profile.map((currentProfile) => currentProfile.detalhes.vaga)),
+  ];
 
-    // if (!tag) {
-    //   getProfiles();
-    // }
-  }
+  // profile.map((currentProfile) => {
+  //   if (vagas.indexOf(currentProfile.detalhes.vaga) === -1) {
+  //     vagas.push(currentProfile.detalhes.vaga);
+  //   }
+  // });
+
+  console.log(vagas);
+
+  let estado = [];
+
+  profile.map((currentProfile) => {
+    if (estado.indexOf(currentProfile.detalhes.endereco.uf) === -1) {
+      estado.push(currentProfile.detalhes.endereco.uf);
+    }
+  });
+
+  console.log(estado);
+
+  let estudo = [];
+
+  profile.map((currentProfile) => {
+    if (estudo.indexOf(currentProfile.formacao.instituicao) === -1) {
+      estudo.push(currentProfile.formacao.instituicao);
+    }
+  });
+
+  console.log(estudo);
+
+  let competencias = [];
+
+  profile.map((currentProfile) => {
+    if (competencias.indexOf(currentProfile.competencias.nome) === -1) {
+      competencias.push(currentProfile.competencias.nome);
+    }
+  });
 
   function getProfiles() {
     axios
@@ -68,14 +109,19 @@ function ProfileList() {
           />
         </div>
         <div className="col-4">
-          <SideBar />
+          <SideBar
+            vaga={vagas}
+            estado={estado}
+            competencias={competencias}
+            // lista={handleCheckboxChange()}
+          />
         </div>
         <div className="col-8">
           {profile.map((currentProfile) => {
             const { id, detalhes } = currentProfile;
             return (
               <div
-                className="card mb-3"
+                className="card mb-3 w-75"
                 // style={{ maxWidth: "600px" }}
                 key={id}
                 onClick={() => navigate(`/cv/${id}`)}
