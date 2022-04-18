@@ -19,9 +19,9 @@ const Detalhes = (props) => {
   const [img, setImg] = useState("");
   const [uploading, setUploading] = useState();
 
-  const errorsKeys = Object.keys(validation.errors);
-
   const [showCrop, setShowCrop] = useState(false);
+
+  const errorsKeys = Object.keys(validation.errors);
 
   let domList = useRef([]);
 
@@ -67,12 +67,6 @@ const Detalhes = (props) => {
     reader.readAsDataURL(file);
   }
 
-  // useEffect(() => {
-  //   setImgFunction(img);
-  // }, [img]);
-
-  console.log(img.data);
-
   return (
     <div>
       <AlertForm show={show} errors={validation.errors} />{" "}
@@ -109,14 +103,37 @@ const Detalhes = (props) => {
         <label htmlFor="vaga" className={labelClassName}>
           Vaga
         </label>
-        <input
+        <select
           id="vaga"
           type="text"
           name="vaga"
           className={inputClassName}
           value={state.vaga}
           onChange={handleChange}
-        />
+        >
+          <option defaultValue={true}>selecione uma das opções</option>
+          <option value="frontend">Desenvolvedor Front-end</option>
+          <option value="backend">Desenvolvedor Back-end</option>
+          <option value="fullstack">Desenvolvedor Fullstack</option>
+        </select>
+      </div>
+      <div className="mb-2">
+        <label htmlFor="senioridade" className={labelClassName}>
+          Senioridade
+        </label>
+        <select
+          id="senioridade"
+          type="text"
+          name="senioridade"
+          className={inputClassName}
+          value={state.senioridade}
+          onChange={handleChange}
+        >
+          <option defaultValue={true}>selecione uma das opções</option>
+          <option value="junior">Junior</option>
+          <option value="pleno">Pleno</option>
+          <option value="senior">Senior</option>
+        </select>
       </div>
       <div className="mb-2">
         <label htmlFor="idade" className={labelClassName}>

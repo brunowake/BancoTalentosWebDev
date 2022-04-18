@@ -65,7 +65,7 @@ const CropImg = (props) => {
         <Cropper
           image={props.uploadedImg}
           crop={crop}
-          cropSize={{ width: 300, height: 300 }}
+          cropSize={{ width: 500, height: 500 }}
           zoom={zoom}
           aspect={4 / 3}
           onCropChange={setCrop}
