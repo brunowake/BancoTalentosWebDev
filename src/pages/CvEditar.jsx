@@ -25,6 +25,7 @@ const CvEditar = () => {
       estadoCivil: "",
       celular: "",
       vaga: "",
+      senioridade: "",
       email: "",
       sobre: "",
       imagem: "",
@@ -208,7 +209,13 @@ const CvEditar = () => {
       });
     } else {
       setValidation((prevState) => {
-        prevState.errors["email"] = "";
+        if (
+          !cv.detalhes.email.match(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/)
+        ) {
+          prevState.errors["email"] = "Formato de email invalido";
+        } else {
+          prevState.errors["email"] = "";
+        }
 
         return prevState;
       });
