@@ -23,13 +23,13 @@ const Endereco = (props) => {
       </div>
 
       <div>
-        <label htmlFor="complemento" className={labelClassName}>
+        <label htmlFor="numero" className={labelClassName}>
           Número
         </label>
         <input
-          id="complemento"
+          id="numero"
           type="text"
-          name="complemento"
+          name="numero"
           className={inputClassName}
           value={state.numero}
           onChange={handleChange}
@@ -37,13 +37,13 @@ const Endereco = (props) => {
       </div>
 
       <div>
-        <label htmlFor="numero" className={labelClassName}>
+        <label htmlFor="complemento" className={labelClassName}>
           Complemento
         </label>
         <input
-          id="numero"
+          id="complemento"
           type="text"
-          name="numero"
+          name="complemento"
           className={inputClassName}
           value={state.complemento}
           onChange={handleChange}

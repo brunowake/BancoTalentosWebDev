@@ -426,6 +426,43 @@
         "github": ""
       },
       "id": 8
+    },
+    {
+      "codigoRegistro": "bt123",
+      "detalhes": {
+        "nome": "bruno wake",
+        "sobrenome": "teste",
+        "idade": "123",
+        "dataNascimento": "2022-04-07",
+        "estadoCivil": "solteiro",
+        "celular": "(11) 99999-9999",
+        "vaga": "frontend",
+        "senioridade": "junior",
+        "email": "brunowake.bw@gmail.com",
+        "sobre": "",
+        "imagem": "",
+        "endereco": {
+          "logradouro": "Rua Jorge Beretta",
+          "bairro": "Parque Erasmo Assunção",
+          "numero": "1231231",
+          "cep": "09271-400",
+          "complemento": "123123",
+          "localidade": "Santo André",
+          "uf": "SP"
+        }
+      },
+      "experienciaProfissional": [],
+      "formacao": [],
+      "competencias": [],
+      "projetos": [],
+      "redeSocial": {
+        "instagram": "",
+        "facebook": "",
+        "twitter": "",
+        "linkedin": "",
+        "github": ""
+      },
+      "id": 9
     }
   ]
 }
