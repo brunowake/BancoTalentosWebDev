@@ -9,6 +9,7 @@ function ProfileList() {
 
   const [profile, setProfile] = useState([]);
   const [text, setText] = useState("");
+  const [initialProfile, setInitialProfile] = useState([]);
 
   useEffect(() => {
     getProfiles();
@@ -34,31 +35,92 @@ function ProfileList() {
     }
   }
 
-  // function handleCheckboxChange(event) {
-  //   if (!check[event.target.value]) {
-  //     setCheck({ ...check, [event.target.value]: true });
-  //     const checkbox = profile.filter((currentProfile) => {
-  //       return currentProfile[event.target.value];
-  //     });
-  //     setProfile(checkbox);
-  //   }
-  //   if (check[event.target.value]) {
-  //     setCheck({ ...check, [event.target.value]: false });
-  //   }
-  // }
+  function getProfiles() {
+    axios
+      .get("http://localhost:4000/perfis")
+      .then((response) => {
+        setInitialProfile([...response.data]);
+        setProfile([...response.data]);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
 
-  //sendo data: detalhe.vaga, detalhe.endereco.uf, formacao.instituicao, competencias.nome
   let vagas = [
-    ...new Set(profile.map((currentProfile) => currentProfile.detalhes.vaga)),
+    // "Desenvolvedor Web - FullStack",
+    // "Desenvolvedor Web - FrontEnd",
+    // "Desenvolvedor Web - BackEnd",
+    ...new Set(
+      initialProfile.map((currentProfile) => {
+        return currentProfile.detalhes.vaga;
+      })
+    ),
   ];
 
-  // profile.map((currentProfile) => {
-  //   if (vagas.indexOf(currentProfile.detalhes.vaga) === -1) {
-  //     vagas.push(currentProfile.detalhes.vaga);
-  //   }
-  // });
+  const [checkVagas, setCheckVagas] = useState([
+    // ...new Array(vagas.length).fill(false),
+  ]);
 
-  console.log(vagas);
+  const [vagasSelecionadas, setVagasSelecionadas] = useState([]);
+
+  useEffect(() => {
+    setCheckVagas([...new Array(vagas.length).fill(false)]);
+  }, [initialProfile]);
+
+  console.log(checkVagas);
+
+  function getUrlFind(arr) {
+    let newUrl;
+    for (let i = 0; i < arr.length; i++) {
+      if (i === 0) {
+        newUrl = `?detalhes.vaga=${arr[i]}`;
+      } else {
+        newUrl += `&detalhes.vaga=${arr[i]}`;
+      }
+    }
+    console.log(newUrl);
+    return newUrl;
+  }
+
+  function handleCheckboxChange(i) {
+    const updateCheckVagas = checkVagas.map((item, index) => {
+      return index === i ? !item : item;
+    });
+
+    setCheckVagas(updateCheckVagas);
+
+    // checkVagas[i] ? getCheckedProfiles(i): getProfiles();
+    if (checkVagas[i] === false) {
+      // getCheckedProfiles(i);
+      let newVagasSelecionadas = [...vagasSelecionadas];
+      newVagasSelecionadas.push(vagas[i]);
+      setVagasSelecionadas(newVagasSelecionadas);
+    }
+
+    if (checkVagas[i] === true) {
+      // getProfiles();
+      setProfile(initialProfile);
+    }
+  }
+
+  useEffect(() => {
+    const resultadoUrl = getUrlFind(vagasSelecionadas);
+    console.log(resultadoUrl);
+    getCheckedProfiles(resultadoUrl);
+  }, [vagasSelecionadas]);
+  console.log(vagasSelecionadas);
+
+  function getCheckedProfiles(resultadoUrl) {
+    axios
+      .get(`http://localhost:4000/perfis${resultadoUrl}`)
+      .then((response) => {
+        setProfile([...response.data]);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
 
   let estado = [];
 
@@ -68,8 +130,6 @@ function ProfileList() {
     }
   });
 
-  console.log(estado);
-
   let estudo = [];
 
   profile.map((currentProfile) => {
@@ -78,8 +138,6 @@ function ProfileList() {
     }
   });
 
-  console.log(estudo);
-
   let competencias = [];
 
   profile.map((currentProfile) => {
@@ -87,17 +145,6 @@ function ProfileList() {
       competencias.push(currentProfile.competencias.nome);
     }
   });
-
-  function getProfiles() {
-    axios
-      .get("http://localhost:4000/perfis")
-      .then((response) => {
-        setProfile([...response.data]);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
 
   return (
     <div className="container ms-3 mt-5">
@@ -113,7 +160,8 @@ function ProfileList() {
             vaga={vagas}
             estado={estado}
             competencias={competencias}
-            // lista={handleCheckboxChange()}
+            change={handleCheckboxChange}
+            state={checkVagas}
           />
         </div>
         <div className="col-8">

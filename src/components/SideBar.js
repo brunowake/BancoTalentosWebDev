@@ -1,18 +1,19 @@
 import { useState } from "react";
 function SideBar(props) {
   //   const vagasLength = props.vaga.length;
-  const [checkVagas, setCheckVagas] = useState([
-    ...new Array(props.vaga.length).fill(false),
-  ]);
+  //   const [checkVagas, setCheckVagas] = useState([
+  //     ...new Array(props.vaga.length).fill(false),
+  //   ]);
 
-  function handleCheckboxChange(i) {
-    const updateCheckVagas = checkVagas.map((item, index) => {
-      return index === i ? !item : item;
-    });
-    setCheckVagas(updateCheckVagas);
-    console.log(checkVagas);
-    console.log(props.vaga[i]);
-  }
+  //   function handleCheckboxChange(i) {
+  //     const updateCheckVagas = checkVagas.map((item, index) => {
+  //       return index === i ? !item : item;
+  //     });
+
+  //     setCheckVagas(updateCheckVagas);
+  //     console.log(checkVagas);
+  //     console.log(props.vaga[i]);
+  //   }
 
   return (
     <div style={{ maxHeight: "50vh" }}>
@@ -22,19 +23,18 @@ function SideBar(props) {
             <button
               class="accordion-button collapsed"
               type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseOne"
-              aria-expanded="true"
+              data-toggle="collapse"
+              data-target="#vaga"
+              aria-expanded="false"
               aria-controls="flush-collapseOne"
             >
               Vaga
             </button>
           </h2>
           <div
-            id="flush-collapseOne"
+            id="vaga"
             class="accordion-collapse collapse show"
             aria-labelledby="flush-headingOne"
-            data-bs-parent="#accordionFlushExample"
           >
             <div class="accordion-body ps-0 pe-0">
               <ul className="list-group">
@@ -44,10 +44,10 @@ function SideBar(props) {
                       <input
                         class="form-check-input me-1"
                         type="checkbox"
-                        checked={checkVagas[index]}
+                        checked={props.state[index]}
                         value={currentVaga}
                         aria-label="..."
-                        onChange={() => handleCheckboxChange(index)}
+                        onChange={() => props.change(index)}
                       />
                       {currentVaga}
                     </li>
