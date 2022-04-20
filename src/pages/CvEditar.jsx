@@ -250,7 +250,7 @@ const CvEditar = () => {
           fullscreen={true}
           handleClose={() => setShowPreview(false)}
         >
-          <Pdflayout id={cv.id} />
+          <Pdflayout state={cv} />
         </ConfirmaModal>
 
         <ConfirmaModal
