@@ -23,15 +23,16 @@ function SideBar(props) {
             <button
               className="accordion-button collapsed"
               type="button"
-              data-toggle="collapse"
-              data-target="#vaga"
+              data-bs-toggle="collapse"
+              data-bs-target="#vaga"
               aria-expanded="false"
-              aria-controls="flush-collapseOne"
+              aria-controls="vaga"
             >
               Vaga
             </button>
           </h2>
           <div
+            data-bs-parent="#accordionFlushExample"
             id="vaga"
             className="accordion-collapse collapse show"
             aria-labelledby="flush-headingOne"
@@ -158,7 +159,7 @@ function SideBar(props) {
           >
             <div className="accordion-body ps-0 pe-0">
               <ul className="list-group">
-                {props.estudo.map((currentEstudo) => {
+                {props.estudo.map((currentEstudo, index) => {
                   return (
                     <li
                       key={currentEstudo}
@@ -168,9 +169,9 @@ function SideBar(props) {
                         className="form-check-input me-1"
                         type="checkbox"
                         value={currentEstudo}
-                        // checked={check}
+                        checked={props.stateFormacao[index]}
+                        onChange={() => props.changeFormacao(index)}
                         aria-label="..."
-                        // onChange={handleCheckboxChange}
                       />
                       {currentEstudo}
                     </li>
@@ -179,52 +180,6 @@ function SideBar(props) {
               </ul>
             </div>
           </div>
-          {/* <div
-            id="panelsStayOpen-collapseThree"
-            className="accordion-collapse collapse show"
-            aria-labelledby="panelsStayOpen-headingThree"
-          >
-            <div className="accordion-body ps-0 pe-0">
-              <ul classNameName="list-group">
-                <li className="list-group-item border-0">
-                  <input
-                    className="form-check-input me-1"
-                    type="checkbox"
-                    value="sp"
-                    aria-label="..."
-                  />
-                  USP
-                </li>
-                <li className="list-group-item border-0">
-                  <input
-                    className="form-check-input me-1"
-                    type="checkbox"
-                    value="rj"
-                    aria-label="..."
-                  />
-                  UNICAMP{" "}
-                </li>
-                <li className="list-group-item border-0">
-                  <input
-                    className="form-check-input me-1"
-                    type="checkbox"
-                    value="mg"
-                    aria-label="..."
-                  />
-                  UNESP{" "}
-                </li>
-                <li className="list-group-item border-0">
-                  <input
-                    className="form-check-input me-1"
-                    type="checkbox"
-                    value="pr"
-                    aria-label="..."
-                  />
-                  Mackenzie{" "}
-                </li>
-              </ul>
-            </div>
-          </div> */}
         </div>
         <div className="accordion-item">
           <h2 className="accordion-header" id="panelsStayOpen-headingThree">
@@ -246,7 +201,7 @@ function SideBar(props) {
           >
             <div className="accordion-body ps-0 pe-0">
               <ul className="list-group">
-                {props.competencias.map((currentCompetencia) => {
+                {props.competencias.map((currentCompetencia, index) => {
                   return (
                     <li
                       key={currentCompetencia}
@@ -256,9 +211,9 @@ function SideBar(props) {
                         className="form-check-input me-1"
                         type="checkbox"
                         value={currentCompetencia}
-                        // checked={check}
+                        checked={props.stateCompetencias[index]}
                         aria-label="..."
-                        // onChange={handleCheckboxChange}
+                        onChange={() => props.changeCompetencias(index)}
                       />
                       {currentCompetencia}
                     </li>

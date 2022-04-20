@@ -251,7 +251,7 @@ const CvAdicionar = () => {
           {cv.detalhes.email}
         </ConfirmaModal>
 
-        <p className="h1 text-center mb-3">Detalhes</p>
+        <p className="mt-5 pt-5"></p>
         <Detalhes
           state={cv.detalhes}
           handleChange={handleDetalhesChange}
@@ -263,14 +263,14 @@ const CvAdicionar = () => {
         />
         <hr />
 
-        <p className="h1 text-center mb-3">Rede Social</p>
+        <p className="h3 text-start mt-2 mb-3">Rede Social</p>
         <RedeSocial
           state={cv.redeSocial}
           handleChange={handleRedeSocialChange}
         />
         <hr />
 
-        <p className="h1 text-center mb-3">Endereço</p>
+        <p className="h3 text-start mt-2 mb-3">Endereço</p>
         <div className="input-group mb-3 mt-3">
           <ReactInputMask
             id="CEP"

@@ -6,10 +6,10 @@ function NavBar() {
       <Navbar
         variant="dark"
         expand="lg"
-        style={{ backgroundColor: "#556B2F", color: "white" }}
+        style={{ backgroundColor: "#4682B4", color: "white" }}
       >
         <Container>
-          <Navbar.Brand href="/">lookUp</Navbar.Brand>
+          <Navbar.Brand href="/">talento</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

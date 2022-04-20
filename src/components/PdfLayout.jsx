@@ -163,7 +163,7 @@ function Pdflayout(props) {
         <div className="d-flex mt-5">
           <img
             className="img-fluid rounded col"
-            style={{ height: "195px" }}
+            style={{ height: "200px", width: "auto" }}
             src={detalhes.imagem}
             alt={`${detalhes.nome}`}
           />
@@ -174,7 +174,7 @@ function Pdflayout(props) {
             <p className="m-0">
               {detalhes.endereco.localidade}, {detalhes.endereco.uf}
             </p>
-            <p className="m-0">{detalhes.idade}</p>
+            <p className="m-0">{detalhes.idade} anos</p>
             <p className="m-0">{detalhes.email}</p>
             <h2 className=" mt-2 fs-5">
               {detalhes.vaga} - {detalhes.senioridade}
