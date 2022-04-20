@@ -464,6 +464,7 @@ function ProfileList() {
                     <div className="col-md-4 ">
                       <img
                         className="img-fluid rounded-start h-100 d-block"
+                        loading="lazy"
                         src={detalhes.imagem}
                         alt={detalhes.nome}
                       />
