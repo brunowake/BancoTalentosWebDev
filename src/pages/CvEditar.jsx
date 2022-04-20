@@ -74,8 +74,7 @@ const CvEditar = () => {
       .get(`/perfis/?codigoRegistro=${codigoCadastro}`)
       .then((response) => {
         const data = response.data[0];
-        console.log(data.redeSocial);
-        setCv({ ...data });
+        response.data.length === 0 ? navigate("*") : setCv({ ...data });
       })
       .catch((err) => {
         console.error(err);
@@ -273,7 +272,7 @@ const CvEditar = () => {
         className="d-flex justify-content-center flex-column"
         onSubmit={handleSubmit}
       >
-        <p className="mt-5 pt-5"></p>
+        <p className="h1 text-center mb-3">Detalhes</p>
         <Detalhes
           state={cv.detalhes}
           handleChange={handleDetalhesChange}
@@ -285,14 +284,14 @@ const CvEditar = () => {
         />
         <hr />
 
-        <p className="h3 text-start mt-2 mb-3">Rede Social</p>
+        <p className="h1 text-center mb-3">Rede Social</p>
         <RedeSocial
           state={cv.redeSocial}
           handleChange={handleRedeSocialChange}
         />
         <hr />
 
-        <p className="h3 text-start mt-2 mb-3">Endereço</p>
+        <p className="h1 text-center mb-3">Endereço</p>
         <div className="input-group mb-3 mt-3">
           <input
             id="CEP"

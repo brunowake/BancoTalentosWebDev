@@ -5,7 +5,7 @@ const Observacao = (props) => {
   const outletcontext = useOutletContext();
   const params = useParams();
   const [obsState, setObsState] = useState({ nome: "", descricao: "" });
-  const inputClassName = `col-lg-8 col-12 rounded-pill`;
+  const inputClassName = `col-lg-8 col-12 `;
   const labelClassName = `form-label  col-lg-4 col-12`;
 
   function handleChange(event) {
@@ -20,6 +20,7 @@ const Observacao = (props) => {
       newState[params.stateKey] = newArr;
       return newState;
     });
+    setObsState({ nome: "", descricao: "" });
   }
 
   function handleDeleteClick(index) {

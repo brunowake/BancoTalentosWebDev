@@ -74,6 +74,7 @@ function CvDetails() {
   });
 
   const { id } = useParams();
+  const pdf = useRef();
 
   function dateFormat(date) {
     const newDate = date.split("-");
@@ -226,47 +227,55 @@ function CvDetails() {
     );
 
   return (
-    <div className="m-5 mt-5 p-3">
-      <div className="d-flex mt-5">
-        <img
-          className="img-fluid rounded col"
-          style={{ height: "200px", width: "auto" }}
-          src={detalhes.imagem}
-          alt={`${detalhes.nome}`}
-        />
-        <div className="ms-5 col-10">
-          <h1>
-            {detalhes.nome} {detalhes.sobrenome}
-          </h1>
-          <p className="m-0">
-            {detalhes.endereco.localidade}, {detalhes.endereco.uf}
-          </p>
-          <p className="m-0">{detalhes.idade} anos</p>
-          <p className="m-0">{detalhes.email}</p>
-          <h2 className=" mt-2 fs-5">
-            {detalhes.vaga} - {detalhes.senioridade}
-          </h2>
+    <div>
+      <ReactToPrint
+        trigger={() => (
+          <button className="btn btn-primary mt-3 me-1 float-end"> PDF</button>
+        )}
+        content={() => pdf.current}
+      />
+      <div className="m-5 mt-5 p-3" ref={pdf}>
+        <div className="d-flex mt-5">
+          <img
+            className="img-fluid rounded col"
+            style={{ height: "200px", width: "auto" }}
+            src={detalhes.imagem}
+            alt={`${detalhes.nome}`}
+          />
+          <div className="ms-5 col-10">
+            <h1>
+              {detalhes.nome} {detalhes.sobrenome}
+            </h1>
+            <p className="m-0">
+              {detalhes.endereco.localidade}, {detalhes.endereco.uf}
+            </p>
+            <p className="m-0">{detalhes.idade} anos</p>
+            <p className="m-0">{detalhes.email}</p>
+            <h2 className=" mt-2 fs-5">
+              {detalhes.vaga} - {detalhes.senioridade}
+            </h2>
+          </div>
         </div>
-      </div>
-      <div className="mt-4 ms-3">
-        <h3 className="fs-5 mb-3">Sobre</h3>
-        <p>{detalhes.sobre}</p>
-      </div>
-
-      {showSectionProfissional}
-      {showSectionFormacao}
-      {showSectionProjetos}
-      <hr />
-
-      <div className="container ms-0 me-0">
-        <div className="row">
-          {showSectionCompetencias}
-          <div class="vr p-0"></div>
-
-          {showSectionRedesSociais}
+        <div className="mt-4 ms-3">
+          <h3 className="fs-5 mb-3">Sobre</h3>
+          <p>{detalhes.sobre}</p>
         </div>
+
+        {showSectionProfissional}
+        {showSectionFormacao}
+        {showSectionProjetos}
+        <hr />
+
+        <div className="container ms-0 me-0">
+          <div className="row">
+            {showSectionCompetencias}
+            <div class="vr p-0"></div>
+
+            {showSectionRedesSociais}
+          </div>
+        </div>
+        <hr />
       </div>
-      <hr />
     </div>
   );
 }
