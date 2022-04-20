@@ -17,11 +17,11 @@ function SideBar(props) {
 
   return (
     <div style={{ maxHeight: "50vh" }}>
-      <div class="accordion accordion-flush" id="accordionFlushExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
+      <div className="accordion accordion-flush" id="accordionFlushExample">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="flush-headingOne">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-toggle="collapse"
               data-target="#vaga"
@@ -33,21 +33,21 @@ function SideBar(props) {
           </h2>
           <div
             id="vaga"
-            class="accordion-collapse collapse show"
+            className="accordion-collapse collapse show"
             aria-labelledby="flush-headingOne"
           >
-            <div class="accordion-body ps-0 pe-0">
+            <div className="accordion-body ps-0 pe-0">
               <ul className="list-group">
                 {props.vaga.map((currentVaga, index) => {
                   return (
-                    <li class="list-group-item border-0">
+                    <li key={currentVaga} className="list-group-item border-0">
                       <input
-                        class="form-check-input me-1"
+                        className="form-check-input me-1"
                         type="checkbox"
-                        checked={props.state[index]}
+                        checked={props.stateVagas[index]}
                         value={currentVaga}
                         aria-label="..."
-                        onChange={() => props.change(index)}
+                        onChange={() => props.changeVagas(index)}
                       />
                       {currentVaga}
                     </li>
@@ -57,10 +57,49 @@ function SideBar(props) {
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="flush-headingOne">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
+              type="button"
+              data-toggle="collapse"
+              data-target="#nivel"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              Nivel
+            </button>
+          </h2>
+          <div
+            id="nivel"
+            className="accordion-collapse collapse show"
+            aria-labelledby="flush-headingOne"
+          >
+            <div className="accordion-body ps-0 pe-0">
+              <ul className="list-group">
+                {props.senioridade.map((currentNivel, index) => {
+                  return (
+                    <li key={currentNivel} className="list-group-item border-0">
+                      <input
+                        className="form-check-input me-1"
+                        type="checkbox"
+                        checked={props.stateSenior[index]}
+                        value={currentNivel}
+                        aria-label="..."
+                        onChange={() => props.changeSenior(index)}
+                      />
+                      {currentNivel}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
+            <button
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#panelsStayOpen-collapseTwo"
@@ -72,21 +111,24 @@ function SideBar(props) {
           </h2>
           <div
             id="panelsStayOpen-collapseTwo"
-            class="accordion-collapse collapse show"
+            className="accordion-collapse collapse show"
             aria-labelledby="panelsStayOpen-headingTwo"
           >
-            <div class="accordion-body ps-0 pe-0">
+            <div className="accordion-body ps-0 pe-0">
               <ul className="list-group">
-                {props.estado.map((currentEstado) => {
+                {props.estado.map((currentEstado, index) => {
                   return (
-                    <li class="list-group-item border-0">
+                    <li
+                      key={currentEstado}
+                      className="list-group-item border-0"
+                    >
                       <input
-                        class="form-check-input me-1"
+                        className="form-check-input me-1"
                         type="checkbox"
                         value={currentEstado}
-                        // checked={check}
+                        checked={props.stateUf[index]}
                         aria-label="..."
-                        // onChange={handleCheckboxChange}
+                        onChange={() => props.changeUf(index)}
                       />
                       {currentEstado}
                     </li>
@@ -96,10 +138,10 @@ function SideBar(props) {
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="panelsStayOpen-headingThree">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#panelsStayOpen-collapseThree"
@@ -110,42 +152,70 @@ function SideBar(props) {
             </button>
           </h2>
           <div
+            id="panelsStayOpen-collapseTwo"
+            className="accordion-collapse collapse show"
+            aria-labelledby="panelsStayOpen-headingTwo"
+          >
+            <div className="accordion-body ps-0 pe-0">
+              <ul className="list-group">
+                {props.estudo.map((currentEstudo) => {
+                  return (
+                    <li
+                      key={currentEstudo}
+                      className="list-group-item border-0"
+                    >
+                      <input
+                        className="form-check-input me-1"
+                        type="checkbox"
+                        value={currentEstudo}
+                        // checked={check}
+                        aria-label="..."
+                        // onChange={handleCheckboxChange}
+                      />
+                      {currentEstudo}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+          {/* <div
             id="panelsStayOpen-collapseThree"
-            class="accordion-collapse collapse show"
+            className="accordion-collapse collapse show"
             aria-labelledby="panelsStayOpen-headingThree"
           >
-            <div class="accordion-body ps-0 pe-0">
-              <ul className="list-group">
-                <li class="list-group-item border-0">
+            <div className="accordion-body ps-0 pe-0">
+              <ul classNameName="list-group">
+                <li className="list-group-item border-0">
                   <input
-                    class="form-check-input me-1"
+                    className="form-check-input me-1"
                     type="checkbox"
                     value="sp"
                     aria-label="..."
                   />
                   USP
                 </li>
-                <li class="list-group-item border-0">
+                <li className="list-group-item border-0">
                   <input
-                    class="form-check-input me-1"
+                    className="form-check-input me-1"
                     type="checkbox"
                     value="rj"
                     aria-label="..."
                   />
                   UNICAMP{" "}
                 </li>
-                <li class="list-group-item border-0">
+                <li className="list-group-item border-0">
                   <input
-                    class="form-check-input me-1"
+                    className="form-check-input me-1"
                     type="checkbox"
                     value="mg"
                     aria-label="..."
                   />
                   UNESP{" "}
                 </li>
-                <li class="list-group-item border-0">
+                <li className="list-group-item border-0">
                   <input
-                    class="form-check-input me-1"
+                    className="form-check-input me-1"
                     type="checkbox"
                     value="pr"
                     aria-label="..."
@@ -154,12 +224,12 @@ function SideBar(props) {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="panelsStayOpen-headingThree">
             <button
-              class="accordion-button collapsed"
+              className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#panelsStayOpen-collapseThree"
@@ -171,16 +241,19 @@ function SideBar(props) {
           </h2>
           <div
             id="panelsStayOpen-collapseThree"
-            class="accordion-collapse collapse show"
+            className="accordion-collapse collapse show"
             aria-labelledby="panelsStayOpen-headingFour"
           >
-            <div class="accordion-body ps-0 pe-0">
+            <div className="accordion-body ps-0 pe-0">
               <ul className="list-group">
                 {props.competencias.map((currentCompetencia) => {
                   return (
-                    <li class="list-group-item border-0">
+                    <li
+                      key={currentCompetencia}
+                      className="list-group-item border-0"
+                    >
                       <input
-                        class="form-check-input me-1"
+                        className="form-check-input me-1"
                         type="checkbox"
                         value={currentCompetencia}
                         // checked={check}

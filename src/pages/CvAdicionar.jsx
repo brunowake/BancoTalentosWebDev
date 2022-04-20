@@ -8,6 +8,7 @@ import RegistroTabs from "../components/RegistroTabs";
 import { useNavigate, Link } from "react-router-dom";
 import ReactInputMask from "react-input-mask";
 import ConfirmaModal from "../components/ConfirmaModal";
+import emailjs from "@emailjs/browser";
 
 const CvAdicionar = () => {
   const [cv, setCv] = useState({
@@ -20,6 +21,7 @@ const CvAdicionar = () => {
       estadoCivil: "",
       celular: "",
       vaga: "",
+      senioridade: "",
       email: "",
       sobre: "",
       imagem: "",
@@ -96,6 +98,7 @@ const CvAdicionar = () => {
       ? axios
           .post("http://localhost:4000/perfis", cv)
           .then((response) => {
+            enviarEmail();
             handleShow();
             setShow(false);
           })
@@ -128,7 +131,7 @@ const CvAdicionar = () => {
     });
   }
 
-  useEffect(() => {
+  function checkValidation() {
     if (!cv.detalhes.nome) {
       setValidation((prevState) => {
         prevState.errors["nome"] = "Campo nome nao pode estar vazio";
@@ -163,11 +166,21 @@ const CvAdicionar = () => {
       });
     } else {
       setValidation((prevState) => {
-        prevState.errors["email"] = "";
+        if (
+          !cv.detalhes.email.match(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/)
+        ) {
+          prevState.errors["email"] = "Formato de email invalido";
+        } else {
+          prevState.errors["email"] = "";
+        }
 
         return prevState;
       });
     }
+  }
+
+  useEffect(() => {
+    checkValidation();
   }, [cv.detalhes.nome, cv.detalhes.sobrenome, cv.detalhes.email]);
 
   function handleCEPClickAPI(event) {
@@ -198,6 +211,22 @@ const CvAdicionar = () => {
 
   function setImagem(img) {
     setCv({ ...cv, detalhes: { ...cv.detalhes, imagem: img } });
+  }
+
+  function enviarEmail() {
+    emailjs
+      .send(
+        "service_my4mj62",
+        "template_sqv07mz",
+        {
+          to_name: `${cv.detalhes.nome} ${cv.detalhes.sobrenome}`,
+          codigoRegistro: cv.codigoRegistro,
+          reply_to: cv.detalhes.email,
+        },
+        "E6emHKkxpucdisAsH"
+      )
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
   }
 
   return (

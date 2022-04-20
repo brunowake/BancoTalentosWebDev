@@ -15,6 +15,7 @@ function CvDetails() {
       estadoCivil: "",
       celular: "",
       vaga: "",
+      senioridade: "",
       email: "",
       sobre: "",
       imagem: "",
@@ -241,7 +242,9 @@ function CvDetails() {
           </p>
           <p className="m-0">{detalhes.idade}</p>
           <p className="m-0">{detalhes.email}</p>
-          <h2 className=" mt-2 fs-5">{detalhes.vaga}</h2>
+          <h2 className=" mt-2 fs-5">
+            {detalhes.vaga} - {detalhes.senioridade}
+          </h2>
         </div>
       </div>
       <div className="mt-4 ms-3">
