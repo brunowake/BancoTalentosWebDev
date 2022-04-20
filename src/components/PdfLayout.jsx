@@ -6,74 +6,8 @@ import "../pages/CvDetails.css";
 import axios from "axios";
 
 function Pdflayout(props) {
-  const [state, setState] = useState({
-    codigoRegistro: "",
-    detalhes: {
-      nome: "",
-      sobrenome: "",
-      idade: "",
-      dataNascimento: "",
-      estadoCivil: "",
-      celular: "",
-      vaga: "",
-      senioridade: "",
-      email: "",
-      sobre: "",
-      imagem: "",
-      endereco: {
-        logradouro: "",
-        bairro: "",
-        numero: "",
-        cep: "",
-        complemento: "",
-        localidade: "",
-        uf: "",
-      },
-    },
-    experienciaProfissional: [
-      {
-        nomeEmpresa: "",
-        cargo: "",
-        inicio: "",
-        termino: "",
-        descricao: "",
-      },
-    ],
-    formacao: [
-      {
-        instituicao: "",
-        nomeCurso: "",
-        inicio: "1",
-        termino: "",
-        descricao: "",
-      },
-    ],
-    competencias: [
-      {
-        nome: "",
-        descricao: "",
-      },
-    ],
-    projetos: [
-      {
-        nome: "",
-        url: "",
-        github: "",
-        descricao: "",
-      },
-    ],
-    redeSocial: [
-      {
-        instagram: "",
-        facebook: "",
-        twitter: "",
-        linkedin: "",
-        github: "",
-      },
-    ],
-  });
+  const { state } = props.state;
 
-  const { id } = props;
   const pdfDiv = useRef();
 
   function dateFormat(date) {
@@ -82,21 +16,6 @@ function Pdflayout(props) {
     return newFormat;
   }
 
-  useEffect(() => {
-    console.log(id);
-    axios
-      .get(`http://localhost:4000/perfis/${id}`)
-      .then((response) => {
-        console.log(response.data);
-        console.log(id);
-        setState({ ...response.data });
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-    console.log(state);
-  }, []);
-
   const {
     detalhes,
     experienciaProfissional,
@@ -104,7 +23,7 @@ function Pdflayout(props) {
     projetos,
     competencias,
     redeSocial,
-  } = state;
+  } = props.state;
 
   let showSectionProfissional =
     experienciaProfissional.length === 0 ? (
@@ -275,7 +194,7 @@ function Pdflayout(props) {
         <div className="container ms-0 me-0">
           <div className="row">
             {showSectionCompetencias}
-            <div class="vr p-0"></div>
+            <div className="vr p-0"></div>
 
             {showSectionRedesSociais}
           </div>

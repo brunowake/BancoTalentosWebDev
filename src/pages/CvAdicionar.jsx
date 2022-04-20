@@ -9,6 +9,7 @@ import { useNavigate, Link } from "react-router-dom";
 import ReactInputMask from "react-input-mask";
 import ConfirmaModal from "../components/ConfirmaModal";
 import emailjs from "@emailjs/browser";
+import api from "../api/api";
 
 const CvAdicionar = () => {
   const [cv, setCv] = useState({
@@ -95,8 +96,8 @@ const CvAdicionar = () => {
   async function handleSubmit(event) {
     event.preventDefault();
     isValid()
-      ? axios
-          .post("http://localhost:4000/perfis", cv)
+      ? api
+          .post("/perfis", cv)
           .then((response) => {
             enviarEmail();
             handleShow();

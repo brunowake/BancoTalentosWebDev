@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import ReactToPrint from "react-to-print";
 import "./CvDetails.css";
 
-import axios from "axios";
+import api from "../api/api";
 
 function CvDetails() {
   const [state, setState] = useState({
@@ -83,8 +83,8 @@ function CvDetails() {
 
   useEffect(() => {
     console.log(id);
-    axios
-      .get(`http://localhost:4000/perfis/${id}`)
+    api
+      .get(`/perfis/${id}`)
       .then((response) => {
         console.log(response.data);
         console.log(id);

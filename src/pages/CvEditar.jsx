@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../api/api";
 import React, { useState, useEffect } from "react";
 import {
   Outlet,
@@ -14,6 +14,7 @@ import RedeSocial from "../components/RedeSocial";
 import RegistroTabs from "../components/RegistroTabs";
 import ConfirmaModal from "../components/ConfirmaModal";
 import Pdflayout from "../components/PdfLayout";
+import axios from "axios";
 
 const CvEditar = () => {
   const [cv, setCv] = useState({
@@ -69,8 +70,8 @@ const CvEditar = () => {
   const [showPreview, setShowPreview] = useState(false);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:4000/perfis/?codigoRegistro=${codigoCadastro}`)
+    api
+      .get(`/perfis/?codigoRegistro=${codigoCadastro}`)
       .then((response) => {
         const data = response.data[0];
         console.log(data.redeSocial);
@@ -99,8 +100,8 @@ const CvEditar = () => {
     event.preventDefault();
 
     isValid()
-      ? axios
-          .patch(`http://localhost:4000/perfis/${cv.id}`, cv)
+      ? api
+          .patch(`/perfis/${cv.id}`, cv)
           .then((response) => {
             setShow(false);
             navigate("/");
@@ -250,7 +251,7 @@ const CvEditar = () => {
           fullscreen={true}
           handleClose={() => setShowPreview(false)}
         >
-          <Pdflayout id={cv.id} />
+          <Pdflayout state={cv} />
         </ConfirmaModal>
 
         <ConfirmaModal
