@@ -382,6 +382,7 @@ function ProfileList() {
       resultadoUfUrl +
       resultadoFormacaoUrl +
       resultadoCompetenciasUrl;
+
     console.log(resultadoUrl);
     resultadoUrl
       ? getCheckedProfiles(resultadoUrl)

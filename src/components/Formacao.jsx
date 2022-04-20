@@ -11,7 +11,7 @@ const Formacao = (props) => {
   });
 
   const params = useParams();
-  const inputClassName = `col-lg-8 col-12 rounded-pill`;
+  const inputClassName = `col-lg-8 col-12 `;
   const labelClassName = `form-label  col-lg-4 col-12`;
 
   function handleChange(event) {
@@ -28,6 +28,14 @@ const Formacao = (props) => {
       const newState = { ...prevState };
       newState[params.stateKey] = newArr;
       return newState;
+    });
+
+    setFormacaoState({
+      instituicao: "",
+      nomeCurso: "",
+      inicio: "",
+      termino: "",
+      descricao: "",
     });
   }
 

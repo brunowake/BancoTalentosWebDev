@@ -153,7 +153,7 @@ function Pdflayout(props) {
             className="btn btn-primary"
             style={{ position: "absolute", top: "66px", right: "20px" }}
           >
-            Gerar Pdf
+            PDF
           </button>
         )}
         content={() => pdfDiv.current}

@@ -9,7 +9,7 @@ const Projetos = (props) => {
     github: "",
     descricao: "",
   });
-  const inputClassName = `col-lg-8 col-12 rounded-pill`;
+  const inputClassName = `col-lg-8 col-12 `;
   const labelClassName = `form-label  col-lg-4 col-12`;
 
   function handleChange(event) {
@@ -26,6 +26,12 @@ const Projetos = (props) => {
       const newState = { ...prevState };
       newState[params.stateKey] = newArr;
       return newState;
+    });
+    setProjetosState({
+      nome: "",
+      url: "",
+      github: "",
+      descricao: "",
     });
   }
 

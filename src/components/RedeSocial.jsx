@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const RedeSocial = (props) => {
   const { state, handleChange } = props;
-  const inputClassName = `col-lg-8 col-12 rounded-pill`;
+  const inputClassName = `col-lg-8 col-12 `;
   const labelClassName = `form-label  col-lg-4 col-12`;
   return (
     <div>
