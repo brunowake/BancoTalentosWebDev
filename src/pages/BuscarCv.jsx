@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const BuscarCv = () => {
@@ -14,18 +13,24 @@ const BuscarCv = () => {
     setCodigoCadastro(event.target.value);
   }
   return (
-    <div>
-      <p className="d-flex justify-content-center mt-5">
-        <b>Digite o código de registro abaixo para editar ou deletar seu CV:</b>
+    <div className="position-absolute top-50 start-50 translate-middle w-50">
+      <p className="text-center fs-6 fw-bold">
+        Digite o código de registro para editar ou deletar seu CV:
       </p>
-      <div className="d-flex justify-content-center mt-5">
+      <div className="d-flex justify-content-center mt-4">
         <input
           type="text"
           value={codigoCadastro}
           onChange={handleChange}
           placeholder="código de registro"
         />
-        <button onClick={handleClick}>Buscar</button>
+        <button
+          className="btn btn-success border-0 ms-3"
+          style={{ backgroundColor: "#556B2F" }}
+          onClick={handleClick}
+        >
+          Buscar
+        </button>
       </div>
     </div>
   );

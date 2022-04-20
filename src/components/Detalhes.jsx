@@ -112,9 +112,13 @@ const Detalhes = (props) => {
           onChange={handleChange}
         >
           <option defaultValue={true}>selecione uma das opções</option>
-          <option value="frontend">Desenvolvedor Front-end</option>
-          <option value="backend">Desenvolvedor Back-end</option>
-          <option value="fullstack">Desenvolvedor Fullstack</option>
+          <option value="Desenvolvedor Front-end">
+            Desenvolvedor Front-end
+          </option>
+          <option value="Desenvolvedor Back-end">Desenvolvedor Back-end</option>
+          <option value="Desenvolvedor Fullstack">
+            Desenvolvedor Fullstack
+          </option>
         </select>
       </div>
       <div className="mb-2">
@@ -130,9 +134,9 @@ const Detalhes = (props) => {
           onChange={handleChange}
         >
           <option defaultValue={true}>selecione uma das opções</option>
-          <option value="junior">Junior</option>
-          <option value="pleno">Pleno</option>
-          <option value="senior">Senior</option>
+          <option value="Júnior">Júnior</option>
+          <option value="Pleno">Pleno</option>
+          <option value="Sênior">Sênior</option>
         </select>
       </div>
       <div className="mb-2">

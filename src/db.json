@@ -76,13 +76,6 @@
       },
       "experienciaProfissional": [
         {
-          "nomeEmpresa": "",
-          "cargo": "",
-          "inicio": "",
-          "termino": "",
-          "descricao": ""
-        },
-        {
           "nomeEmpresa": "Vivo",
           "cargo": "Estagiária",
           "inicio": "2021-07-23",
@@ -92,18 +85,18 @@
       ],
       "formacao": [
         {
-          "instituicao": "",
-          "nomeCurso": "",
-          "inicio": "1",
-          "termino": "",
-          "descricao": ""
-        },
-        {
           "instituicao": "Ufscar",
           "nomeCurso": "Analise de Sistemas",
           "inicio": "2015-03-31",
           "termino": "2019-11-17",
           "descricao": "intercambio São Francisco/EUA"
+        },
+        {
+          "instituicao": "USP",
+          "nomeCurso": "Pós Graduação em Computacao",
+          "inicio": "2017-03-12",
+          "termino": "2018-06-08",
+          "descricao": ""
         }
       ],
       "competencias": [
@@ -125,87 +118,6 @@
         "twitter": "/masantos"
       },
       "id": 2
-    },
-    {
-      "codigoRegistro": "ManuelPereira34",
-      "detalhes": {
-        "nome": "Manuel",
-        "sobrenome": "Pereira",
-        "idade": "34",
-        "dataNascimento": "1988-08-12",
-        "estadoCivil": "casado",
-        "celular": "21-9876876",
-        "vaga": "Web Dev Sênio",
-        "email": "manuel@gmail.com",
-        "sobre": "trabalho na área há 12 anos",
-        "imagem": "https://designtecnologico.com/wp-content/uploads/2021/07/imagem-masculina-perfil-whatsapp-desenho-3d.jpg",
-        "endereco": {
-          "logradouro": "Rua Senador Correia",
-          "bairro": "Laranjeiras",
-          "numero": "302",
-          "cep": "22231-180",
-          "complemento": "85",
-          "localidade": "Rio de Janeiro",
-          "uf": "RJ"
-        }
-      },
-      "experienciaProfissional": [
-        {
-          "nomeEmpresa": "",
-          "cargo": "",
-          "inicio": "",
-          "termino": "",
-          "descricao": ""
-        },
-        {
-          "nomeEmpresa": "Google",
-          "cargo": "Web Dev - Front End",
-          "inicio": "2013-08-18",
-          "termino": "2017-11-30",
-          "descricao": ""
-        }
-      ],
-      "formacao": [
-        {
-          "instituicao": "",
-          "nomeCurso": "",
-          "inicio": "1",
-          "termino": "",
-          "descricao": ""
-        },
-        {
-          "instituicao": "UNESP",
-          "nomeCurso": "Ciência da computação",
-          "inicio": "2012-02-10",
-          "termino": "2018-12-10",
-          "descricao": ""
-        }
-      ],
-      "competencias": [
-        {
-          "nome": "",
-          "descricao": ""
-        }
-      ],
-      "projetos": [
-        {
-          "nome": "",
-          "url": "",
-          "github": "",
-          "descricao": ""
-        },
-        {
-          "nome": "SITE",
-          "url": "www.1234566.com",
-          "github": "/1234567",
-          "descricao": "JavaScript\nHTML/CSS"
-        }
-      ],
-      "redeSocial": {
-        "linkedin": "/manuel-pereira",
-        "github": "/manuel-pereira2"
-      },
-      "id": 3
     },
     {
       "codigoRegistro": "antoniofunction toLowerCase() { [native code] }38",
@@ -284,11 +196,11 @@
     {
       "codigoRegistro": "11",
       "detalhes": {
-        "nome": "BRUNO WAKE",
-        "sobrenome": "GONCALVES",
+        "nome": "1123123",
+        "sobrenome": "123123",
         "idade": "",
         "dataNascimento": "",
-        "estadoCivil": "SP",
+        "estadoCivil": "",
         "celular": "",
         "vaga": "",
         "email": "brunowake.bw@gmail.com",
@@ -302,8 +214,7 @@
           "complemento": "",
           "localidade": "",
           "uf": ""
-        },
-        "senioridade": "pleno"
+        }
       },
       "experienciaProfissional": [],
       "formacao": [],
@@ -319,16 +230,16 @@
       "id": 5
     },
     {
-      "codigoRegistro": "bg123123123",
+      "codigoRegistro": "",
       "detalhes": {
-        "nome": "BRUNO WAKE",
-        "sobrenome": "GONCALVES",
-        "idade": "123123123",
+        "nome": "123123123123",
+        "sobrenome": "123123",
+        "idade": "",
         "dataNascimento": "",
-        "estadoCivil": "SP",
+        "estadoCivil": "",
         "celular": "",
         "vaga": "",
-        "email": "brunowake.bw@gmail.com",
+        "email": "123123123123",
         "sobre": "",
         "imagem": "",
         "endereco": {
@@ -355,16 +266,16 @@
       "id": 6
     },
     {
-      "codigoRegistro": "bg123123",
+      "codigoRegistro": "",
       "detalhes": {
-        "nome": "BRUNO WAKE",
-        "sobrenome": "GONCALVES",
-        "idade": "123123",
+        "nome": "123123",
+        "sobrenome": "123123123",
+        "idade": "",
         "dataNascimento": "",
-        "estadoCivil": "SP",
+        "estadoCivil": "",
         "celular": "",
         "vaga": "",
-        "email": "brunowake.bw@gmail.com",
+        "email": "123123123",
         "sobre": "",
         "imagem": "",
         "endereco": {
@@ -391,27 +302,26 @@
       "id": 7
     },
     {
-      "codigoRegistro": "bg",
+      "codigoRegistro": "",
       "detalhes": {
-        "nome": "BRUNO WAKE",
-        "sobrenome": "GONCALVES",
+        "nome": "Thaís",
+        "sobrenome": "Machado",
         "idade": "",
         "dataNascimento": "",
-        "estadoCivil": "SP",
+        "estadoCivil": "",
         "celular": "",
-        "vaga": "frontend",
-        "senioridade": "pleno",
-        "email": "brunowake.bw@gmail.com",
+        "vaga": "",
+        "email": "thais@gmail.com",
         "sobre": "",
         "imagem": "",
         "endereco": {
-          "logradouro": "Rua Jorge Beretta",
-          "bairro": "Parque Erasmo Assunção",
-          "numero": 0,
-          "cep": "09271-400",
+          "logradouro": "",
+          "bairro": "",
+          "numero": "",
+          "cep": "",
           "complemento": "",
-          "localidade": "Santo André",
-          "uf": "SP"
+          "localidade": "",
+          "uf": ""
         }
       },
       "experienciaProfissional": [],
@@ -426,43 +336,6 @@
         "github": ""
       },
       "id": 8
-    },
-    {
-      "codigoRegistro": "bt123",
-      "detalhes": {
-        "nome": "bruno wake",
-        "sobrenome": "teste",
-        "idade": "123",
-        "dataNascimento": "2022-04-07",
-        "estadoCivil": "solteiro",
-        "celular": "(11) 99999-9999",
-        "vaga": "frontend",
-        "senioridade": "junior",
-        "email": "brunowake.bw@gmail.com",
-        "sobre": "",
-        "imagem": "",
-        "endereco": {
-          "logradouro": "Rua Jorge Beretta",
-          "bairro": "Parque Erasmo Assunção",
-          "numero": "1231231",
-          "cep": "09271-400",
-          "complemento": "123123",
-          "localidade": "Santo André",
-          "uf": "SP"
-        }
-      },
-      "experienciaProfissional": [],
-      "formacao": [],
-      "competencias": [],
-      "projetos": [],
-      "redeSocial": {
-        "instagram": "",
-        "facebook": "",
-        "twitter": "",
-        "linkedin": "",
-        "github": ""
-      },
-      "id": 9
     }
   ]
 }

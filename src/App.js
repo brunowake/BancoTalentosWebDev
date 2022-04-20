@@ -13,6 +13,7 @@ import CvEditar from "./pages/CvEditar";
 import BuscarCv from "./pages/BuscarCv";
 import CvDelete from "./pages/CvDelete";
 import NavBar from "./components/NavBar";
+import Error from "./pages/Error";
 
 // npm run dev:server - para rodar a API
 function App() {
@@ -48,7 +49,7 @@ function App() {
           <Route path="/cv/delete/:id" element={<CvDelete />} />
           {/* '*' pagina de erro */}
 
-          <Route path="*" element={<div>erro</div>} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </div>
     </div>

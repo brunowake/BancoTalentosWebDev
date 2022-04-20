@@ -231,7 +231,7 @@ const CvEditar = () => {
   const handleShow = () => setModal(true);
 
   return (
-    <div className="container ">
+    <div className="container mt-5 ">
       <div className="mb-3 mt-3 text-end">
         <button className="btn btn-danger" onClick={handleShow}>
           Deletar

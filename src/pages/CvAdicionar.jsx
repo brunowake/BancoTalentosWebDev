@@ -63,8 +63,8 @@ const CvAdicionar = () => {
   }
 
   function createCodigoResgistro() {
-    const inicialNome = cv.detalhes.nome.slice(0, 1).toLowerCase();
-    const inicialSobrenome = cv.detalhes.sobrenome.slice(0, 1).toLowerCase();
+    const inicialNome = cv.detalhes.nome.toLowerCase();
+    const inicialSobrenome = cv.detalhes.sobrenome.toLowerCase();
     const codigo = `${inicialNome}${inicialSobrenome}${cv.detalhes.idade}`;
 
     setCv({ ...cv, codigoRegistro: codigo });
