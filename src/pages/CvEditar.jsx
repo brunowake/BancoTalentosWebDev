@@ -13,6 +13,7 @@ import Endereco from "../components/Endereco";
 import RedeSocial from "../components/RedeSocial";
 import RegistroTabs from "../components/RegistroTabs";
 import ConfirmaModal from "../components/ConfirmaModal";
+import Pdflayout from "../components/PdfLayout";
 
 const CvEditar = () => {
   const [cv, setCv] = useState({
@@ -65,6 +66,7 @@ const CvEditar = () => {
   });
 
   const [show, setShow] = useState(false);
+  const [showPreview, setShowPreview] = useState(false);
 
   useEffect(() => {
     axios
@@ -229,6 +231,7 @@ const CvEditar = () => {
 
   // const handleClose = () => setModal(false);
   const handleShow = () => setModal(true);
+  const handleShowPreview = () => setShowPreview(true);
 
   return (
     <div className="container mt-5 ">
@@ -236,6 +239,19 @@ const CvEditar = () => {
         <button className="btn btn-danger" onClick={handleShow}>
           Deletar
         </button>
+        <button className="btn btn-primary" onClick={handleShowPreview}>
+          Preview
+        </button>
+
+        <ConfirmaModal
+          title="Preview!"
+          variant="primary"
+          show={showPreview}
+          fullscreen={true}
+          handleClose={() => setShowPreview(false)}
+        >
+          <Pdflayout id={cv.id} />
+        </ConfirmaModal>
 
         <ConfirmaModal
           title="Atenção!"

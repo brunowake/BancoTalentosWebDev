@@ -4,7 +4,11 @@ function ConfirmaModal(props) {
   console.log(props.handleClose);
 
   return (
-    <Modal show={props.show} onHide={props.handleClose}>
+    <Modal
+      show={props.show}
+      onHide={props.handleClose}
+      fullscreen={props.fullscreen || false}
+    >
       <Modal.Header closeButton>
         <Modal.Title>{props.title}</Modal.Title>
       </Modal.Header>
@@ -17,12 +21,17 @@ function ConfirmaModal(props) {
         ) : (
           ""
         )}
-        <button
-          className={`btn btn-${props.variant}`}
-          onClick={props.handleConfirmation}
-        >
-          {props.confirmationText}
-        </button>
+
+        {props.confirmationText ? (
+          <button
+            className={`btn btn-${props.variant}`}
+            onClick={props.handleConfirmation}
+          >
+            {props.confirmationText}
+          </button>
+        ) : (
+          ""
+        )}
       </Modal.Footer>
     </Modal>
   );
