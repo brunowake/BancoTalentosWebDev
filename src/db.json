@@ -445,6 +445,80 @@
         "github": "brunowake"
       },
       "id": 10
+    },
+    {
+      "codigoRegistro": "bruno wakegoncalves23",
+      "detalhes": {
+        "nome": "BRUNO WAKE",
+        "sobrenome": "GONCALVES",
+        "idade": "23",
+        "dataNascimento": "",
+        "estadoCivil": "SP",
+        "celular": "",
+        "vaga": "",
+        "senioridade": "",
+        "email": "jose@gmail.com",
+        "sobre": "",
+        "imagem": "",
+        "endereco": {
+          "logradouro": "",
+          "bairro": "",
+          "numero": "",
+          "cep": "",
+          "complemento": "",
+          "localidade": "",
+          "uf": ""
+        }
+      },
+      "experienciaProfissional": [],
+      "formacao": [],
+      "competencias": [],
+      "projetos": [],
+      "redeSocial": {
+        "instagram": "",
+        "facebook": "",
+        "twitter": "",
+        "linkedin": "",
+        "github": ""
+      },
+      "id": 11
+    },
+    {
+      "codigoRegistro": "123123123123",
+      "detalhes": {
+        "nome": "123123",
+        "sobrenome": "123123",
+        "idade": "",
+        "dataNascimento": "",
+        "estadoCivil": "",
+        "celular": "",
+        "vaga": "",
+        "senioridade": "",
+        "email": "123123123123123@gmail.com",
+        "sobre": "",
+        "imagem": "",
+        "endereco": {
+          "logradouro": "",
+          "bairro": "",
+          "numero": "",
+          "cep": "",
+          "complemento": "",
+          "localidade": "",
+          "uf": ""
+        }
+      },
+      "experienciaProfissional": [],
+      "formacao": [],
+      "competencias": [],
+      "projetos": [],
+      "redeSocial": {
+        "instagram": "",
+        "facebook": "",
+        "twitter": "",
+        "linkedin": "",
+        "github": ""
+      },
+      "id": 12
     }
   ]
 }
