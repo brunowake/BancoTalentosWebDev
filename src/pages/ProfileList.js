@@ -42,6 +42,7 @@ function ProfileList() {
     console.log(profile);
   }, []);
 
+  // barra de pesquisa
   useEffect(() => {
     searchByVaga(text);
   }, [text]);
@@ -49,9 +50,13 @@ function ProfileList() {
   function searchByVaga(text) {
     const clone = [...profile];
     const find = clone.filter((currentProfileObj) => {
-      return currentProfileObj.detalhes.vaga
+      let nome = currentProfileObj.detalhes.nome
         .toLowerCase()
         .includes(text.toLowerCase());
+      let sobrenome = currentProfileObj.detalhes.sobrenome
+        .toLowerCase()
+        .includes(text.toLowerCase());
+      return nome + sobrenome;
     });
 
     setProfile(find);
@@ -72,7 +77,9 @@ function ProfileList() {
         console.error(err);
       });
   }
+  // FUNÇÕES PARA O SIDEBAR
 
+  // captura dos nomes dos "temas" para os campos do Sidebar
   let vagas = [
     ...new Set(
       initialProfile.map((currentProfile) => {
@@ -140,101 +147,7 @@ function ProfileList() {
     setCheckCompetencias([...new Array(competencias.length).fill(false)]);
   }, [initialProfile]);
 
-  let newUrl = false;
-  function getUrlVaga(arr) {
-    let site = "";
-    if (!arr.length) {
-      return site;
-    }
-    for (let i = 0; i < arr.length; i++) {
-      if (!newUrl) {
-        site = `?detalhes.vaga=${arr[i]}`;
-        newUrl = true;
-      } else {
-        site += `&detalhes.vaga=${arr[i]}`;
-      }
-    }
-    console.log(site);
-    // newUrl = true;
-    return site;
-  }
-
-  function getUrlSenior(arr) {
-    let site = "";
-
-    if (!arr.length) {
-      return site;
-    }
-    for (let i = 0; i < arr.length; i++) {
-      if (!newUrl) {
-        site = `?detalhes.senioridade=${arr[i]}`;
-        newUrl = true;
-      } else {
-        site += `&detalhes.senioridade=${arr[i]}`;
-      }
-    }
-    console.log(site);
-    // newUrl = true;
-
-    return site;
-  }
-
-  function getUrlUf(arr) {
-    let site = "";
-
-    if (!arr.length) {
-      return site;
-    }
-    for (let i = 0; i < arr.length; i++) {
-      if (!newUrl) {
-        site = `?detalhes.endereco.uf=${arr[i]}`;
-        newUrl = true;
-      } else {
-        site += `&detalhes.endereco.uf=${arr[i]}`;
-      }
-    }
-    console.log(site);
-
-    return site;
-  }
-
-  function getUrlFormacao(arr) {
-    let site = "";
-
-    if (!arr.length) {
-      return site;
-    }
-    for (let i = 0; i < arr.length; i++) {
-      if (!newUrl) {
-        site = `?formacao.1.instituicao=${arr[i]}`;
-        newUrl = true;
-      } else {
-        site += `&formacao.1.instituicao=${arr[i]}`;
-      }
-    }
-    console.log(site);
-
-    return site;
-  }
-
-  function getUrlCompetencias(arr) {
-    let site = "";
-
-    if (!arr.length) {
-      return site;
-    }
-    for (let i = 0; i < arr.length; i++) {
-      if (!newUrl) {
-        site = `?competencias.1.nome=${arr[i]}`;
-        newUrl = true;
-      } else {
-        site += `&competencias.1.nome=${arr[i]}`;
-      }
-    }
-    console.log(site);
-
-    return site;
-  }
+  // Cada "tema" tem uma handleChange para funcionar as checkbox
 
   function handleCheckboxVagasChange(i) {
     const updateCheckVagas = checkVagas.map((item, index) => {
@@ -350,6 +263,104 @@ function ProfileList() {
     }
   }
 
+  // cada tema gera um complemento para ser atribuido a url do servidor
+  let newUrl = false;
+  function getUrlVaga(arr) {
+    let site = "";
+    if (!arr.length) {
+      return site;
+    }
+    for (let i = 0; i < arr.length; i++) {
+      if (!newUrl) {
+        site = `?detalhes.vaga=${arr[i]}`;
+        newUrl = true;
+      } else {
+        site += `&detalhes.vaga=${arr[i]}`;
+      }
+    }
+    console.log(site);
+    // newUrl = true;
+    return site;
+  }
+
+  function getUrlSenior(arr) {
+    let site = "";
+
+    if (!arr.length) {
+      return site;
+    }
+    for (let i = 0; i < arr.length; i++) {
+      if (!newUrl) {
+        site = `?detalhes.senioridade=${arr[i]}`;
+        newUrl = true;
+      } else {
+        site += `&detalhes.senioridade=${arr[i]}`;
+      }
+    }
+    console.log(site);
+    // newUrl = true;
+
+    return site;
+  }
+
+  function getUrlUf(arr) {
+    let site = "";
+
+    if (!arr.length) {
+      return site;
+    }
+    for (let i = 0; i < arr.length; i++) {
+      if (!newUrl) {
+        site = `?detalhes.endereco.uf=${arr[i]}`;
+        newUrl = true;
+      } else {
+        site += `&detalhes.endereco.uf=${arr[i]}`;
+      }
+    }
+    console.log(site);
+
+    return site;
+  }
+
+  function getUrlFormacao(arr) {
+    let site = "";
+
+    if (!arr.length) {
+      return site;
+    }
+    for (let i = 0; i < arr.length; i++) {
+      if (!newUrl) {
+        site = `?formacao.1.instituicao=${arr[i]}`;
+        newUrl = true;
+      } else {
+        site += `&formacao.1.instituicao=${arr[i]}`;
+      }
+    }
+    console.log(site);
+
+    return site;
+  }
+
+  function getUrlCompetencias(arr) {
+    let site = "";
+
+    if (!arr.length) {
+      return site;
+    }
+    for (let i = 0; i < arr.length; i++) {
+      if (!newUrl) {
+        site = `?competencias.1.nome=${arr[i]}`;
+        newUrl = true;
+      } else {
+        site += `&competencias.1.nome=${arr[i]}`;
+      }
+    }
+    console.log(site);
+
+    return site;
+  }
+
+  // no useEffect os resultados acima são concatenados para os filtros funcionarem concomitantemente
   useEffect(() => {
     let resultadoVagaUrl = getUrlVaga(vagasSelecionadas);
     console.log(resultadoVagaUrl);

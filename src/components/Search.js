@@ -5,7 +5,7 @@ function Search(props) {
         type="text"
         className="input search-bar"
         name="search"
-        placeholder="Pesquise por vaga..."
+        placeholder="Pesquise pela pessoa..."
         value={props.value}
         onChange={props.onChange}
       />

@@ -45,6 +45,7 @@ const CropImg = (props) => {
 
   return props.showCrop ? (
     <div
+      className="mt-5 pt-5"
       style={{
         position: "absolute",
         height: "100vh",
