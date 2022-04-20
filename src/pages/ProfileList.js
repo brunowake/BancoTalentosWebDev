@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../api/api";
 import Search from "../components/Search";
 import SideBar from "../components/SideBar";
 
@@ -58,8 +58,8 @@ function ProfileList() {
   }
 
   function getProfiles() {
-    axios
-      .get("http://localhost:4000/perfis")
+    api
+      .get("/perfis")
       .then((response) => {
         setInitialProfile([...response.data]);
         setProfile([...response.data]);
@@ -254,8 +254,8 @@ function ProfileList() {
   // console.log(checkUf);
 
   function getCheckedProfiles(resultadoUrl) {
-    axios
-      .get(`http://localhost:4000/perfis${resultadoUrl}`)
+    api
+      .get(`/perfis${resultadoUrl}`)
       .then((response) => {
         setProfile([...response.data]);
       })

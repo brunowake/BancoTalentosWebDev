@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import api from "../api/api";
 
 function CvDelete() {
   const params = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios
-      .delete(`http://localhost:4000/perfis/${params.id}`)
+    api
+      .delete(`/perfis/${params.id}`)
       .then((response) => {
         navigate("/");
       })
