@@ -254,7 +254,13 @@ function CvDetails() {
     <div>
       <ReactToPrint
         trigger={() => (
-          <button className="btn btn-primary mt-3 me-1 float-end"> PDF</button>
+          <button
+            className="btn btn-primary mt-4 me-4 float-end border-0"
+            style={{ backgroundColor: "#4682B4" }}
+          >
+            {" "}
+            PDF
+          </button>
         )}
         content={() => pdf.current}
       />

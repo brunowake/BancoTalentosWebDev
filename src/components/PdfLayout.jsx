@@ -174,8 +174,13 @@ function Pdflayout(props) {
       <ReactToPrint
         trigger={() => (
           <button
-            className="btn btn-primary"
-            style={{ position: "absolute", top: "66px", right: "20px" }}
+            className="btn btn-primary border-0"
+            style={{
+              position: "absolute",
+              top: "66px",
+              right: "20px",
+              backgroundColor: "#4682B4",
+            }}
           >
             PDF
           </button>

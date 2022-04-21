@@ -302,7 +302,8 @@ const CvAdicionar = () => {
         <hr />
         <div className="d-grid gap-2 col-6 mx-auto">
           <button
-            className="btn btn-primary align-text-center "
+            className="btn btn-primary align-text-center border-0 "
+            style={{ backgroundColor: "#4682B4" }}
             type="submit"
             onClick={createCodigoResgistro}
           >

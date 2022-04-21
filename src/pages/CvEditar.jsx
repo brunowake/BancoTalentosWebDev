@@ -236,11 +236,12 @@ const CvEditar = () => {
   return (
     <div className="container mt-5 ">
       <div className="mb-3 mt-3 text-end">
-        <button className="btn btn-danger mt-5" onClick={handleShow}>
+        <button className="btn btn-danger mt-5 border-0" onClick={handleShow}>
           Deletar
         </button>
         <button
-          className="btn btn-primary ms-3 mt-5"
+          className="btn btn-primary ms-3 mt-5 border-0"
+          style={{ backgroundColor: "#4682B4" }}
           onClick={handleShowPreview}
         >
           Preview
@@ -308,6 +309,7 @@ const CvEditar = () => {
           />
           <button
             className="btn btn-outline-primary ms-2 rounded-pill"
+            style={{ color: "#4682B4" }}
             onClick={(event) => handleCEPClickAPI(event)}
           >
             Buscar CEP
@@ -324,7 +326,12 @@ const CvEditar = () => {
         <Outlet context={{ state: cv, setState: setCv }} />
         <hr />
         <div className="d-grid gap-2 col-6 mx-auto">
-          <button className="btn btn-primary">Atualizar Cadastro</button>
+          <button
+            className="btn btn-primary border-0"
+            style={{ backgroundColor: "#4682B4" }}
+          >
+            Atualizar Cadastro
+          </button>
         </div>
       </form>
     </div>

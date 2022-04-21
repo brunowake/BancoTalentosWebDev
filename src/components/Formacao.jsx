@@ -116,7 +116,11 @@ const Formacao = (props) => {
         />
       </div>
       <div className="d-grid gap-2 col-6 mx-auto">
-        <button onClick={handleClick} className="btn btn-primary mt-3 mb-3">
+        <button
+          onClick={handleClick}
+          className="btn btn-primary mt-3 mb-3 border-0"
+          style={{ backgroundColor: "#4682B4" }}
+        >
           Adicionar Formação
         </button>
       </div>

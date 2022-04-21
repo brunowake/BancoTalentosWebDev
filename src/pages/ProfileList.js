@@ -429,7 +429,7 @@ function ProfileList() {
             onChange={(event) => setText(event.target.value)}
           />
         </div>
-        <div className="col-4">
+        <div className="col-3">
           <SideBar
             vaga={vagas}
             senioridade={senioridade}
@@ -448,7 +448,7 @@ function ProfileList() {
             stateCompetencias={checkCompetencias}
           />
         </div>
-        <div className="col-8">
+        <div className="d-flex flex-column align-items-center col-9">
           {profile.length === 0 ? (
             <h2 className="text-center text-muted fw-bold">
               Nenhum resultado encontrado...

@@ -26,7 +26,7 @@ const BuscarCv = () => {
         />
         <button
           className="btn btn-success border-0 ms-3"
-          style={{ backgroundColor: "#556B2F" }}
+          style={{ backgroundColor: "#4682B4" }}
           onClick={handleClick}
         >
           Buscar
