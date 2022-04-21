@@ -20,6 +20,7 @@ const RegistroTabs = (props) => {
           <li className="nav-item" key={index}>
             <Link
               className={`nav-link ${active === element.valor ? "active" : ""}`}
+              style={{ backgroundColor: "white", color: "#4682B4" }}
               aria-current="page"
               to={element.endereco}
               onClick={(event) => {

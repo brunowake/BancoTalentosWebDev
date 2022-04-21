@@ -236,10 +236,14 @@ const CvEditar = () => {
   return (
     <div className="container mt-5 ">
       <div className="mb-3 mt-3 text-end">
-        <button className="btn btn-danger" onClick={handleShow}>
+        <button className="btn btn-danger mt-5 border-0" onClick={handleShow}>
           Deletar
         </button>
-        <button className="btn btn-primary" onClick={handleShowPreview}>
+        <button
+          className="btn btn-primary ms-3 mt-5 border-0"
+          style={{ backgroundColor: "#4682B4" }}
+          onClick={handleShowPreview}
+        >
           Preview
         </button>
 
@@ -272,6 +276,7 @@ const CvEditar = () => {
         className="d-flex justify-content-center flex-column"
         onSubmit={handleSubmit}
       >
+        <p className="mt-3"></p>
         <p className="h1 text-center mb-3">Detalhes</p>
         <Detalhes
           state={cv.detalhes}
@@ -304,6 +309,7 @@ const CvEditar = () => {
           />
           <button
             className="btn btn-outline-primary ms-2 rounded-pill"
+            style={{ color: "#4682B4" }}
             onClick={(event) => handleCEPClickAPI(event)}
           >
             Buscar CEP
@@ -319,7 +325,14 @@ const CvEditar = () => {
 
         <Outlet context={{ state: cv, setState: setCv }} />
         <hr />
-        <button className="btn btn-primary">Atualizar Cadastro</button>
+        <div className="d-grid gap-2 col-6 mx-auto">
+          <button
+            className="btn btn-primary border-0"
+            style={{ backgroundColor: "#4682B4" }}
+          >
+            Atualizar Cadastro
+          </button>
+        </div>
       </form>
     </div>
   );
