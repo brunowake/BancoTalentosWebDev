@@ -70,7 +70,7 @@ const Formacao = (props) => {
       </div>
       <div className="mb-2">
         <label htmlFor="inicio" className={labelClassName}>
-          Data Inicio
+          Data de Início
         </label>
         <input
           id="inicio"
@@ -83,7 +83,7 @@ const Formacao = (props) => {
       </div>
       <div className="mb-2">
         <label htmlFor="termino" className={labelClassName}>
-          Data Conclusão
+          Data de Conclusão
         </label>
         <input
           id="termino"
@@ -107,9 +107,11 @@ const Formacao = (props) => {
           onChange={handleChange}
         />
       </div>
-      <button onClick={handleClick} className="btn btn-primary mt-3 mb-3">
-        Adicionar Formação
-      </button>
+      <div className="d-grid gap-2 col-6 mx-auto">
+        <button onClick={handleClick} className="btn btn-primary mt-3 mb-3">
+          Adicionar Formação
+        </button>
+      </div>
 
       {outletcontext.state[params.stateKey].map((element, index) => {
         return (

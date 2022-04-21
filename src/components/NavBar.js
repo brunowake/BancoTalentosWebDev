@@ -6,7 +6,7 @@ function NavBar() {
       <Navbar
         variant="dark"
         expand="lg"
-        style={{ backgroundColor: "#4682B4", color: "white" }}
+        style={{ backgroundColor: "#696969", color: "white" }}
       >
         <Container>
           <Navbar.Brand href="/">talento</Navbar.Brand>

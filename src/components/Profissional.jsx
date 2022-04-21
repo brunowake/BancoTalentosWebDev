@@ -72,7 +72,7 @@ const Profissional = (props) => {
       </div>
       <div className="mb-2">
         <label htmlFor="inicio" className={labelClassName}>
-          inicio:
+          Início:
         </label>
         <input
           id="inicio"
@@ -85,7 +85,7 @@ const Profissional = (props) => {
       </div>
       <div className="mb-2">
         <label htmlFor="termino" className={labelClassName}>
-          termino:
+          Término:
         </label>
         <input
           id="termino"
@@ -98,7 +98,7 @@ const Profissional = (props) => {
       </div>
       <div className="mb-2">
         <label htmlFor="descricao" className={labelClassName}>
-          descricao:
+          Descrição:
         </label>
         <textarea
           id="descricao"
@@ -109,9 +109,11 @@ const Profissional = (props) => {
           onChange={handleChange}
         />
       </div>
-      <button onClick={handleClick} className="btn btn-primary mt-3 mb-3">
-        Adicionar trabalho
-      </button>
+      <div className="d-grid gap-2 col-6 mx-auto">
+        <button onClick={handleClick} className="btn btn-primary mt-3 mb-3">
+          Adicionar trabalho
+        </button>
+      </div>
 
       {outletcontext.state[params.stateKey].map((element, index) => {
         return (

@@ -237,10 +237,13 @@ const CvEditar = () => {
   return (
     <div className="container mt-5 ">
       <div className="mb-3 mt-3 text-end">
-        <button className="btn btn-danger" onClick={handleShow}>
+        <button className="btn btn-danger mt-5" onClick={handleShow}>
           Deletar
         </button>
-        <button className="btn btn-primary" onClick={handleShowPreview}>
+        <button
+          className="btn btn-primary ms-3 mt-5"
+          onClick={handleShowPreview}
+        >
           Preview
         </button>
 
@@ -273,7 +276,7 @@ const CvEditar = () => {
         className="d-flex justify-content-center flex-column"
         onSubmit={handleSubmit}
       >
-        <p className="mt-5 pt-5"></p>
+        <p className="mt-3"></p>
         <Detalhes
           state={cv.detalhes}
           handleChange={handleDetalhesChange}
@@ -320,7 +323,9 @@ const CvEditar = () => {
 
         <Outlet context={{ state: cv, setState: setCv }} />
         <hr />
-        <button className="btn btn-primary">Atualizar Cadastro</button>
+        <div className="d-grid gap-2 col-6 mx-auto">
+          <button className="btn btn-primary">Atualizar Cadastro</button>
+        </div>
       </form>
     </div>
   );

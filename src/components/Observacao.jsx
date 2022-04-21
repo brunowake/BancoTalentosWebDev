@@ -35,7 +35,7 @@ const Observacao = (props) => {
     <div className="d-flex justify-content-center flex-column">
       <div className="mb-2">
         <label htmlFor="nome" className={labelClassName}>
-          nome
+          Nome
         </label>
         <input
           id="nome"
@@ -59,9 +59,11 @@ const Observacao = (props) => {
           onChange={handleChange}
         />
       </div>
-      <button onClick={handleClick} className="btn btn-primary mt-3 mb-3">
-        Adicionar Competências
-      </button>
+      <div className="d-grid gap-2 col-6 mx-auto">
+        <button onClick={handleClick} className="btn btn-primary mt-3 mb-3">
+          Adicionar Competências
+        </button>
+      </div>
 
       {outletcontext.state[params.stateKey].map((element, index) => {
         return (

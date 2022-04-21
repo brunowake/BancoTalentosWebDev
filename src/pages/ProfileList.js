@@ -279,7 +279,6 @@ function ProfileList() {
       }
     }
     console.log(site);
-    // newUrl = true;
     return site;
   }
 
@@ -298,7 +297,6 @@ function ProfileList() {
       }
     }
     console.log(site);
-    // newUrl = true;
 
     return site;
   }
@@ -347,7 +345,11 @@ function ProfileList() {
     if (!arr.length) {
       return site;
     }
+    let clone = [...profile];
     for (let i = 0; i < arr.length; i++) {
+      // let result = clone.competencias.filter((obj) => {
+      //   return obj.nome === arr[i];
+      // });
       if (!newUrl) {
         site = `?competencias.1.nome=${arr[i]}`;
         newUrl = true;
@@ -447,7 +449,7 @@ function ProfileList() {
         </div>
         <div className="col-8">
           {profile.length === 0 ? (
-            <h2 className="text-center fw-bold">
+            <h2 className="text-center text-muted fw-bold">
               Nenhum resultado encontrado...
             </h2>
           ) : (

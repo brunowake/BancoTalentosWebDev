@@ -198,32 +198,56 @@ function CvDetails() {
       </div>
     );
 
-  let showSectionRedesSociais =
-    redeSocial.length === 0 ? (
-      ""
-    ) : (
-      <div className="ms-3 col">
-        <h3 className="fs-5 mb-3">Redes Sociais</h3>
+  function showSectionRedesSociais() {
+    const { instagram, facebook, twitter, linkedin, github } = redeSocial;
+    if (!instagram || !facebook || !twitter || !linkedin || !github) {
+      return "";
+    } else {
+      return (
+        <div className="ms-3 col">
+          <h3 className="fs-5 mb-3">Redes Sociais</h3>
 
-        <div>
-          <p className="m-0">
-            <b>Instagram:</b> {redeSocial.instagram}
-          </p>
-          <p className="m-0">
-            <b>Facebook:</b> {redeSocial.facebook}
-          </p>
-          <p className="m-0">
-            <b>Twitter:</b> {redeSocial.twitter}
-          </p>
-          <p className="m-0">
-            <b>LinkedIn:</b> {redeSocial.linkedin}
-          </p>
-          <p className="m-0">
-            <b>github:</b> {redeSocial.github}
-          </p>
+          <div>
+            {!instagram ? (
+              ""
+            ) : (
+              <p className="m-0">
+                <b>Instagram:</b> {instagram}
+              </p>
+            )}
+            {!facebook ? (
+              ""
+            ) : (
+              <p className="m-0">
+                <b>Facebook:</b> {facebook}
+              </p>
+            )}
+            {!twitter ? (
+              ""
+            ) : (
+              <p className="m-0">
+                <b>Twitter:</b> {twitter}
+              </p>
+            )}
+            {!linkedin ? (
+              ""
+            ) : (
+              <p className="m-0">
+                <b>LinkedIn:</b> {linkedin}
+              </p>
+            )}
+            {!github ? (
+              ""
+            ) : (
+              <p className="m-0">
+                <b>github:</b> {github}
+              </p>
+            )}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
+  }
 
   return (
     <div className="m-5 mt-5 p-3">
@@ -248,10 +272,14 @@ function CvDetails() {
           </h2>
         </div>
       </div>
-      <div className="mt-4 ms-3">
-        <h3 className="fs-5 mb-3">Sobre</h3>
-        <p>{detalhes.sobre}</p>
-      </div>
+      {detalhes.sobre.length === 0 ? (
+        ""
+      ) : (
+        <div className="mt-4 ms-3">
+          <h3 className="fs-5 mb-3">Sobre</h3>
+          <p>{detalhes.sobre}</p>
+        </div>
+      )}
 
       {showSectionProfissional}
       {showSectionFormacao}
