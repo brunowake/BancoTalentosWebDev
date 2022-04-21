@@ -41,8 +41,6 @@ const CropImg = (props) => {
     props.setImg(newCroppedImg);
   }, [newCroppedImg]);
 
-  console.log("imagem", props.uploadedImg);
-
   return props.showCrop ? (
     <div
       className="mt-5 pt-5"
