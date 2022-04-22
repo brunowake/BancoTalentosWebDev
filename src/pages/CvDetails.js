@@ -83,18 +83,14 @@ function CvDetails() {
   }
 
   useEffect(() => {
-    console.log(id);
     api
       .get(`/perfis/${id}`)
       .then((response) => {
-        console.log(response.data);
-        console.log(id);
         setState({ ...response.data });
       })
       .catch((err) => {
         console.error(err);
       });
-    console.log(state);
   }, []);
 
   const {
