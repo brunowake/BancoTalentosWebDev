@@ -7,6 +7,7 @@ const CropImg = (props) => {
   const [croppedArea, setCroppedArea] = useState({});
   const [croppedAreaPixels, setCroppedAreaPixels] = useState({});
   const [newCroppedImg, setnewCroppedImg] = useState("");
+
   const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
     setCroppedArea(croppedArea);
     setCroppedAreaPixels(croppedAreaPixels);
@@ -21,8 +22,6 @@ const CropImg = (props) => {
     if (image.height) {
       canvas.height = image.height;
       canvas.width = image.width;
-      //   ctx.translate(image.width / 2, image.height / 2);
-      //   ctx.translate(-image.width / 2, -image.height / 2);
       ctx.drawImage(image, 0, 0);
       const data = ctx.getImageData(
         croppedAreaPixels.x,

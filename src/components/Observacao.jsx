@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
 
 const Observacao = (props) => {
+  const [obsState, setObsState] = useState({ nome: "", descricao: "" });
   const outletcontext = useOutletContext();
   const params = useParams();
-  const [obsState, setObsState] = useState({ nome: "", descricao: "" });
   const inputClassName = `col-lg-8 col-12 `;
   const labelClassName = `form-label  col-lg-4 col-12`;
 

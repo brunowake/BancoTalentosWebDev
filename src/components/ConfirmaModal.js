@@ -1,8 +1,6 @@
 import Modal from "react-bootstrap/Modal";
 
 function ConfirmaModal(props) {
-  console.log(props.handleClose);
-
   return (
     <Modal
       show={props.show}
