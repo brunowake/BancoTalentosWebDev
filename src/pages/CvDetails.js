@@ -197,7 +197,7 @@ function CvDetails() {
 
   function showSectionRedesSociais() {
     const { instagram, facebook, twitter, linkedin, github } = redeSocial;
-    if (!instagram || !facebook || !twitter || !linkedin || !github) {
+    if (!instagram && !facebook && !twitter && !linkedin && !github) {
       return "";
     } else {
       return (
@@ -297,7 +297,7 @@ function CvDetails() {
             {showSectionCompetencias}
             <div className="vr p-0"></div>
 
-            {showSectionRedesSociais}
+            {showSectionRedesSociais()}
           </div>
         </div>
         <hr />
