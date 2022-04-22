@@ -115,40 +115,69 @@ function Pdflayout(props) {
       </div>
     );
 
-  let showSectionRedesSociais =
-    redeSocial.length === 0 ? (
-      ""
-    ) : (
-      <div className="ms-3 col">
-        <h3 className="fs-5 mb-3">Redes Sociais</h3>
+  function showSectionRedesSociais() {
+    const { instagram, facebook, twitter, linkedin, github } = redeSocial;
+    if (!instagram || !facebook || !twitter || !linkedin || !github) {
+      return "";
+    } else {
+      return (
+        <div className="ms-3 col">
+          <h3 className="fs-5 mb-3">Redes Sociais</h3>
 
-        <div>
-          <p className="m-0">
-            <b>Instagram:</b> {redeSocial.instagram}
-          </p>
-          <p className="m-0">
-            <b>Facebook:</b> {redeSocial.facebook}
-          </p>
-          <p className="m-0">
-            <b>Twitter:</b> {redeSocial.twitter}
-          </p>
-          <p className="m-0">
-            <b>LinkedIn:</b> {redeSocial.linkedin}
-          </p>
-          <p className="m-0">
-            <b>github:</b> {redeSocial.github}
-          </p>
+          <div>
+            {!instagram ? (
+              ""
+            ) : (
+              <p className="m-0">
+                <b>Instagram:</b> {instagram}
+              </p>
+            )}
+            {!facebook ? (
+              ""
+            ) : (
+              <p className="m-0">
+                <b>Facebook:</b> {facebook}
+              </p>
+            )}
+            {!twitter ? (
+              ""
+            ) : (
+              <p className="m-0">
+                <b>Twitter:</b> {twitter}
+              </p>
+            )}
+            {!linkedin ? (
+              ""
+            ) : (
+              <p className="m-0">
+                <b>LinkedIn:</b> {linkedin}
+              </p>
+            )}
+            {!github ? (
+              ""
+            ) : (
+              <p className="m-0">
+                <b>github:</b> {github}
+              </p>
+            )}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
+  }
 
   return (
     <div>
       <ReactToPrint
         trigger={() => (
           <button
-            className="btn btn-primary"
-            style={{ position: "absolute", top: "66px", right: "20px" }}
+            className="btn btn-primary border-0"
+            style={{
+              position: "absolute",
+              top: "66px",
+              right: "20px",
+              backgroundColor: "#4682B4",
+            }}
           >
             PDF
           </button>

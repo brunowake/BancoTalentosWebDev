@@ -10,6 +10,7 @@ import ReactInputMask from "react-input-mask";
 import ConfirmaModal from "../components/ConfirmaModal";
 import emailjs from "@emailjs/browser";
 import api from "../api/api";
+import "./CvDetails.css";
 
 const CvAdicionar = () => {
   const [cv, setCv] = useState({
@@ -299,14 +300,16 @@ const CvAdicionar = () => {
 
         <Outlet context={{ state: cv, setState: setCv }} />
         <hr />
-
-        <button
-          className="btn btn-primary align-text-center "
-          type="submit"
-          onClick={createCodigoResgistro}
-        >
-          Finalizar Cadastro
-        </button>
+        <div className="d-grid gap-2 col-6 mx-auto">
+          <button
+            className="btn btn-primary align-text-center border-0 "
+            style={{ backgroundColor: "#4682B4" }}
+            type="submit"
+            onClick={createCodigoResgistro}
+          >
+            Finalizar Cadastro
+          </button>
+        </div>
       </form>
     </div>
   );

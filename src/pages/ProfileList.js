@@ -279,7 +279,6 @@ function ProfileList() {
       }
     }
     console.log(site);
-    // newUrl = true;
     return site;
   }
 
@@ -298,7 +297,6 @@ function ProfileList() {
       }
     }
     console.log(site);
-    // newUrl = true;
 
     return site;
   }
@@ -347,7 +345,11 @@ function ProfileList() {
     if (!arr.length) {
       return site;
     }
+    let clone = [...profile];
     for (let i = 0; i < arr.length; i++) {
+      // let result = clone.competencias.filter((obj) => {
+      //   return obj.nome === arr[i];
+      // });
       if (!newUrl) {
         site = `?competencias.1.nome=${arr[i]}`;
         newUrl = true;
@@ -427,7 +429,7 @@ function ProfileList() {
             onChange={(event) => setText(event.target.value)}
           />
         </div>
-        <div className="col-4">
+        <div className="col-3">
           <SideBar
             vaga={vagas}
             senioridade={senioridade}
@@ -446,9 +448,9 @@ function ProfileList() {
             stateCompetencias={checkCompetencias}
           />
         </div>
-        <div className="col-8">
+        <div className="d-flex flex-column align-items-center col-9">
           {profile.length === 0 ? (
-            <h2 className="text-center fw-bold">
+            <h2 className="text-center text-muted fw-bold">
               Nenhum resultado encontrado...
             </h2>
           ) : (
