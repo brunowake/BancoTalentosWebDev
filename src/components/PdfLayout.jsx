@@ -1,9 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
 import ReactToPrint from "react-to-print";
 import "../pages/CvDetails.css";
-
-import axios from "axios";
 
 function Pdflayout(props) {
   const { state } = props.state;

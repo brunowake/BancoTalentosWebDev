@@ -39,7 +39,6 @@ function ProfileList() {
 
   useEffect(() => {
     getProfiles();
-    console.log(profile);
   }, []);
 
   // barra de pesquisa
@@ -136,9 +135,6 @@ function ProfileList() {
     );
   });
 
-  console.log(estudo);
-  console.log(competencias);
-
   useEffect(() => {
     setCheckVagas([...new Array(vagas.length).fill(false)]);
     setCheckSenior([...new Array(senioridade.length).fill(false)]);
@@ -160,7 +156,7 @@ function ProfileList() {
     // checkVagas[i] ? getCheckedProfiles(i): getProfiles();
     if (checkVagas[i] === false) {
       // getCheckedProfiles(i);
-      console.log(vagas[i]);
+
       if (newVagasSelecionadas.indexOf(vagas[i]) === -1) {
         newVagasSelecionadas.push(vagas[i]);
         setVagasSelecionadas(newVagasSelecionadas);
@@ -168,7 +164,6 @@ function ProfileList() {
     }
 
     if (checkVagas[i] === true) {
-      console.log(vagas[i]);
       let index = newVagasSelecionadas.indexOf(vagas[i]);
       newVagasSelecionadas.splice(index, 1);
       setVagasSelecionadas(newVagasSelecionadas);
@@ -184,7 +179,6 @@ function ProfileList() {
     let newSeniorSelecionados = [...seniorSelecionados];
 
     if (checkSenior[i] === false) {
-      console.log(senioridade[i]);
       if (newSeniorSelecionados.indexOf(senioridade[i]) === -1) {
         newSeniorSelecionados.push(senioridade[i]);
         setSeniorSelecionados(newSeniorSelecionados);
@@ -192,7 +186,6 @@ function ProfileList() {
     }
 
     if (checkSenior[i] === true) {
-      console.log(senioridade[i]);
       let index = newSeniorSelecionados.indexOf(senioridade[i]);
       newSeniorSelecionados.splice(index, 1);
       setSeniorSelecionados(newSeniorSelecionados);
@@ -248,7 +241,6 @@ function ProfileList() {
     let newCompetenciasSelecionadas = [...competenciasSelecionadas];
 
     if (checkCompetencias[i] === false) {
-      console.log(competencias[i]);
       if (newCompetenciasSelecionadas.indexOf(competencias[i]) === -1) {
         newCompetenciasSelecionadas.push(competencias[i]);
         setCompetenciasSelecionadas(newCompetenciasSelecionadas);
@@ -256,7 +248,6 @@ function ProfileList() {
     }
 
     if (checkCompetencias[i] === true) {
-      console.log(competencias[i]);
       let index = newCompetenciasSelecionadas.indexOf(competencias[i]);
       newCompetenciasSelecionadas.splice(index, 1);
       setCompetenciasSelecionadas(newCompetenciasSelecionadas);
@@ -278,7 +269,7 @@ function ProfileList() {
         site += `&detalhes.vaga=${arr[i]}`;
       }
     }
-    console.log(site);
+
     return site;
   }
 
@@ -296,7 +287,6 @@ function ProfileList() {
         site += `&detalhes.senioridade=${arr[i]}`;
       }
     }
-    console.log(site);
 
     return site;
   }
@@ -315,7 +305,6 @@ function ProfileList() {
         site += `&detalhes.endereco.uf=${arr[i]}`;
       }
     }
-    console.log(site);
 
     return site;
   }
@@ -334,7 +323,6 @@ function ProfileList() {
         site += `&formacao.1.instituicao=${arr[i]}`;
       }
     }
-    console.log(site);
 
     return site;
   }
@@ -357,7 +345,6 @@ function ProfileList() {
         site += `&competencias.1.nome=${arr[i]}`;
       }
     }
-    console.log(site);
 
     return site;
   }
@@ -365,16 +352,12 @@ function ProfileList() {
   // no useEffect os resultados acima são concatenados para os filtros funcionarem concomitantemente
   useEffect(() => {
     let resultadoVagaUrl = getUrlVaga(vagasSelecionadas);
-    console.log(resultadoVagaUrl);
 
     let resultadoSeniorUrl = getUrlSenior(seniorSelecionados);
-    console.log(resultadoSeniorUrl);
 
     let resultadoUfUrl = getUrlUf(ufSelecionados);
-    console.log(resultadoUfUrl);
 
     let resultadoFormacaoUrl = getUrlFormacao(formacaoSelecionadas);
-    console.log(resultadoFormacaoUrl);
 
     let resultadoCompetenciasUrl = getUrlCompetencias(competenciasSelecionadas);
 
@@ -385,7 +368,6 @@ function ProfileList() {
       resultadoFormacaoUrl +
       resultadoCompetenciasUrl;
 
-    console.log(resultadoUrl);
     resultadoUrl
       ? getCheckedProfiles(resultadoUrl)
       : setProfile(initialProfile);
@@ -405,9 +387,6 @@ function ProfileList() {
 
   // console.log(ufSelecionados);
   // console.log(checkUf);
-
-  console.log(formacaoSelecionadas);
-  console.log(checkFormacao);
 
   function getCheckedProfiles(resultadoUrl) {
     api
@@ -444,8 +423,8 @@ function ProfileList() {
             stateVagas={checkVagas}
             stateUf={checkUf}
             stateSenior={checkSenior}
-            stateFormacao={checkFormacao}
-            stateCompetencias={checkCompetencias}
+            // stateFormacao={checkFormacao}
+            // stateCompetencias={checkCompetencias}
           />
         </div>
         <div className="d-flex flex-column align-items-center col-9">

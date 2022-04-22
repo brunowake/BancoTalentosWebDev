@@ -84,7 +84,7 @@ function SideBar(props) {
             </ul>{" "}
           </Accordion.Body>
         </Accordion.Item>
-        <Accordion.Item eventKey="3">
+        {/* <Accordion.Item eventKey="3">
           <Accordion.Header>Formação</Accordion.Header>
           <Accordion.Body>
             <ul className="list-group">
@@ -130,7 +130,7 @@ function SideBar(props) {
               })}
             </ul>
           </Accordion.Body>
-        </Accordion.Item>
+        </Accordion.Item> */}
       </Accordion>
     </div>
   );

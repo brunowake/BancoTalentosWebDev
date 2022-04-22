@@ -52,13 +52,13 @@ const CvAdicionar = () => {
 
   const [validation, setValidation] = useState({
     errors: {},
-    validForm: false,
   });
   const navigate = useNavigate();
 
   const [buscarCEP, setBuscarCEP] = useState("");
-  const [show, setShow] = useState(false);
-  const [modal, setModal] = useState(false);
+
+  const [show, setShow] = useState(false); //alertform
+  const [modal, setModal] = useState(false); //modal confirmacao de cadastro
 
   function handleShow() {
     setModal(true);

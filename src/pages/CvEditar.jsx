@@ -57,7 +57,7 @@ const CvEditar = () => {
 
   const navigate = useNavigate();
 
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(false); //modal de deletar
 
   const [buscarCEP, setBuscarCEP] = useState("");
 
@@ -66,34 +66,15 @@ const CvEditar = () => {
     validForm: false,
   });
 
-  const [show, setShow] = useState(false);
-  const [showPreview, setShowPreview] = useState(false);
+  const [show, setShow] = useState(false); //alerta de erros
+  const [showPreview, setShowPreview] = useState(false); // modal preview
 
-  useEffect(() => {
-    api
-      .get(`/perfis/?codigoRegistro=${codigoCadastro}`)
-      .then((response) => {
-        const data = response.data[0];
-        response.data.length === 0 ? navigate("*") : setCv({ ...data });
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
+  const handleShow = () => setModal(true);
+  const handleShowPreview = () => setShowPreview(true);
 
   function closeAlert() {
     setShow(false);
   }
-
-  // async function handleSubmit(event) {
-  //   event.preventDefault();
-  //   axios
-  //     .patch(`http://localhost:4000/perfis/${cv.id}`, cv)
-  //     .then((response) => {
-  //       navigate("/");
-  //     })
-  //     .catch((err) => console.error(err));
-  // }
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -176,6 +157,11 @@ const CvEditar = () => {
     setCv({ ...cv, detalhes: { ...cv.detalhes, imagem: img } });
   }
 
+  function scrollToError() {
+    setShow(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   useEffect(() => {
     if (!cv.detalhes.nome) {
       setValidation((prevState) => {
@@ -224,14 +210,17 @@ const CvEditar = () => {
     }
   }, [cv.detalhes.nome, cv.detalhes.sobrenome, cv.detalhes.email]);
 
-  function scrollToError() {
-    setShow(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  // const handleClose = () => setModal(false);
-  const handleShow = () => setModal(true);
-  const handleShowPreview = () => setShowPreview(true);
+  useEffect(() => {
+    api
+      .get(`/perfis/?codigoRegistro=${codigoCadastro}`)
+      .then((response) => {
+        const data = response.data[0];
+        response.data.length === 0 ? navigate("*") : setCv({ ...data });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
   return (
     <div className="container mt-5 ">

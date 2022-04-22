@@ -15,14 +15,10 @@ const Detalhes = (props) => {
 
   const inputClassName = ` col-lg-8 col-12 `;
   const labelClassName = `form-label  col-lg-4 col-12`;
-
   const [img, setImg] = useState("");
   const [uploading, setUploading] = useState();
-
   const [showCrop, setShowCrop] = useState(false);
-
   const errorsKeys = Object.keys(validation.errors);
-
   let domList = useRef([]);
 
   domList = errorsKeys.map((key) => {
@@ -215,7 +211,6 @@ const Detalhes = (props) => {
         {uploading ? (
           "  Uploading..."
         ) : (
-          // <img src={state.imagem} style={{ height: "100px" }} />
           <CropImg
             uploadedImg={img}
             cvImage={state.imagem}
