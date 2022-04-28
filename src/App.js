@@ -13,6 +13,7 @@ import CvEditar from "./pages/CvEditar";
 import BuscarCv from "./pages/BuscarCv";
 import CvDelete from "./pages/CvDelete";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import Error from "./pages/Error";
 
 // npm run dev:server - para rodar a API
@@ -34,6 +35,7 @@ function App() {
             <Route path="competencias/:stateKey" element={<Observacao />} />
             <Route path="projetos/:stateKey" element={<Projetos />} />
           </Route>
+
           {/* /criar  */}
           <Route path="/criar" element={<CvAdicionar />}>
             <Route path="profissional/:stateKey" element={<Profissional />} />
@@ -47,11 +49,12 @@ function App() {
 
           {/* 'deletar perfil' -> criar componente de deletar */}
           <Route path="/cv/delete/:id" element={<CvDelete />} />
-          {/* '*' pagina de erro */}
 
+          {/* '*' pagina de erro */}
           <Route path="*" element={<Error />} />
         </Routes>
       </div>
+      <Footer />
     </div>
   );
 }
