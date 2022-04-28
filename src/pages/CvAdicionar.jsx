@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Detalhes from "../components/Detalhes";
 import Endereco from "../components/Endereco";
 import RedeSocial from "../components/RedeSocial";
 import RegistroTabs from "../components/RegistroTabs";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ReactInputMask from "react-input-mask";
 import ConfirmaModal from "../components/ConfirmaModal";
 import emailjs from "@emailjs/browser";
@@ -302,7 +302,7 @@ const CvAdicionar = () => {
         <hr />
         <div className="d-grid gap-2 col-6 mx-auto">
           <button
-            className="btn btn-primary align-text-center border-0 "
+            className="btn btn-primary align-text-center border-0 mb-4"
             style={{ backgroundColor: "#4682B4" }}
             type="submit"
             onClick={createCodigoResgistro}

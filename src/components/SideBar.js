@@ -1,20 +1,5 @@
 import Accordion from "react-bootstrap/Accordion";
 function SideBar(props) {
-  //   const vagasLength = props.vaga.length;
-  //   const [checkVagas, setCheckVagas] = useState([
-  //     ...new Array(props.vaga.length).fill(false),
-  //   ]);
-
-  //   function handleCheckboxChange(i) {
-  //     const updateCheckVagas = checkVagas.map((item, index) => {
-  //       return index === i ? !item : item;
-  //     });
-
-  //     setCheckVagas(updateCheckVagas);
-  //     console.log(checkVagas);
-  //     console.log(props.vaga[i]);
-  //   }
-
   return (
     <div style={{ maxHeight: "50vh" }}>
       <Accordion alwaysOpen flush>

@@ -266,7 +266,6 @@ const CvEditar = () => {
         onSubmit={handleSubmit}
       >
         <p className="mt-3"></p>
-        <p className="h1 text-center mb-3">Detalhes</p>
         <Detalhes
           state={cv.detalhes}
           handleChange={handleDetalhesChange}
@@ -278,14 +277,14 @@ const CvEditar = () => {
         />
         <hr />
 
-        <p className="h1 text-center mb-3">Rede Social</p>
+        <p className="h3 text-start mt-2 mb-3">Rede Social</p>
         <RedeSocial
           state={cv.redeSocial}
           handleChange={handleRedeSocialChange}
         />
         <hr />
 
-        <p className="h1 text-center mb-3">Endereço</p>
+        <p className="h3 text-start mt-2 mb-3">Endereço</p>
         <div className="input-group mb-3 mt-3">
           <input
             id="CEP"
@@ -316,7 +315,7 @@ const CvEditar = () => {
         <hr />
         <div className="d-grid gap-2 col-6 mx-auto">
           <button
-            className="btn btn-primary border-0"
+            className="btn btn-primary border-0 mb-4"
             style={{ backgroundColor: "#4682B4" }}
           >
             Atualizar Cadastro
