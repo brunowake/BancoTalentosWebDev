@@ -13,8 +13,8 @@ const BuscarCv = () => {
     setCodigoCadastro(event.target.value);
   }
   return (
-    <div className="container-fluid m-5 p-5">
-      <div className="d-flex m-5 p-5 row justify-content-center mh-100">
+    <div className="container d-flex justify-content-center mt-5 pt-2">
+      <div className="d-flex m-5 flex-column">
         <p className="text-center fs-6 fw-bold" style={{ color: "#4682B4" }}>
           Digite o código de registro para editar ou deletar seu CV:
         </p>

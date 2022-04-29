@@ -11,7 +11,7 @@ function SideBar(props) {
                 return (
                   <li key={currentVaga} className="list-group-item border-0">
                     <input
-                      className="form-check-input me-1"
+                      className="form-check-input me-2"
                       type="checkbox"
                       checked={props.stateVagas[index]}
                       value={currentVaga}
