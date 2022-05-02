@@ -3,13 +3,12 @@ import { Navbar, Container } from "react-bootstrap";
 function Footer() {
   return (
     <Navbar
-      className="d-flex align-content-end flex-wrap"
       variant="dark"
       expand="lg"
-      style={{ backgroundColor: "#4682B4", color: "white" }}
+      style={{ backgroundColor: "#4682B4", color: "white", width: "100vw" }}
     >
       <Container>
-        <Navbar.Text className="justify-content-end">
+        <Navbar.Text>
           criado por{" "}
           <a href="https://www.linkedin.com/in/bruno-wake-moraes-go/">
             Bruno Wake

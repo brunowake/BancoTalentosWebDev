@@ -10,6 +10,8 @@ function ProfileList() {
   const [profile, setProfile] = useState([]);
   const [text, setText] = useState("");
   const [initialProfile, setInitialProfile] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   const [checkVagas, setCheckVagas] = useState([]);
   const [checkSenior, setCheckSenior] = useState([]);
   const [checkUf, setCheckUf] = useState([]);
@@ -66,11 +68,14 @@ function ProfileList() {
   }
 
   function getProfiles() {
+    setLoading(true);
+
     api
       .get("/perfis")
       .then((response) => {
         setInitialProfile([...response.data]);
         setProfile([...response.data]);
+        setLoading(false);
       })
       .catch((err) => {
         console.error(err);
@@ -389,10 +394,12 @@ function ProfileList() {
   // console.log(checkUf);
 
   function getCheckedProfiles(resultadoUrl) {
+    setLoading(true);
     api
       .get(`/perfis${resultadoUrl}`)
       .then((response) => {
         setProfile([...response.data]);
+        setLoading(false);
       })
       .catch((err) => {
         console.error(err);
@@ -400,8 +407,9 @@ function ProfileList() {
   }
 
   return (
-    <div className="container ms-3 mt-5">
-      <div className="row ">
+    <div className="container ms-3 mt-5 p-0">
+      <div className="row g-0">
+        {/* d-md-flex flex-direction-col */}
         <div>
           <Search
             value={text}
@@ -428,7 +436,17 @@ function ProfileList() {
           />
         </div>
         <div className="d-flex flex-column align-items-center col-9">
-          {profile.length === 0 ? (
+          {loading ? (
+            <div class="d-flex justify-content-center">
+              <div
+                class="spinner-border"
+                style={{ color: "#4682B4" }}
+                role="status"
+              >
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          ) : profile.length === 0 ? (
             <h2 className="text-center text-muted fw-bold">
               Nenhum resultado encontrado...
             </h2>
@@ -437,15 +455,15 @@ function ProfileList() {
               const { id, detalhes } = currentProfile;
               return (
                 <div
-                  className="card mb-3 w-75"
-                  // style={{ maxWidth: "600px" }}
+                  className="card mb-3 w-75 hover-overlay ripple shadow-1-strong"
+                  data-mdb-ripple-color="light"
                   key={id}
                   onClick={() => navigate(`/cv/${id}`)}
                 >
                   <div className="row g-0">
-                    <div className="col-md-4 ">
+                    <div className="col-md-4 embed-responsive embed-responsive-1by1 ">
                       <img
-                        className="img-fluid rounded-start h-100 d-block"
+                        className="img-fluid rounded-start embed-responsive-item"
                         loading="lazy"
                         src={detalhes.imagem}
                         alt={detalhes.nome}
@@ -465,8 +483,8 @@ function ProfileList() {
                           </b>
                         </p>
                         <span
-                          className="card-text d-inline-block text-truncate"
-                          style={{ maxWidth: "250px" }}
+                          className="card-text d-block text-truncate"
+                          style={{ maxWidth: "350px" }}
                         >
                           {detalhes.sobre}
                         </span>

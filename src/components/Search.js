@@ -1,12 +1,15 @@
-function Search(props) {
+import { Search } from "@carbon/icons-react";
+function SearchInput(props) {
   return (
-    <div className="mb-4 mt-5 col-3">
-      <label className="me-2"></label>
+    <div className="mb-4 mt-5 w-25">
+      <label className="m-2">
+        <Search />
+      </label>
       <input
         type="text"
         className="input search-bar w-75"
         name="search"
-        placeholder="Nome da pessoa..."
+        placeholder="Nome..."
         value={props.value}
         onChange={props.onChange}
       />
@@ -14,4 +17,4 @@ function Search(props) {
   );
 }
 
-export default Search;
+export default SearchInput;

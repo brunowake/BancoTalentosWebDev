@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactToPrint from "react-to-print";
 import "./CvDetails.css";
-
 import api from "../api/api";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function CvDetails() {
   const [state, setState] = useState({
@@ -209,35 +210,35 @@ function CvDetails() {
               ""
             ) : (
               <p className="m-0">
-                <b>Instagram:</b> {instagram}
+                <b>instagram:</b> {instagram}
               </p>
             )}
             {!facebook ? (
               ""
             ) : (
               <p className="m-0">
-                <b>Facebook:</b> {facebook}
+                <b>facebook:</b> {facebook}
               </p>
             )}
             {!twitter ? (
               ""
             ) : (
               <p className="m-0">
-                <b>Twitter:</b> {twitter}
+                <b>twitter:</b> {twitter}
               </p>
             )}
             {!linkedin ? (
               ""
             ) : (
               <p className="m-0">
-                <b>LinkedIn:</b> {linkedin}
+                <b>linkedIn:</b> {linkedin}
               </p>
             )}
             {!github ? (
               ""
             ) : (
               <p className="m-0">
-                <b>github:</b> {github}
+                <b>gitHub :</b> {github}
               </p>
             )}
           </div>
@@ -260,11 +261,11 @@ function CvDetails() {
         )}
         content={() => pdf.current}
       />
-      <div className="m-5 mt-5 p-3" ref={pdf}>
+      <div className="m-4 mt-5 p-3" ref={pdf}>
         <div className="d-flex mt-5">
           <img
             className="img-fluid rounded col"
-            style={{ height: "200px", width: "auto" }}
+            style={{ height: "11rem", width: "auto" }}
             src={detalhes.imagem}
             alt={`${detalhes.nome}`}
           />
@@ -277,9 +278,9 @@ function CvDetails() {
             </p>
             <p className="m-0">{detalhes.idade} anos</p>
             <p className="m-0">{detalhes.email}</p>
-            <h2 className=" mt-2 fs-5">
+            <p className=" mt-2 fs-5 text-wrap">
               {detalhes.vaga} - {detalhes.senioridade}
-            </h2>
+            </p>
           </div>
         </div>
         <div className="mt-4 ms-3">
