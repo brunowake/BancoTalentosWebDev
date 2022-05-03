@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import ReactToPrint from "react-to-print";
-import "../pages/CvDetails.css";
 
 function Pdflayout(props) {
   const { state } = props.state;

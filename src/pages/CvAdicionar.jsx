@@ -10,7 +10,6 @@ import ReactInputMask from "react-input-mask";
 import ConfirmaModal from "../components/ConfirmaModal";
 import emailjs from "@emailjs/browser";
 import api from "../api/api";
-import "./CvDetails.css";
 
 const CvAdicionar = () => {
   const [cv, setCv] = useState({
