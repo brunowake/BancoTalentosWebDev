@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactToPrint from "react-to-print";
-import "./CvDetails.css";
 import api from "../api/api";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -210,7 +209,7 @@ function CvDetails() {
               ""
             ) : (
               <p className="m-0">
-                <b>instagram:</b> {instagram}
+                <b>instagram :</b> {instagram}
               </p>
             )}
             {!facebook ? (

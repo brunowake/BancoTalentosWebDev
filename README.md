@@ -2,7 +2,7 @@
 
 ## Português
 
-Scroll down for the English version
+(Scroll down for the English version)
 
 Um banco de talentos da área de Web Development para consulta de recrutadores, onde qualquer pessoa da área pode criar seu currículo e deixar salvo no site.
 
@@ -86,8 +86,12 @@ npm run dev:server
 npm start
 ```
 
+<br>
+
 Projeto desenvolvido para o Bootcamp de Web Development da Ironhack por [Bruno Wake](https://github.com/brunowake) e [Thaís Machado](https://github.com/thaismachado31)
 Apresentação: [slides](https://docs.google.com/presentation/d/1TybQg7seaZuUQ8CS7L1IYh_71bGjx3J-2u9jgq8g6cU/edit?usp=sharing)
+
+<br>
 
 ## English
 
@@ -172,4 +176,6 @@ npm run dev:server
 npm start
 ```
 
-Projeto created for the Ironhack Web Development Bootcamp by [Bruno Wake](https://github.com/brunowake) and [Thaís Machado](https://github.com/thaismachado31)
+<br>
+
+Project created for the Ironhack Web Development Bootcamp by [Bruno Wake](https://github.com/brunowake) and [Thaís Machado](https://github.com/thaismachado31)
